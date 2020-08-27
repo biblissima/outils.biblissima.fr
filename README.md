@@ -14,8 +14,8 @@ Le site Boîte à Outils Biblissima est développé par [l'équipe Biblissima](h
 Après avoir récupéré le dépôt de code sur votre poste, vous pourrez :
 
 - [Installer et générer le site complet](#installer-et-générer-le-site-complet) (plutôt destiné à l'équipe Biblissima)
-- [Utiliser Collatinus-web seul en mode hors-ligne](#utiliser-collatinus-web-seul-en-mode-horsligne)
-- [Utiliser Eulexis-web seul en mode hors-ligne](#utiliser-eulexis-web-seul-en-mode-horsligne)
+- [Utiliser Collatinus-web seul en mode hors-ligne](#utiliser-collatinus-web-seul-en-mode-hors-ligne)
+- [Utiliser Eulexis-web seul en mode hors-ligne](#utiliser-eulexis-web-seul-en-mode-hors-ligne)
 
 Pour cloner ce dépôt :
 
@@ -56,12 +56,16 @@ Le site est alors généré dans le répertoire `_site`.
 ### Générer Collatinus-web et Eulexis-web séparément
 
 #### Pour Collatinus-web :
-```jekyll build --config=_config.yml,_config_prod.yml,_config_collatinus-web.yml --trace --verbose```
+```
+jekyll build --config=_config.yml,_config_prod.yml,_config_collatinus-web.yml --trace --verbose
+```
 
 Les fichiers nécessaires à l'application sont situés dans le répertoire `collatinus-web`.
 
 #### Pour Eulexis-web :
-```jekyll build --config=_config.yml,_config_prod.yml,_config_eulexis-web.yml --trace --verbose```
+```
+jekyll build --config=_config.yml,_config_prod.yml,_config_eulexis-web.yml --trace --verbose
+```
 
 Les fichiers nécessaires à l'application sont situés dans le répertoire `eulexis-web`.
 
