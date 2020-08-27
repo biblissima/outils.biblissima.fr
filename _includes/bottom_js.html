@@ -1,0 +1,37 @@
+<script type="text/javascript" src="{{ "/vendor/jquery-1.10.2.min.js" | prepend: site.common_baseurl }}"></script>
+<script type="text/javascript" src="{{ site.common_baseurl }}/vendor/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ "/vendor/masonry.pkgd.min.js" | prepend: site.common_baseurl }}"></script>
+<script type="text/javascript" src="/js/vendor/simplelightbox.min.js"></script>
+<script type="text/javascript" src="{{ site.common_baseurl }}/js/common.js"></script>
+<script type="text/javascript" src="/js/outils.js"></script>
+{% if page.id == 'collatinus-web' %}
+  <script type="text/javascript" src="/collatinus-web/collatinus-web.js"></script>
+{% endif %}
+{% if page.id == 'eulexis-web' %}
+  <script type="text/javascript" src="/eulexis-web/lat_grc.json"></script>
+  <script type="text/javascript" src="/eulexis-web/eulexis.js"></script>
+{% endif %}
+
+<!-- Font Loading using CSS @font-face and font-events for enabling fonts (using FontFaceObserver : polyfill script to the Font Loading API)
+Demo : https://github.com/filamentgroup/font-loading/blob/master/font-events.html
+-->
+<script src="{{ "/vendor/fontfaceobserver.js" | prepend: site.common_baseurl }}"></script>
+<script>
+  (function( w ){
+    // if the class is already set, we're good.
+    if( w.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ){
+      return;
+    }
+    var fontA = new w.FontFaceObserver( "Source Sans Pro", {
+      weight: 400
+    });
+    var fontB = new w.FontFaceObserver( "Source Serif Pro", {
+      weight: 400
+    });
+    w.Promise
+      .all([fontA.check(), fontB.check()])
+      .then(function(){
+        w.document.documentElement.className += " fonts-loaded";
+      });
+  }( this ));
+</script>

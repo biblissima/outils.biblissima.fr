@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  {% include head.html %}
+
+  {% if page.id == 'home' %}
+    <body class="front biblissima site-outils {{page.id}} {{page.lang}}">
+  {% else %}
+    <body class="not-front biblissima site-outils {{page.id}} {{page.lang}}">
+  {% endif %}
+   
+    {% include chromeframe.html %}
+    {% include header.php %}
+  
+    <div class="main-container container" role="main">
+      <div class="row">
+        <section class="col-sm-12">
+          {{ content }}        
+        </section>
+      </div>
+    </div>
+    
+    {% include footer.html %}
+    
+    {% include backToTop.html %}
+    <div class="site-cache" id="site-cache"></div>
+    
+    {% include bottom_js.html %}    
+    {% include analytics.html idStat=page.id_stat %}
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{page.lang}}">
+
+  {% include head.html %}
+
+  <body class="default-variant not-front biblissima site-outils scroll-demo {{page.id}}">
+    {% include chromeframe.html %}
+    {% include header_variant.php %}
+    
+    <div class="main-container container" role="main">
+      <div class="row">
+        <section class="col-sm-12">
+          {{ content }}        
+        </section>
+      </div>
+    </div>
+    
+    {% include footer.html %}
+    {% include backToTop.html %}
+
+    {% include bottom_js.html %}
+    {% include analytics.html idStat=page.id_stat %}
+  </body>
+</html>

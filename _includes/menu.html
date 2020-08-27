@@ -1,0 +1,27 @@
+<!-- MENU -->
+<nav class="menu-navigation menu-responsive" role="navigation">
+    <div class="navbar-collapse collapse" id="navbar-collapse-1">
+        <div class="region region-navigation">
+            <div class="menu-biblissima clearfix">
+                <ul class="menu nav container">
+                    {% for item in site.data.navigation[page.lang] %}
+                        {% comment %}
+                            Il est nécessaire d'avoir une variable "phpurl" car jekyll ne réécrit pas les pages php dans sa variable php.url. (E.g: page html eulexis : /fr/eulexis/, page php collatinus : /fr/eulexis/index.php)
+                        {% endcomment %}
+
+                        {% assign phpurl = item.url | append: 'index.php' %}
+                        {% if page.url == item.url or phpurl == page.url %}
+                            {% assign class = 'active' %} 
+                        {% else %}
+                            {% assign class = '' %} 
+                        {% endif %}
+                        <li>
+                            <a href="{{ item.url }}" class="{{ class }}" title="{{item.desc}}">{{ item.name_short }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- #MENU -->

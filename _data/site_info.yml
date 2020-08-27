@@ -1,0 +1,10 @@
+name: "Boîte à outils Biblissima"
+name_short: "Boîte à outils"
+fr:
+  description: "Boîte à outils Biblissima"
+en:
+  description: "Biblissima Toolkit"
+url: ""
+# common_baseurl: "http://static.biblissima.fr"
+# url_projet: "http://www.biblissima-condorcet.fr"
+#common_baseurl: "http://localhost:8080"

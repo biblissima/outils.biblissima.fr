@@ -1,0 +1,41 @@
+{% comment %}
+*  
+*  http://stackoverflow.com/questions/9612235/what-are-some-good-ways-to-implement-breadcrumbs-on-a-jekyll-site
+*  
+{% endcomment %}
+
+<ol class="breadcrumb" role="menubar" aria-label="breadcrumbs">
+ <li><a href="{{ site.url }}">{{ site.breadcrumb_start }}</a></li>
+ {% assign crumbs = page.url | split: '/' %}
+   {% for crumb in crumbs offset: 1 %}
+    {% if forloop.last %}
+        <li class="active ">{{ page.title }}</li>
+    {% else %}
+    
+      {% assign crumb_name = crumbs[1] %}
+
+      {% for item in site.data.navigation %}
+       
+        {% assign urls = item.url | split: '/' %}
+        
+        {% for url in urls %}
+
+          {% if url == crumb_name and item.subpages != null %}
+            {% assign parent_name = item.name %}
+            {% assign parent_url = item.url %}
+            
+            
+            {% for subpage in item.subpages %}
+              {% assign subpage_url = subpage.url | split: '/' %}
+            {% endfor %}
+
+          {% endif %}
+        {% endfor %}
+
+      {% endfor %}
+            
+    <li><a href="{{parent_url}}">{{parent_name}}</a></li>
+    
+    {% endif %}
+  {% endfor %}
+</ol>

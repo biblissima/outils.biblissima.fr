@@ -1,0 +1,17 @@
+_site
+.sass-cache
+.jekyll-metadata
+.jekyll-cache
+.old_htaccess
+resources
+collatinus/ressources/
+collatinus-web/_includes
+collatinus-web/_layouts
+collatinus-web/assets
+collatinus-web/.jekyll-cache
+eulexis-web/_includes
+eulexis-web/_layouts
+eulexis-web/assets
+eulexis-web/.jekyll-cache
+eulexis-web/data
+eulexis-web/data.tar.gz

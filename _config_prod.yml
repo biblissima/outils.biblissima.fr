@@ -1,0 +1,8 @@
+url: "https://outils.biblissima.fr"
+common_baseurl: "https://static.biblissima.fr"
+url_projet: "https://projet.biblissima.fr"
+
+# Collatinus/Eulexis downloads paths
+collatinus_path: "/var/www/html/outils.biblissima.fr/root/resources/collatinus/telechargements/"
+eulexis_path: "/var/www/html/outils.biblissima.fr/root/resources/eulexis/"
+praelector_path: "/var/www/html/outils.biblissima.fr/root/resources/praelector/"

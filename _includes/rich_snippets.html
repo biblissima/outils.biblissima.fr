@@ -1,0 +1,141 @@
+{% if page.id == 'collatinus' %}
+<!-- RS Collatinus -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "SoftwareApplication",
+  "name" : "Collatinus",
+  "url" : "{{ site.url }}{{ page.url }}",
+  "description" : "{{page.description_meta}}",
+  "screenshot" : "https://outils.biblissima.fr/images/captures/Coll_capt1_min.png",
+  "softwareVersion" : "11",
+  "operatingSystem" : "Windows, Mac, Debian GNU/Linux",
+  "applicationCategory": "Linguistics",
+  "provider" : {
+    "@type" : "Organization",
+    "name" : "Equipex Biblissima"
+  },
+  "creator" : {
+    "@type" : "Person",
+    "name" : "Yves Ouvrard"
+  },
+  "contributor" : {
+    "@type" : "Person",
+    "name" : "Philippe Verkerk"
+  }
+}
+</script>
+{% endif %}
+
+{% if page.id == 'collatinus-web' %}
+<!-- RS Collatinus-web -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "WebApplication",
+  "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+  "name" : "Collatinus-web",
+  "url" : "{{ site.url }}{{ page.url }}",
+  "description" : "{{page.description_meta}}",
+  "applicationCategory": "Linguistics",
+  "provider" : {
+    "@type" : "Organization",
+    "name" : "Equipex Biblissima"
+  },
+  "creator" : [{
+    "@type" : "Person",
+    "name" : "Yves Ouvrard"
+  },
+  {
+    "@type" : "Person",
+    "name" : "Philippe Verkerk"
+  }],
+  "contributor" : [
+  {
+    "@type" : "Person",
+    "name" : "Régis Robineau"
+  },
+  {
+    "@type" : "Person",
+    "name" : "Eduard Frunzeanu"
+  }]
+}
+</script>
+{% endif %}
+
+{% if page.id == 'eulexis-web' %}
+<!-- RS Eulexis -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "WebApplication",
+  "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+  "name" : "Eulexis-web",
+  "url" : "{{ site.url }}{{ page.url }}",
+  "description" : "{{page.description_meta}}",
+  "applicationCategory": "Linguistics",
+  "provider" : {
+    "@type" : "Organization",
+    "name" : "Equipex Biblissima"
+  },
+  "creator" : [
+  {
+    "@type" : "Person",
+    "name" : "Philippe Verkerk"
+  }],
+  "contributor" : [
+  {
+    "@type" : "Person",
+    "name" : "Régis Robineau"
+  }]
+}
+</script>
+{% endif %}
+
+{% if page.id == 'eulexis' %}
+<!-- RS Eulexis -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "WebApplication",
+  "license": "http://www.gnu.org/licenses/gpl.html",
+  "name" : "Eulexis",
+  "url" : "{{ site.url }}{{ page.url }}",
+  "description" : "{{page.description_meta}}",
+  "applicationCategory": "Linguistics",
+  "provider" : {
+    "@type" : "Organization",
+    "name" : "Equipex Biblissima"
+  },
+  "creator" : [
+  {
+    "@type" : "Person",
+    "name" : "Philippe Verkerk"
+  }]
+}
+</script>
+{% endif %}
+
+{% if page.id == 'schemas-reliure' %}
+<!-- RS Reliure -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "WebPage",
+  "license": "https://www.etalab.gouv.fr/licence-ouverte-open-licence",
+  "name" : "Schémas TEI reliure",
+  "url" : "{{ site.url }}{{ page.url }}",
+  "relatedLink": "http://bibnum.bnf.fr/reliure",
+  "description" : "{{page.description_meta}}",
+  "provider" : {
+    "@type" : "Organization",
+    "name" : "Equipex Biblissima"
+  },
+  "creator" : [
+  {
+    "@type" : "Organization",
+    "name" : "Bibliothèque Nationale de France"
+  }]
+}
+</script>
+{% endif %}

@@ -1,0 +1,40 @@
+{% if page.id == 'collatinus' %}
+{% include collatinus_headers.php %}
+{% endif %}
+
+{% if page.id == 'praelector' %}
+{% include praelector_headers.php %}
+{% endif %}
+
+{% if page.id == 'eulexis' %}
+{% include eulexis_headers.php %}
+{% endif %}
+
+{% if page.id == 'collatinus-web' %}
+{% include collatinusweb_session.php %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="{{page.lang}}">
+
+  {% include head.html %}
+
+  {% if page.id == 'home' %}
+  <body class="front biblissima site-outils {{page.id}} {{page.lang}}">
+  {% else %}
+  <body class="not-front biblissima site-outils {{page.id}} {{page.lang}}">
+  {% endif %}
+     
+  {% include chromeframe.html %}
+  {% include header.php %}
+  {{ content }}
+    
+  {% include footer.html %}
+  
+  {% include backToTop.html %}
+  <div class="site-cache" id="site-cache"></div>
+  
+  {% include bottom_js.html %}    
+  {% include analytics.html idStat=page.id_stat %}
+  </body>
+</html>

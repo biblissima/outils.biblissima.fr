@@ -1,0 +1,39 @@
+<!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@biblissima" />
+{% if page.title %}
+  <meta name="twitter:title" content="{{ page.title }}">
+{% else %}
+  <meta name="twitter:title" content="{{ site.data.site_info.{{page.lang}}.description }}">
+{% endif %}
+{% if page.url %}
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+{% endif %}
+{% if page.description_meta %}
+  <meta name="twitter:description" content="{{ page.description_meta }}">
+{% else %}
+  <meta name="twitter:description" content="{{ site.data.site_info.description }}">
+{% endif %}
+{% if page.img %}
+  <meta name="twitter:image" content="{{ site.url }}/images/{{ page.img }}">
+{% endif %}
+
+<!-- OGP -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ site.data.site_info.name }}" />
+{% if page.title %}
+  <meta property="og:title" content="{{ page.title }}" />
+{% else %}
+  <meta property="og:title" content="{{ site.data.site_info[page.lang].description }}" />
+{% endif %}
+{% if page.url %}
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+{% endif %}
+{% if page.description_meta %}
+  <meta property="og:description" content="{{ page.description_meta }}" />
+{% else %}
+  <meta name="og:description" content="{{ site.data.site_info.description }}">
+{% endif %}
+{% if page.img %}
+  <meta property="og:image" content="{{ site.url }}/images/{{ page.img }}" />
+{% endif %}

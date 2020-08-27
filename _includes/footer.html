@@ -1,0 +1,54 @@
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="region region-footer">
+            <div class="block block-menu block-footer-col-2 block-footer clearfix">
+                <ul class="menu nav">
+                    {% if page.lang == 'en' %}
+                    <li class="first last leaf">
+                        <a href="{{site.url_projet}}/en/legal-notice" target="_blank">Legal Notice</a>
+                    </li>
+                    <li class="leaf">
+                        <a href="{{site.url_projet}}/en/contact" target="_blank">Contact</a>
+                    </li>                        
+                    <li class="leaf">
+                        <a href="{{site.url_projet}}/en/logos" target="_blank">Logos</a>
+                    </li>
+                    {% else %}
+                    <li class="first last leaf">
+                        <a href="{{site.url_projet}}/mentions-legales" target="_blank">Mentions légales</a>
+                    </li>
+                    <li class="leaf">
+                        <a href="{{site.url_projet}}/contact" target="_blank">Contact</a>
+                    </li>                        
+                    <li class="leaf">
+                        <a href="{{site.url_projet}}/logos" target="_blank">Logos</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="block block-menu block-footer-col-2 block-footer clearfix find-us">
+                <p><strong>{% if page.lang == 'en' %} Follow us: {% else %} Suivez-nous : {% endif %}</strong></p>
+                <ul class="nav">
+                    <li><a href="https://facebook.com/biblissima" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/biblissima" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.slideshare.net/biblissima" title="Slideshare"><i class="fa fa-slideshare"></i></a></li>
+                    <li><a href="https://github.com/biblissima" title="Github"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCaHWzwUV0xBAQ-sEdE9EtKg" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+                </ul>
+            </div>
+            <div class="block block-block block-footer-col-4 block-footer clearfix">
+                <div class="logo-ia">
+                    <a href="http://www.agence-nationale-recherche.fr/investissements-d-avenir/" target="_blank"></a>
+                    <p>{% if page.lang == 'en' %} Biblissima benefits from State funding managed by the ANR within the "Investissements d'avenir" programme, reference ANR-­11-­EQPX-­0007. {% else %} Biblissima b&eacute;n&eacute;ficie d&rsquo;une aide de l&#39;Etat g&eacute;r&eacute;e par l&#39;ANR au titre du programme &laquo; Investissements d&#39;avenir &raquo;, portant la r&eacute;f&eacute;rence ANR-&shy;11-&shy;EQPX-&shy;0007. {% endif %}</p>
+                </div>
+            </div>
+            <div class="block block-block block-footer-col-2 block-footer clearfix">
+                <p><strong>Equipex Biblissima</strong>
+                    <br /> Campus Condorcet
+                    <br /> 20 avenue George Sand
+                    <br /> 93210
+                    <br /> La Plaine Saint-Denis</p>
+            </div>
+        </div>
+    </div>
+</footer>

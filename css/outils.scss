@@ -1,0 +1,902 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+/* ----------------------------------------
+== VARIABLES
+---------------------------------------- */
+
+$green: #48b089;
+$red: #e75252;
+$grey: #f5f5f5;
+
+$indent: 175px;
+
+/* ----------------------------------------
+== TEMPORAIRES
+---------------------------------------- */
+
+// Messages temporaires sur les traductions restantes
+.red {
+	background-color: lighten(#FF0000, 20%);
+	color: #FFF;
+	padding: 0 5px;
+}
+
+/* ----------------------------------------
+== GLOBALS
+---------------------------------------- */
+
+h1 {
+	small {
+		display: block;
+		line-height: 1.2;
+	}
+}
+
+dt {
+	font-size: 1.2em;
+	margin: 30px 0 15px 0
+}
+
+span.caret {
+	display: inline-block;
+}
+
+.tooltip {
+	display: block !important;
+
+	.tooltip-inner {
+		border-radius: 0;
+	}
+}
+
+.form-lemme select {
+	min-width: 122px;
+}
+
+form {
+	padding: 15px 0px;
+	.form-control {
+		&:focus {
+			border-color: $green;
+		}
+	}
+	label {
+		display: inline-block;
+		margin-bottom: 5px;
+		font-weight: 600;
+
+		&[for="recherche_lemme"], // Collatinus web
+		&[for="flexion_lemme"],
+		&[for="traitement_texte"],
+		&[for="langue"] {
+			width: 137px;
+			vertical-align: middle;
+		}
+	}
+	select {
+		display: inline-block;
+		width: auto;
+		height: 40px;
+	}
+	.btn {
+		height: 40px;
+	}
+	textarea {
+		margin-bottom: 10px;
+	}
+}
+
+table.table {
+	thead {
+		background: $green;
+
+		th {
+			color: #FFF;
+			white-space: nowrap;
+		}
+	}
+	tbody {
+		td[align="center"] {
+			text-align: center;
+			vertical-align: middle;
+			
+			a {
+				vertical-align: middle;
+			}
+		}
+		.debian-logo {
+			text-align: center;
+			vertical-align: middle;
+			
+			img {
+				display: block;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+.sl-close .glyphicon,
+.sl-next .glyphicon,
+.sl-prev .glyphicon,
+.sl-counter {
+	color: $green;
+}
+.sl-overlay {
+	background: #000;
+}
+
+.modal {
+	.close {
+		opacity: 1;
+		&:hover {
+			opacity: 0.8;
+		}
+		.glyphicon {
+			color: $green;
+			opacity: 1;
+			font-weight: 700;
+		}
+	}
+}
+
+.indent {
+	padding-left: $indent;
+}
+
+input[type="checkbox"] + label {
+	margin-right: 5px;
+}
+
+.news {
+	font-weight: 300;
+	padding: 24px;
+	margin: 15px 0;
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* ----------------------------------------
+== BOUTONS & LIENS 
+---------------------------------------- */
+
+.btn {
+	background-color: $green;
+	color: #FFF;
+	white-space: normal;
+	margin: 0;
+
+	&:hover, &:focus, &:active, &.focus {
+		opacity: 1;
+		background: lighten($green, 7%);
+		color: #FFF;
+	}
+
+	.fa {
+		font-size: 1.1em;
+		padding-right: 7px;
+		vertical-align: middle;
+	}
+	&[type="reset"] {
+		background: $red;
+	}
+	&.btn-danger[disabled="disabled"],
+	&.btn-warning[disabled="disabled"] {
+		white-space: normal;
+		opacity: 1;
+	}
+}
+
+.alert-danger {
+	.btn-primary {
+		margin-left: 5px;
+		padding: 6px 12px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+	}
+}
+
+/* ----------------------------------------
+==== HEADER
+---------------------------------------- */
+
+.navbar {
+	background: $green;
+
+	.lead {
+		color: #fff;
+	}
+
+	.tool-box-bloc {
+		border: none;
+		padding: 0px;
+
+		a {
+			color: #FFF;
+		} 
+	}
+
+	.menu-biblissima {
+		li {
+			a {
+				&.active,
+				&:hover {
+					color: $green;
+				}
+			}
+		}
+	}
+	.header__icon.navbar-toggle {
+		.icon-bar {
+			background: #FFF;
+		}
+	}
+	.langue-box ul li {
+		border-color: #FFF;
+		a {
+			color: #FFF;
+		}
+	}
+}
+
+/* ----------------------------------------
+==== CONTENT BOTTOM
+---------------------------------------- */
+
+.content-bottom {
+	.license {
+
+		img {
+			padding-right: 10px;
+		}
+	}
+	.glyphicon-envelope {
+		vertical-align: middle;
+		padding-right: 7px;
+	}
+}
+
+/* ----------------------------------------
+==== BANNER + GENERAL STYLES + COLLATINUS
+---------------------------------------- */
+
+.top-banner {
+	background: url(/images/bg-collatinus.jpg) no-repeat center center;
+	background-size: cover;
+	padding: 105px 0px 30px 0;
+	min-height: 291px; // égal à collatinus en desktop
+
+	.banner-image {
+		background: url(/images/pseudo-sappho.png) no-repeat;
+		height: 275px;
+	}
+
+	.banner-content {
+		h1 {
+			font-size: 54px;
+			line-height: 54px;
+			color: #FFF;
+			margin: 0px 0px 10px;
+
+			small {
+				color: #FFF;
+			}
+		}
+		h2 {
+			font-family: 'Source sans pro', sans-serif;
+			font-weight: normal;
+			font-size: 21px;
+			color: #FFF;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.text-right {	//boutons
+			align-self: flex-end;
+		}
+		.buttons-container {
+			display: inline-block;
+			width: 300px;
+
+			.btn-group {
+				width: 100%;
+
+				.btn {
+					z-index: 10;
+					margin: 0;
+				}
+				/*.dropdown-toggle {
+					width: 35px;
+					position: absolute;
+					top: 0;bottom: 0;right: 0;
+					box-shadow: none;
+					border-left: solid 1px darken($green, 5%);
+					outline: 0;
+				}*/
+				.dropdown-menu {
+					background: $green;
+					border: none;
+					border-radius: 0;
+					width: 100%;
+					padding: 0;
+					margin: 0;
+					border-top: solid 1px darken($green, 5%);
+
+					li {
+						border-bottom: solid 1px darken($green, 5%);
+						a {
+							background: none;
+							color: #FFF;
+							text-decoration: none;
+							padding: 5px 20px;
+
+							&:hover {
+								background: lighten($green, 5%);
+							}
+						}
+					}
+
+					.divider {
+						border: none;
+						margin: 0;
+					}
+				} 
+			}
+			.btn {
+				width: 100%;
+				margin-top: 10px;
+			}
+		}
+	}
+}
+.region-content {
+	.intro {
+		margin: 30px 0;
+	}
+	h2 {
+		border: none;
+	}
+	#downloads {
+		.btn {
+			margin-bottom: 10px;
+		}
+		.btn-lg {
+			width: 250px;
+		}
+	}
+}
+
+.forms {
+	margin-bottom: 30px;
+}
+
+.results-container {
+	margin-top: 30px;
+
+	.results-header {
+		width: 100%;
+		top: 0;
+		border-top: 3px solid rgba(72, 176, 137, .85);
+		z-index: 1000;
+
+		.scroll-form {
+			display: block;
+			margin: 0 auto;
+			font-size: 1.15em;
+			box-shadow: 2px 2px 2px -2px rgba(0,0,0,0.5);
+			background-color: rgba(72, 176, 137, .85);
+
+			.glyphicon {
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+#results {
+	padding: 20px 15px;
+	/*border: 1px dashed #48b089;
+	border-top: 0;*/
+
+	img {
+		display: block;
+		margin: 0 auto;	
+	}
+
+	.attribution {
+		font-size: .85em;
+    margin-top: 30px;
+    font-style: italic;
+	}
+
+	.entree-dico {
+		margin: 20px 0;
+	}
+
+	.pager {
+		margin-left: 0;
+		text-indent: 0;
+		li {
+			&:before {
+				content: none;
+			}
+			a {
+				background: $green;
+				border: none;
+				border-radius: 0px;
+				color: #FFF;
+				text-decoration: none;
+			}
+		}
+	}
+
+	table {
+		tbody {
+			tr {
+				&:first-child td {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	
+	/* workaround to make a clearer distinction between the different tables (see results for conjugate/decline a word) */
+	/* response should be better formatted by collatinus itself, not in css... */
+	.table-responsive ~ p {
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 1.1em;
+	}
+
+	#colMots {
+		display: none;
+	}
+	.mots {
+		a {
+			text-decoration: none;
+			list-style: none;
+			.lead {
+				color: $green;
+				padding-left: 10px;
+			}
+		}
+	}
+}
+.nav-pills {
+	margin-top: 20px;
+	text-align: center;
+	border-bottom: solid 1px #48b089;
+
+	li {
+		padding: 0 5px;
+
+		&:first-child {
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+		
+		&.active {
+			a, a:hover, a:active, a:focus  {
+				background: $green;
+			}
+		}
+
+		a {
+			background: none;
+			padding: 10px 10px;
+			border-radius: 0;
+			color: #333;
+			text-decoration: none;
+			white-space: nowrap;
+			font-weight: 600;
+			font-size: 1.1em;
+		
+			&:hover, &:active, &:focus {
+				background: lighten($green, 20%);
+				color: #FFF;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/* ----------------------------------------
+==== COLLATINUS-WEB
+---------------------------------------- */
+
+.collatinus-web {
+	.pager {
+		.previous a {
+			&:before {
+				content: '\2190';
+				padding-right: 5px;
+			}
+		}
+		.next a {
+			&:after {
+				content: '\2192';
+				padding-left: 5px;
+			}
+		}
+	}
+
+	.title-results {
+		width: 100%; 
+		text-align: center; 
+		border-bottom: 1px solid #000; 
+		line-height: 0.1em; 
+		margin: 10px 0 20px;
+
+		span {
+			background:#fff; 
+			padding:0 10px; 
+		}
+	}
+}
+
+/* ----------------------------------------
+==== EULEXIS
+---------------------------------------- */
+
+body.navbar-is-fixed-top.scroll-demo {
+    transition: none;
+    padding-top: 0;
+
+    #contentDiv {
+        top: 228px;
+    }
+
+    header {
+    	position: static;
+    }
+}
+
+.collatinus-web,
+.eulexis,
+.eulexis-web {
+	.top-banner {
+		padding-top: 147px;
+	}
+}
+
+.eulexis,
+.eulexis-web {
+	.top-banner {
+		background: url(/images/bg-eulexis.jpg) no-repeat;
+		background-size: cover;
+	}
+	.region-content {
+		> p:first-child {
+			margin-bottom: 5px;
+		}
+	}
+	form {
+		label[for="recherche_lemme"],
+		label[for="flexion_lemme"],
+		label[for="lemmatiser_texte"] {
+			width: calc(#{$indent} - 2px);
+		}
+		input[type="text"] {
+			max-width: 310px;
+		}
+	}
+	.selectLayoutDiv {
+		text-align: right;
+		
+		.columnBtn, .rowBtn {
+		    display: inline-block;
+		    width: 16px;
+		    height: 16px;
+		    margin-right: 5px;
+		    opacity: .4;
+
+		    &.selected {
+		    	opacity: 1;
+		    	cursor: default;
+		    }
+		}
+		.columnBtn {
+			background:transparent url(/images/ui-column-layout.png) left top no-repeat;
+		}
+		.rowBtn {
+			background:transparent url(/images/ui-row-layout.png) left top no-repeat;
+		}
+	}
+	.table-dicos {
+		display: table;
+		width: 100%;
+		.col {
+			display: table;
+			vertical-align: top;
+
+			&.mots {
+				display: table-cell;
+				.lead {
+					margin: 5px 0;
+				}
+			}
+			&.dicos {
+				width: 100%;
+				table-layout: fixed;
+				padding: 0 15px;
+			}
+			h3 {
+				margin-top: 0;
+				margin-bottom: 10px;
+			}
+		}
+		.row {
+			display: table-row;
+			margin: 0;
+		}
+		.column {
+			display: table-cell;
+			width: 33.33333333%;
+			vertical-align: top;
+			padding: 0 15px;
+		}
+		/* classes bailly 2020 */
+		.pp { margin-top:0; margin-bottom:0; margin-left:30px; }
+		.rub { margin-top:0; margin-bottom:0; margin-left:15px; }
+		.norm { margin-top:5px; margin-bottom:0; }
+	}
+}
+
+:target + li {
+	background-color: #FFFBCC;
+}
+
+/* ----------------------------------------
+==== RELIURE
+---------------------------------------- */
+
+.schemas-reliure {
+	.top-banner {
+		background: url(/images/bg-reliure.jpg) no-repeat;
+		background-size: cover;
+		padding-top: 147px;
+	}
+}
+
+/* ----------------------------------------
+==== OUTILS EDITION
+---------------------------------------- */
+
+.outils-edition {
+	.top-banner {
+		background: url(/images/bg-outils-xml.jpg) no-repeat;
+		background-size: cover;
+		padding-top: 165px;
+	}
+	.nav-justified {
+		display: flex;
+		li {
+			width: auto;
+			display: block;
+			a {
+				white-space: normal;
+			}
+		}
+	}
+}
+
+
+/* ----------------------------------------
+==== HOME
+---------------------------------------- */
+
+.home {
+	.baobab-screenshots {
+		margin: 20px -15px 40px;
+	}
+	.outils {
+		a {
+			text-decoration: none;
+			display: block;
+			text-align: center;
+
+			img {
+				width: 275px;
+			}
+
+			h2 {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.form-lemme {
+		textarea {
+			max-width: 68%;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.collatinus-web {
+		.banner-content {
+			h1 {
+				font-size: 46px;
+			}
+		}
+		label {
+			&[for="dicos"] {
+				width: 137px;
+				vertical-align: middle;
+			}
+		}
+	}
+	.eulexis {
+		form {
+			label[for="recherche_lemme"],
+			label[for="flexion_lemme"],
+			label[for="lemmatiser_texte"] {
+				width: auto;
+			}
+			.lemmatiser {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.form-inline .form-group {
+		margin-bottom: 5px;
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar {
+		.menu-biblissima {
+			ul {
+				li {
+					a {
+						&.active {
+							color: #FFF;
+						}
+					}
+				}
+			}
+		}
+		.langue-box {
+			padding: 0;
+			li:first-child {
+				padding-left: 0;
+			}
+		}
+	}
+	.collatinus-web,
+	.eulexis {
+		.top-banner {
+			padding: 70px 0px 30px;
+		}
+		form {
+			label {
+				width: auto;
+				padding-right: 10px;
+			}
+		}
+		.form-group {
+			margin-bottom: 5px;
+		}
+	}
+	.top-banner {
+		padding: 30px 0;
+		.banner-content {
+			h1 {
+				font-size: 43px;
+			}
+			h2 {
+				margin-bottom: 15px;
+			}
+			.text-right {
+				text-align: left;
+			}
+		}
+	}
+	.nav-pills {
+		li, li+li {
+			padding: 0;
+			margin: 0;
+
+			a {
+				padding: 5px 10px;
+				text-align: left;
+			}
+		}
+	}
+	.eulexis {
+		.top-banner {
+			min-height: 0;
+			background-position-x: 40%;
+		}
+	}
+	#results {
+		.pager {
+			position: relative;
+			margin-top: 30px;
+			
+			&:first-child {  //pagination du haut
+				margin-top: 20px;
+				margin-bottom: 45px;
+				.lead {
+					top: 50px;
+				}
+			}
+
+			li {
+				display: block;
+				float: left;
+				width: 48%;
+
+				&.next {
+					margin-left: 4%;
+				}
+				&.lead {
+					width: 100%;
+					position: absolute;
+					top: -25px;
+				}
+				a {
+				    display: block;
+				    width: 100%;
+				    word-break: break-all;
+				}
+			}
+		}
+		.selectLayoutDiv {
+			display: none;
+		}
+		#colMots {
+			display: block;
+			background: none;
+			color: #333;
+			padding-left: 0px;
+
+			.glyphicon-list {
+				padding-right: 5px;
+			}
+		}
+		.table-dicos {
+			display: block;
+			margin-top: 10px;
+			border-top: solid 1px #666;
+			border-bottom: solid 1px #666;
+			
+			.col {
+				display: block;
+				padding: 0;
+			}
+			.mots {
+				max-height: 0;
+				overflow-y: hidden;
+				transition: .4s ease;
+
+				&.open {
+					max-height: 555px;
+				}
+			}
+			.dicos {
+				padding-top: 15px;
+				.row, .column {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+	.outils-edition {
+		.nav-pills {
+			display: block;
+		}
+	}
+}

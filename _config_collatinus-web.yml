@@ -1,0 +1,3 @@
+source: "collatinus-web"
+destination: "collatinus-web/build"
+exclude: ['collatinus-web.js', 'collatinus-web.php']

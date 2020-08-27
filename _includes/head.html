@@ -1,0 +1,39 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} - {{page.description}} | {{ site.data.site_info[page.lang].description }}</title>
+  <meta name="description" content="{{ page.description_meta }}">
+
+  {% include meta.html %}
+  {% include rich_snippets.html %}
+
+  <!-- Custom CSS -->
+  <link href="{{ "/vendor/bootstrap/3.3.5/css/bootstrap.min.css" | prepend: site.common_baseurl }}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/simplelightbox.min.css">
+  <link href="{{ "/css/common.css" | prepend: site.common_baseurl }}" rel="stylesheet">
+  <link href="/css/outils.css" rel="stylesheet" media="all">
+  <link href="{{ "/css/print.css" | prepend: site.common_baseurl }}" rel="stylesheet" media="print">
+    
+  <style>
+  	body {
+      font-family: "Arial", "Helvetica", sans-serif;
+    }
+    .fonts-loaded body {
+      font-family: "Source Sans Pro", "Arial", "Helvetica", sans-serif;
+    }
+  </style>
+  
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" href="{{ "/images/favicons/apple-touch-icon-152x152.png" | prepend: site.common_baseurl }}">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{{ "/images/favicons/mstile-144x144.png" | prepend: site.common_baseurl }}">
+  <link rel="icon" type="image/png" href="{{ "/images/favicons/favicon.png" | prepend: site.common_baseurl }}">
+  <!--[if IE]><link rel="shortcut icon" href="{{ "/images/favicons/favicon.ico" | prepend: site.common_baseurl }}"><![endif]-->
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>

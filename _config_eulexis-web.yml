@@ -1,0 +1,3 @@
+source: "eulexis-web"
+destination: "eulexis-web/build"
+exclude: ['eulexis.js', 'eulexis.php', 'lat_grc.json', 'data', 'data.zip']

@@ -1,0 +1,29 @@
+# Site settings
+title: "Boîte à Outils Biblissima"
+description: "Boîte à outils Biblissima (Baobab)"
+url: "http://localhost:4000"
+common_baseurl: "https://static.biblissima.fr"
+include_baseurl: "http://localhost:8888/biblissima-menu"
+url_projet: "https://projet.biblissima.fr"
+include: ['.htaccess']
+breadcrumb_start: "Accueil"
+safe: false
+
+#includes_dir: ['_includes', 'collatinus-web/_includes']
+#layouts_dir: ['_layouts', 'collatinus-web/_layouts']
+
+# Pas nécessaire de copier ces dossiers à chaque génération de Jekyll
+exclude: ['resources']
+keep_files: ['resources']
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Gems
+#gems: [jekyll-sitemap]
+
+# Collatinus/Eulexis downloads paths
+#collatinus_path: ""
+#collatinus_path: ""
+#eulexis_path: ""
