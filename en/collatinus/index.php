@@ -247,6 +247,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 								<ul class="list-no-margin">
 									<li><a download href="/collatinus/ressources/Calonghi_1898-avr17.col" title="Calonghi F., Dizionario latino-italiano, 1898">Calonghi 1898</a> (62 Mo &mdash; latin-italian)</li>
 									<li><a download href="/collatinus/ressources/de_Miguel_1867-dec18.col">De Miguel 1867</a> (153 Mo &mdash; latin-spanish)</li>
+									<li><a download href="/collatinus/ressources/Faria_Junqueira_1975-sep20.col">Faria 1975</a> (171 Mo — latin-portuguese) <span class="label label-info">New</span></li>
 							    <li><a download href="/collatinus/ressources/Gaffiot_1934-avr17.col" title="Gaffiot F., Dictionnaire illustré latin-français, 1934">Gaffiot 1934</a> (101 Mo &mdash; latin-french)</li>
 							    <li><a download href="/collatinus/ressources/Noel_1851-nov19.col" title="">Nöel 1851</a> (218 Mo &mdash; latin-french)</li>
 							    <li><a download href="/collatinus/ressources/Valbuena_1819-avr17.col" title="Valbuena, Diccionario universal latino-español">Valbuena 1819</a> (86 Mo &mdash; latin-spanish)</li>
