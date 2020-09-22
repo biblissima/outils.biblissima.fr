@@ -46,15 +46,17 @@ lang: en
 			        <div class="form-group">
 				        <label for="dicos">&nbsp;in the dictionary&nbsp;</label>
 				        <select name="dicos" id="dicos">
-				            <option value="dga ">Gaffiot</option>
-				            <option value="dle " selected="selected">Lewis &amp; Short</option>
-				            <option value="dge ">Georges</option>
-				            <option value="dje ">Jeanneau</option>
-				            <option value="ddu ">du Cange</option>
-				            <option value="dca ">Calonghi (mode image)</option>
-				            <option value="dfg ">Gaffiot (mode image)</option>
-				            <option value="dra ">De Miguel (mode image)</option>
-				            <option value="dva ">Valbuena (mode image)</option>
+									<option value="dgaf " title="latin-french">Gaffiot</option>
+									<option value="dlew " title="latin-english" selected="selected">Lewis &amp; Short</option>
+									<option value="dgeo " title="latin-german">Georges</option>
+									<option value="djea " title="latin-french">Jeanneau</option>
+									<option value="dduc " title="glossary of medieval latin">du Cange</option>
+									<option value="dram " title="neolatin-german">Ramminger</option>
+									<option value="dkoe " title="medieval latin-german">Köbler</option>
+									<option value="dcal " title="latin-italian">Calonghi (image mode)</option>
+									<option value="dfg "  title="latin-french">Gaffiot (image mode)</option>
+									<option value="drai " title="latin-spanish">De Miguel (image mode)</option>
+									<option value="dval " title="latin-spanish">Valbuena (image mode)</option>
 				        </select>
 				        <button type="submit" value="Search" class="btn btn-success" aria-controls="results">Submit</button>
 				    </div>		

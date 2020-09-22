@@ -119,7 +119,7 @@ if (isset($_POST['opera'])) {
 } else {
   // La première fois
   $lemme = "";
-  $dico = "dga ";
+  $dico = "dgaf ";
   $langue = "fr ";
   $texte = "";
 }
@@ -129,22 +129,17 @@ if (isset($_POST['opera'])) {
  **               Traitement                 **
  *********************************************/
 
-if ($requete != '') {
-//    $sol = interroge($requete);
-    
+if ($requete != '') {    
   // Controle du token
   if (verifyFormToken('form_lemme')) {
     $requete = trim($requete);
     $sol = interroge($requete);
-  
   // sauf pour les requetes de type "page prec/suiv"
   } elseif (isset($_POST["r"])) {
     $sol = interroge($requete);
-    
   } else {
-    echo "<p class='text-danger'>Une erreur s'est produite ?" . $requete . "</p> <button type='button' class='btn btn-default' onclick='javascript:window.location.reload()'><span class='glyphicon glyphicon-refresh'></span> Recharger la page</button>";
+    echo "<p class='text-danger'>Une erreur s'est produite ! " . $requete . "</p> <button type='button' class='btn btn-default' onclick='javascript:window.location.reload()'><span class='glyphicon glyphicon-refresh'></span> Recharger la page</button>";
   }
-
   echo $sol;
 }
 
