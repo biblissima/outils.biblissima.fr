@@ -54,6 +54,7 @@ lang: en
 									<option value="dram " title="neolatin-german">Ramminger</option>
 									<option value="dkoe " title="medieval latin-german">Köbler</option>
 									<option value="dcal " title="latin-italian">Calonghi (image mode)</option>
+									<option value="dfar " title="latin-portuguese">Faria (image mode)</option>
 									<option value="dfg "  title="latin-french">Gaffiot (image mode)</option>
 									<option value="drai " title="latin-spanish">De Miguel (image mode)</option>
 									<option value="dval " title="latin-spanish">Valbuena (image mode)</option>
