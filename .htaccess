@@ -1,0 +1,20 @@
+# On redirige l'accueil vers /fr par défaut
+Redirect /index.html /fr/
+
+RewriteEngine on
+
+# redirige vers /fr les anciennes URL sans préfixe de langue
+RewriteRule ^collatinus-web(/)?$ /fr/collatinus-web$1 [R=301,NC]
+RewriteRule ^collatinus(/)?$ /fr/collatinus$1 [R=301,NC]
+RewriteRule ^eulexis(/)?$ /fr/eulexis$1 [R=301,NC]
+RewriteRule ^praelector(/)?$ /fr/praelector$1 [R=301,NC]
+
+# redirige la racine (uniquement) vers baobab
+RewriteRule ^/?(fr|en)?/?(index\.html)?/?$ https://baobab.biblissima.fr/$1 [R=301]
+
+# redirige l'ancienne URL d'Eulexis
+Redirect 301 /lemmatiseur_grec https://outils.biblissima.fr/fr/eulexis/
+
+# redirige les url de requêtes ajax
+RewriteRule ^ajax/eulexis/eulexis.php /eulexis/eulexis.php [R=301,NC]
+RewriteRule ^ajax/collatinus-web/collatinus-web.php /collatinus-web/collatinus-web.php [R=301,NC]
