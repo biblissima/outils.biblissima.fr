@@ -138,7 +138,7 @@ if ($requete != '') {
   } elseif (isset($_POST["r"])) {
     $sol = interroge($requete);
   } else {
-    echo "<p class='text-danger'>Une erreur s'est produite ! " . $requete . "</p> <button type='button' class='btn btn-default' onclick='javascript:window.location.reload()'><span class='glyphicon glyphicon-refresh'></span> Recharger la page</button>";
+    echo "<p class='text-danger'><strong>Votre session a expiré</strong>. Veuillez recharger la page pour commencer une nouvelle session.</p> <button type='button' class='btn btn-default' onclick='javascript:window.location.reload()'><span class='glyphicon glyphicon-refresh'></span> Recharger la page</button>";
   }
   echo $sol;
 }
