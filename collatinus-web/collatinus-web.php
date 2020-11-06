@@ -30,14 +30,19 @@ function interroge($requete) {
  
 //---- Verifie les valeurs des tokens
 function verifyFormToken($form) {
-    
+  
+  // bypass token for lexilogos
+  if (isset($_POST['referer']) && $_POST['referer'] == 'lexilogos') {
+    return true;
+  }
+
   // check if a session is started and a token is transmitted, if not return an error
-  if(!isset($_SESSION[$form.'_token'])) {
+  if (!isset($_SESSION[$form.'_token'])) {
     return false;
   }
   
   // check if the form is sent with token in it
-  if(!isset($_POST['token'])) {
+  if (!isset($_POST['token'])) {
     return false;
   }
   
@@ -80,13 +85,32 @@ if (isset($_POST['opera'])) {
   $opera = $_POST['opera'];
   switch ($opera) {
     case 'consult' :
-      $dicos = strip_tags($_POST['dicos']);
+      $mapKeysToNames = array(
+        'dgaf' => 'Gaffiot',
+        'dlew' => 'Lewis',
+        'dgeo' => 'Georges',
+        'djea' => 'Jeanneau',
+        'dduc' => 'DuCange',
+        'dram' => 'Ramminger',
+        'dkoe' => 'Kobler',
+        'dcal' => 'Calonghi',
+        'dfar' => 'Faria',
+        'drai' => 'DeMiguel',
+        'dval' => 'Valbuena'
+      );
+      $dico = trim(strip_tags($_POST['dicos']));
       // convertit l'ancienne syntaxe des requêtes 
-      if (strpos($dicos, ":") !== false) {
-        $dicos = str_replace(":", " ", $dicos);
+      if (strpos($dico, ":") !== false) {
+        $dico = str_replace(":", "", $dico);
       }
       $lemme = strip_tags($_POST['lemme']);
-      $requete = "-" . $dicos . $lemme;
+      foreach ($mapKeysToNames as $key => $value) {
+        if (strtolower($dico) == strtolower($value)) {
+          $dico = $key;
+          break;
+        }
+      }
+      $requete = "-" . $dico ." ". $lemme;
       break;
     case 'flexion' :
       $lemme = strip_tags($_POST['lemme']);

@@ -116,59 +116,68 @@
       }
 
       if (lemme || texte) {
-        $.ajax({
-          type: "POST",
-          url: "/collatinus-web/collatinus-web.php",
-          data: dataString,
-          dataType: "html",
-          cache: false,
-        })
-        .done(function(data) {
-          $("#results").html(data);
-
-          var divResults = $("#results");
-
-          /*var imgDico = $("#results img");
-          var imgDicoWidth = imgDico.width();*/
-
-          // Calculate best horizontal position
-          var divResultsOffsetTop = divResults.offset().top;
-          var divResultsOffsetTop = divResultsOffsetTop + 20;
-          var divResultsWidth = divResults.width();
-          var divResultsHeight = divResults.height();
-          var windowWidth = $(window).width();
-          var positionRight = (windowWidth - divResultsWidth) / 2 - 60;
-
-          // $(window).scroll(function() {
-          //     if ($(this).scrollTop() > divResultsOffsetTop) {
-          //         $("#scrollToTop").css("right", positionRight).fadeIn();
-          //     } else {
-          //         $("#scrollToTop").fadeOut();
-          //     }
-          // });
-          // Click event to go to top of #results
-          // $("#scrollToTop a").click(function() {
-          //     $("html, body").stop(true).animate({
-          //         scrollTop: $("#results").offset().top
-          //     }, 800);
-          //     return false;
-          // });
-
-          // ScrollToTop
-          $("html, body").stop(true).animate({
-            scrollTop: $("#results").offset().top
-          }, 600);
-
-          afterHtmlAppendCallback();
-        })
-        .fail(function() {
-          $("#results").html("<p class='text-danger'><strong>Une erreur s'est produite<strong></p>");
-        });
+        ajaxRequest(dataString);
       }
       else {
         $("#modal-error").modal()
       }
     });
+
+    var params = (new URL(document.location)).searchParams;
+    var lemma = params.get("lemma") || "";
+    var dict = params.get("dict") || "";
+    var referer = params.get("referer") || "";
+    if (lemma && dict && referer) {
+        var dataString = 'lemme=' + lemma + '&dicos=' + dict + '&opera=consult&referer=' + referer;
+        ajaxRequest(dataString);
+    }
+    window.history.replaceState({}, document.title, window.location.pathname);
+
+    function ajaxRequest(dataString) {
+      $.ajax({
+        type: "POST",
+        url: "/collatinus-web/collatinus-web.php",
+        data: dataString,
+        dataType: "html",
+        cache: false,
+      })
+      .done(function(data) {
+        $("#results").html(data);
+        var divResults = $("#results");
+        // Calculate best horizontal position
+        var divResultsOffsetTop = divResults.offset().top;
+        var divResultsOffsetTop = divResultsOffsetTop + 20;
+        var divResultsWidth = divResults.width();
+        var divResultsHeight = divResults.height();
+        var windowWidth = $(window).width();
+        var positionRight = (windowWidth - divResultsWidth) / 2 - 60;
+
+        // $(window).scroll(function() {
+        //     if ($(this).scrollTop() > divResultsOffsetTop) {
+        //         $("#scrollToTop").css("right", positionRight).fadeIn();
+        //     } else {
+        //         $("#scrollToTop").fadeOut();
+        //     }
+        // });
+        // Click event to go to top of #results
+        // $("#scrollToTop a").click(function() {
+        //     $("html, body").stop(true).animate({
+        //         scrollTop: $("#results").offset().top
+        //     }, 800);
+        //     return false;
+        // });
+
+        // ScrollToTop
+        $("html, body").stop(true).animate({
+          scrollTop: $("#results").offset().top
+        }, 600);
+
+        afterHtmlAppendCallback();
+      })
+      .fail(function() {
+        $("#results").html("<p class='text-danger'><strong>Une erreur s'est produite<strong></p>");
+      });
+    }
 
     function afterHtmlAppendCallback() {
       $(".pager a, .liste-liens a[data-value]").click(function(event) {
