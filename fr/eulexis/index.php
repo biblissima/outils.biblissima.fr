@@ -100,16 +100,17 @@ $link_base =  $link_prefix.$version;
                     <div class="col-md-3 col-sm-6">
                         <h3>Sources</h3>
                         <a href="https://github.com/PhVerkerk/Eulexis_off_line/archive/master.zip" class="btn btn-sm"><span class="fa fa-download"></span>Télécharger (.zip)</a><br />
-                        <small class="text-muted">Archive zip de la branche principale (master)</small><br />
-                        <small>Les sources sont déposées et gérées sur <a href="https://github.com/PhVerkerk/Eulexis_off_line">Github</a>.</small>
+                        <small class="text-muted">Archive zip de la branche principale sur <a href="https://github.com/PhVerkerk/Eulexis_off_line">Github</a></small><br />
                     </div>
                 </div>
+                <p>&nbsp;</p>
+                <p>Eulexis est également compatible <strong>GNU/Linux</strong> : il est possible compiler le logiciel à partir du <a href="https://github.com/PhVerkerk/Eulexis_off_line">code source disponible sur Github</a>.</p>
 
                 <div class="news bg-info">
                     <p>Les données, en particulier le <a href="http://gerardgreco.free.fr/spip.php?article52">Bailly 2020 Hugo Chávez</a>, n'étant pas libres de droit, mais néanmoins utilisables sous conditions, nous avons préféré ne pas les rendre téléchargeables sur ce site. Toutefois, un utilisateur de Linux qui compilerait les <a href="https://github.com/PhVerkerk/Eulexis_off_line">sources d'Eulexis</a> aura besoin de ces données. Il lui suffira de <a href="mailto:eulexis@biblissima-condorcet.fr">nous écrire</a> et nous nous ferons un plaisir de les lui envoyer.</p>
                 </div>
 
-                <p><strong>Eulexis est aussi disponible en version en ligne</strong> : <a href="/fr/eulexis-web" class="">Tester Eulexis-web</a></p>
+                <p class="lead">Eulexis est aussi disponible en version en ligne : <a href="/fr/eulexis-web" class="">Tester Eulexis-web</a></p>
 
                 <h3>Nouveautés de la version 1.1</h3>
                 <ul>

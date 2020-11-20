@@ -100,16 +100,18 @@ $link_base =  $link_prefix.$version;
                     <div class="col-md-3 col-sm-6">
                         <h3>Source code</h3>
                         <a href="https://github.com/PhVerkerk/Eulexis_off_line/archive/master.zip" class="btn btn-sm"><span class="fa fa-download"></span>Download (.zip)</a><br />
-                        <small class="text-muted">Archive of the main code branch (master)</small><br />
-                        <small>The source code is hosted and managed on <a href="https://github.com/PhVerkerk/Eulexis_off_line">Github</a>.</small>
+                        <small class="text-muted">Archive of the main code branch on <a href="https://github.com/PhVerkerk/Eulexis_off_line">Github</a></small>
                     </div>
                 </div>
+
+                <p>&nbsp;</p>
+                <p>Eulexis is also compatible with <strong>GNU/Linux</strong> : it is possible to compile the software from the <a href="https://github.com/PhVerkerk/Eulexis_off_line">source code available on Github</a>.</p>
 
                 <div class="news bg-info">
                     <p>The data, in particular the <a href="http://gerardgreco.free.fr/spip.php?article52">Bailly 2020 Hugo Chávez</a>, not being released under a free license, but nevertheless usable under conditions, we preferred not to make it downloadable here. However, a Linux user compiling Eulexis from its <a href="https://github.com/PhVerkerk/Eulexis_off_line">source code</a> will need this data. He will just have to <a href="mailto:eulexis@biblissima-condorcet.fr">email us</a> and we will be happy to send it along.</p>
                 </div>
 
-                <p><strong>Eulexis also exists as an online app</strong>: <a href="/en/eulexis-web" class="">Try Eulexis-web</a></p>
+                <p class="lead">Eulexis also exists as an online app</strong>: <a href="/en/eulexis-web" class="">Try Eulexis-web</a></p>
 
                 <h3>New in version 1.1</h3>
                 <ul>
