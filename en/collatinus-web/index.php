@@ -33,6 +33,13 @@ lang: en
 					<p class="lead">
 						Online version of <a href="/en/collatinus" title="Download page of Collatinus">Collatinus</a>, a multi-OS application to <strong>lemmatise</strong> and <strong>analyse the morphology</strong> of Latin texts.
 					</p>
+					<div class="news bg-warning">
+          	<p>June 2021</p>
+          	<p class="lead">&mdash; Two languages added to the Collatinus registry: <strong>Dutch</strong> and <strong>Euskara</strong>.</p>
+          	<p class="lead">&mdash; Launch of a campaign to review translations of the languages of Spain:</p>
+          	<p>(EN) An extensive campaign to review translations has been launched by our Spanish colleagues. The goal is to review translations of Latin lemmas in the four official languages of Spain: <strong>Castilian</strong>, <strong>Catalan</strong>, <strong>Euskara</strong> and <strong>Galician</strong>. If you would like to participate, <a href="mailto:collatinus@biblissima-condorcet.fr">contact us</a> to put you in touch with the relevant teams.</p>
+          	<p>(ES) Una amplia campaña de verificación de traducciones se ha iniciado por parte de nuestros amigos españoles. Se trata de verificar las traducciones de los términos latinos en las cuatro lenguas oficiales de España: <strong>castellano</strong>, <strong>catalán</strong>, <strong>euskara</strong> y <strong>gallego</strong>. Si desean participar en esta revisión, <a href="mailto:collatinus@biblissima-condorcet.fr">pónganse en contacto con nosotros</a> para que podamos ponerles en contacto con los equipos correspondientes.</p>
+          </div>
 					<p>This online version is based on <strong>version 11.2 of Collatinus</strong>. Its lexical database has been extended with the systematic treatment of the digital dictionaries (Gaffiot 2016, Jeanneau 2017, Lewis &amp; Short 1879 and Georges 1913). The lexical base now contains more than 80.000 lemmas.</p>
 					<p>Due to lack of space on a web-page, the features of Collatinus 11 are not all available. For intensive use, we recommend the installation of the <a href="/en/collatinus" title="Download page of Collatinus">stand-alone version of Collatinus</a>, which is available for Windows, MacOS and Linux/Debian.</p>
 					<p>This application has been made available with no guarantee and may be subject to further corrections and improvements.
@@ -83,16 +90,18 @@ lang: en
 				    <div class="form-group">
 			        <label for="langue">Target language&nbsp;</label>
 			        <select name="langue" id="langue">
-			            <option value="fr ">French</option>
-			            <option value="it ">Italian</option>
-			            <option value="ca ">Catalan</option>
-			            <option value="de ">German</option>
-			            <option value="en " selected="selected">English</option>
-			            <option value="es ">Spanish</option>
-			            <option value="gl ">Galician</option>
+			        	<option value="es ">Castellano</option>
+                <option value="ca ">Catalán</option>
+                <option value="de ">Deutsch</option>
+                <option value="en " selected="selected">English</option>
+                <option value="eu ">Euskara</option>
+                <option value="fr ">Français</option>
+                <option value="gl ">Galego</option>
+                <option value="it ">Italiano</option>
+                <option value="nl ">Nederlands</option>
 			        </select>
 		        </div>
-			       <div class="form-group">
+			      <div class="form-group">
 			        	<button type="submit" name="action" value="Lemmatiser" class="btn btn-success" aria-controls="results">Lemmatise</button>
 				        <button type="submit" name="action" value="Analyser" class="btn btn-success" aria-controls="results">Analyse</button>
 				        <button type="submit" name="action" value="Taguer" class="btn btn-success" aria-controls="results">Tag</button>
