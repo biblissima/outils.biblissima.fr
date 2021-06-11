@@ -48,7 +48,7 @@ lang: en
 				<form method="post" role="form" class="form-lemme form-inline" id="form">
 				    <div class="form-group">
 				    	<label for="recherche_lemme" class="main-label">Find the word</label>
-				        <input type="text" name="lemme" id="recherche_lemme" class="form-control" size="40" placeholder="Enter a Latin word...">
+				        <input type="search" name="lemme" id="recherche_lemme" class="form-control" size="40" placeholder="Enter a Latin word...">
 			        </div>
 			        <div class="form-group">
 				        <label for="dicos">&nbsp;in the dictionary&nbsp;</label>
@@ -74,7 +74,7 @@ lang: en
 				<form method="post" role="form" class="form-lemme form-inline">
 				    <div class="form-group">
 				    	<label for="flexion_lemme" class="main-label">Conjugate/decline the word</label>
-				        <input type="text" name="lemme" id="flexion_lemme" class="form-control" size="40" placeholder="Enter a Latin word...">
+				        <input type="search" name="lemme" id="flexion_lemme" class="form-control" size="40" placeholder="Enter a Latin word...">
 			        </div>
 			        <div class="form-group">
 				        <button type="submit" value="Inflect" class="btn btn-success" aria-controls="results">Submit</button>
