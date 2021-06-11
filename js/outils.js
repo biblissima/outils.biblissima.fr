@@ -3,7 +3,6 @@
 		$('[data-toggle="tooltip"]').tooltip({container: 'body'});
 
 		// simple light box
-
 		$('.gallery a').simpleLightbox({
 			navText: ['<span class="glyphicon glyphicon-arrow-left"></span>','<span class="glyphicon glyphicon-arrow-right"></span>'],
 			closeText: '<span class="glyphicon glyphicon-remove"></span>',
@@ -32,6 +31,21 @@
 				}
 			}
 		}
-
+		// var clear = $('<span class="clear-input glyphicon glyphicon-remove"></span>');
+  //   $('.form-lemme input[type="text"]').keyup( function(){
+  //   	//$("#searchclear").toggle(Boolean($(this).val()));
+  //   	//$(this).next('.clear-input').show();
+  //   	$(this).after(clear);
+  //   });
+  //   $('.clear-input').click(function(){
+  //   //   $("#searchinput").val('').focus();
+  //   	$(this).hide();
+  //   	$(this).prev('input[type="text"]').val('');
+  //   });
+  //   // $("#searchclear").toggle(Boolean($("#searchinput").val()));
+  //   // 	$("#searchclear").click(function(){
+  //   //   $("#searchinput").val('').focus();
+  //   //   $(this).hide();
+  //   // });
 	});
 }(jQuery))
