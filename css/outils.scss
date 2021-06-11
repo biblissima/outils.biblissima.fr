@@ -53,7 +53,7 @@ span.caret {
 }
 
 .form-lemme {
-  select {
+select {
     min-width: 122px;
   }
 
@@ -69,6 +69,17 @@ span.caret {
   }
 }
 
+.form-traitement {
+	display: flex;
+	flex-direction: column;
+
+	.form-flex {
+		display: flex;
+    	flex-direction: row;
+    	justify-content: space-between;
+	}
+}
+
 form {
   padding: 15px 0px;
 
@@ -81,13 +92,13 @@ form {
   label {
     display: inline-block;
     margin-bottom: 5px;
+    margin-right: 5px;
     font-weight: 600;
 
     &[for="recherche_lemme"],
     // Collatinus web
     &[for="flexion_lemme"],
-    &[for="traitement_texte"],
-    &[for="langue"] {
+    &[for="traitement_texte"] {
       width: 137px;
       vertical-align: middle;
     }
@@ -210,8 +221,10 @@ input[type="checkbox"]+label {
     vertical-align: middle;
   }
 
-  &[type="reset"] {
-    background: $red;
+  &.btn-clear {
+    background: none;
+    border:  1px solid $red;
+    color:  $red;
   }
 
   &.btn-danger[disabled="disabled"],
@@ -809,10 +822,10 @@ body.navbar-is-fixed-top.scroll-demo {
 }
 
 @media (min-width: 992px) {
-  .form-lemme {
-    textarea {
-      max-width: 68%;
-    }
+  .form-traitement {
+    .form-group {
+		max-width: 66%;
+	}
   }
 }
 

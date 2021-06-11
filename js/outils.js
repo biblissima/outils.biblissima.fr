@@ -31,6 +31,12 @@
 				}
 			}
 		}
+
+		$('.btn-clear').bind( "click", function(){
+			$('#traitement_texte').val(function() {
+				return this.defaultValue;
+			});
+		});
 		// var clear = $('<span class="clear-input glyphicon glyphicon-remove"></span>');
   //   $('.form-lemme input[type="text"]').keyup( function(){
   //   	//$("#searchclear").toggle(Boolean($(this).val()));

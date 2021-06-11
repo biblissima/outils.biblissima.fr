@@ -73,24 +73,29 @@
             <input type="hidden" name="opera" value="flexion">
             <input type="hidden" name="token" value="<?php echo $token ?>">
           </form>
-          <form method="post" role="form" class="form-lemme">
+          <form method="post" role="form" class="form-lemme form-traitement">
             <div class="form-group">
               <label for="traitement_texte" class="main-label">Traiter un texte latin</label>
               <textarea name="texte" id="traitement_texte" class="form-control" rows="6" cols="80" placeholder="Entrez un texte latin..."></textarea>
             </div>
-            <div class="form-group">
-              <label for="langue">Langue cible&nbsp;</label>
-              <select name="langue" id="langue">
-                <option value="es ">Castellano</option>
-                <option value="ca ">Catalán</option>
-                <option value="de ">Deutsch</option>
-                <option value="en ">English</option>
-                <option value="eu ">Euskara</option>
-                <option value="fr " selected="selected">Français</option>
-                <option value="gl ">Galego</option>
-                <option value="it ">Italiano</option>
-                <option value="nl ">Nederlands</option>
-              </select>
+            <div class="form-group form-flex">
+            	<div>
+	              <label for="langue">Langue cible&nbsp;</label>
+	              <select name="langue" id="langue">
+	                <option value="es ">Castellano</option>
+	                <option value="ca ">Catalán</option>
+	                <option value="de ">Deutsch</option>
+	                <option value="en ">English</option>
+	                <option value="eu ">Euskara</option>
+	                <option value="fr " selected="selected">Français</option>
+	                <option value="gl ">Galego</option>
+	                <option value="it ">Italiano</option>
+	                <option value="nl ">Nederlands</option>
+	              </select>
+	            </div>
+	            <div>
+              	<button type="button" name="action" value="Effacer" class="btn btn-default btn-sm btn-clear" aria-controls="results"><span class="glyphicon glyphicon-remove-circle"></span> Effacer la saisie</button>
+              </div>
             </div>
             <div class="form-group">
               <button type="submit" name="action" value="Lemmatiser" class="btn btn-success" aria-controls="results"> Lemmatiser</button>
@@ -98,7 +103,6 @@
               <button type="submit" name="action" value="Taguer" class="btn btn-success" aria-controls="results">Taguer</button>
               <button type="submit" name="action" value="Scander" class="btn btn-success" aria-controls="results">Scander</button>
               <button type="submit" name="action" value="Accentuer" class="btn btn-success" aria-controls="results">Accentuer</button>
-              <button type="reset" name="action" value="Effacer" class="btn btn-default btn-sm" aria-controls="results"><span class="glyphicon glyphicon-remove-circle"></span> Effacer la saisie</button>
             </div>
             <input type="hidden" name="opera" value="traite_txt">
             <input type="hidden" name="token" value="<?php echo $token ?>">
