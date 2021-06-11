@@ -56,6 +56,17 @@ span.caret {
   select {
     min-width: 122px;
   }
+
+  input[type="search"] {
+  	appearance: auto;
+
+  	&::-webkit-search-cancel-button {
+  		color: $green;
+  		appearance: auto;
+  		-moz-appearance: auto;
+  		-webkit-appearance: auto;
+  	}
+  }
 }
 
 form {
