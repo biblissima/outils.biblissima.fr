@@ -57,10 +57,11 @@ function cherche($lem, $deb, $fin) {
 }
 
 function latin2greek($mot) {
-  if (strrpos($mot, 's') == (strlen($mot) - 1) && strlen($mot) != 1)
-    $mot = substr($mot, 0, strlen($mot) - 1) . 'ς';
   $lat = array('a', 'b', 'g', 'd', 'e', 'z', 'h', 'q', 'i', 'k', 'l', 'm', 'n', 'c', 'o', 'p', 'r', 's', 't', 'u', 'f', 'x', 'y', 'w', 'v');
   $grec = array('α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω', 'ϝ');
+  if (strrpos($mot, 'σ') !== false && mb_strlen($mot) > 1) {
+    $mot = mb_substr($mot, 0, mb_strlen($mot) - 1) . 'ς';
+  }
   return str_ireplace($lat, $grec, $mot);
 }
 
@@ -108,8 +109,8 @@ function nettoie($mot) {
   $grec = array('α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω');
   $mot = str_replace($lettres, $grec, $mot);
   // Ajout pour remplacer un éventuel σ en fin de mot par un ς
-  if (strrpos($mot, 'σ') == (strlen($mot) - 2) && strlen($mot) != 1)
-    $mot = substr($mot, 0, strlen($mot) - 2) . 'ς';
+  if (strrpos($mot, 'σ') !== false && mb_strlen($mot) > 1)
+    $mot = mb_substr($mot, 0, mb_strlen($mot) - 1) . 'ς';
 
   return $mot;
 }
@@ -484,7 +485,7 @@ if (!$consultation) {
   if ($pos_ind == -1)// J'ai donc un lemme.
   {
     if (ord($lemme) < 128)
-      $lemme = latin2greek(strtolower($lemme));
+      $lemme = latin2greek(mb_strtolower($lemme));
     else
       $lemme = nettoie($lemme);
     $pos_ind = cherche($lemme, 0, filesize("data/index_com.csv"));
@@ -586,10 +587,13 @@ if (!$consultation) {
     for ($i = $avant + 1; $i < $ici; $i++)
       $lg_titre .= $b[$i] . ", ";
   $lg_titre .= $b[$ici];
-  $lg_titre .= "</strong></li>";
+  $lg_titre .= "</li>";
   $lg_titre .= "<li class='next'>";
   //$lg_titre .= "<a href='index.php?pos_ind=" . $a[$ici + 1] . "#haut_de_page'>" . $b[$ici + 1] . " &rarr;</a>";
-  $lg_titre .= "<a href='#' data-pos='" . $a[$ici + 1] . "'>" . $b[$ici + 1] . " &rarr;</a>";
+  if ($ici + 1 != $x)
+    $lg_titre .= "<a href='#' data-pos='" . $a[$ici + 1] . "'>" . $b[$ici + 1] . " &rarr;</a>";
+  else
+    $lg_titre .= "<a href='#' data-pos='" . $a[$ici] . "'>" . $b[$ici] . " &rarr;</a>";
   $lg_titre .= "</li></ul>";
   $b[$avant + 1] = "<li class='lead'>" . $b[$avant + 1] . "</li>";
 
