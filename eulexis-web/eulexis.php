@@ -59,7 +59,7 @@ function cherche($lem, $deb, $fin) {
 function latin2greek($mot) {
   $lat = array('a', 'b', 'g', 'd', 'e', 'z', 'h', 'q', 'i', 'k', 'l', 'm', 'n', 'c', 'o', 'p', 'r', 's', 't', 'u', 'f', 'x', 'y', 'w', 'v');
   $grec = array('α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω', 'ϝ');
-  if (strrpos($mot, 'σ') !== false && mb_strlen($mot) > 1) {
+  if ( (mb_strrpos($mot, 'σ') == mb_strlen($mot) - 1) && mb_strlen($mot) > 1 ) {
     $mot = mb_substr($mot, 0, mb_strlen($mot) - 1) . 'ς';
   }
   return str_ireplace($lat, $grec, $mot);
@@ -109,7 +109,7 @@ function nettoie($mot) {
   $grec = array('α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω');
   $mot = str_replace($lettres, $grec, $mot);
   // Ajout pour remplacer un éventuel σ en fin de mot par un ς
-  if (strrpos($mot, 'σ') !== false && mb_strlen($mot) > 1)
+  if ( (mb_strrpos($mot, 'σ') == mb_strlen($mot) - 1) && mb_strlen($mot) > 1 )
     $mot = mb_substr($mot, 0, mb_strlen($mot) - 1) . 'ς';
 
   return $mot;
