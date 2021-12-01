@@ -5,16 +5,19 @@ url: "http://localhost:4000"
 common_baseurl: "https://static.biblissima.fr"
 include_baseurl: "http://localhost:8888/biblissima-menu"
 url_projet: "https://projet.biblissima.fr"
-include: ['.htaccess']
 breadcrumb_start: "Accueil"
 safe: false
 
 #includes_dir: ['_includes', 'collatinus-web/_includes']
 #layouts_dir: ['_layouts', 'collatinus-web/_layouts']
 
-# Pas nécessaire de copier ces dossiers à chaque génération de Jekyll
-exclude: ['resources']
+# ignore la copie de ces dossiers dans _site à chaque génération de Jekyll
+exclude: ['resources', 'deploy.sh']
 keep_files: ['resources']
+
+# force l'inclusion de certains fichiers 
+# dont les noms de fichiers commençant par un underscore dans la doc Qt de collatinus/eulexis
+include: ['.htaccess', '_*.html', '_*.png']
 
 # Build settings
 markdown: kramdown
