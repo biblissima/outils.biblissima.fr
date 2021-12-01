@@ -1,10 +1,14 @@
-_site
 .sass-cache
 .jekyll-metadata
 .jekyll-cache
 .old_htaccess
+_site
+doc
 resources
 collatinus/ressources/
+fr/collatinus/doc
+fr/collatinus/aide
+fr/eulexis/doc
 collatinus-web/_includes
 collatinus-web/_layouts
 collatinus-web/assets
