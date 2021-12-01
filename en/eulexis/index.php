@@ -125,7 +125,7 @@ $link_base =  $link_prefix.$version;
                 </ul>
 
                 <h2>Help</h2>
-                <p><a href="/fr/eulexis/aide/" target="_blank noopener">Read the help pages</a> (in French)</p>
+                <p><a href="/fr/eulexis/aide/" target="_blank" rel="noreferrer noopener">Read the help pages</a> (in French)</p>
 
 			    <div class="well">
 			        <h2>Credits</h2>

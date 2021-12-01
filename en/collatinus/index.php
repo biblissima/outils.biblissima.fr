@@ -130,13 +130,15 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 						<p>
 							In practice, Collatinus will be useful mostly for Latin teachers and professors who can quickly generate a complete lexical aid for any text and distribute it to their students. Students often use Collatinus as a reference when reading Latin texts, as they develop their vocabulary and language skills.
 						</p>
+						<h2>Main Features</h2>
+			    	<ul>
+			    	    <li>lemmatise a Latin word or a full Latin text</li>
+			    	    <li>translate lemmas using the Latin dictionaries included in the application</li>
+			    	    <li>display syllable quantities (long and short syllables) and inflection (declension and conjugation)</li>
+			    	</ul>
+			    	<h2>Help</h2>
+            <p><a href="/fr/collatinus/aide/" target="_blank" rel="noreferrer noopener">Read the help pages</a> (in French)</p>
 				    <div class="well">
-				    	<h2>Main Features</h2>
-				    	<ul>
-				    	    <li>lemmatise a Latin word or a full Latin text</li>
-				    	    <li>translate lemmas using the Latin dictionaries included in the application</li>
-				    	    <li>display syllable quantities (long and short syllables) and inflection (declension and conjugation)</li>
-				    	</ul>
 				    	<h2>Advantages of Collatinus</h2>
 				    	<ul>
 				    		<li>efficiency of the lemmatization process (~1000 words/s. ; depends of course on the machine on which the program is running),</li>
@@ -152,19 +154,20 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 								<li>ability to query Collatinus from a client in console mode. Lemmatization of a text from a file</li>
 								<li>software source code refactored in a modular way in order to facilitate the development of more specific applications</li>
 				    	</ul>
-				    </div>
 
-						<h3>Project History</h3>
-						<p>Originally, Collatinus was meant to produce printed documents, and it is still used for this purpose. Further improvements and adjustments were made when it became apparent that many people were using it for other purposes:</p>
-						<ol>
-						    <li>as a lexical and morphological reference when reading a Latin text disposer,</li>
-						    <li>for lexical and stylistic searches</li>
-						    <li>to provide students with exercises based on Latin texts</li>
-						</ol>
-						<h3>How it Works</h3>
-						<p>Unlike the majority of lemmatisers, which use lists of inflected forms, Collatinus uses a lexicon containing the lemmas and all the necessary information for their inflection. The advantage to this approach is that Collatinus, with its 11,000 lemmas, is capable of recognising over half a million forms. Adding lemmas with spelling variants (such as medieval spellings, for example) would make it possible to recognise all of their inflected forms as well.</p>
-						<p>Starting from a lemma and its associated flexional endings, Collatinus is also capable of displaying the corresponding inflection tables, which Latin learners may find useful.</p>
-						<p>Finally, when syllable quantities are known for a given lemma, Collatinus can scan the word and even the entire text. When scanning a text, Collatinus applies the usual rules of elision and hiatus.</p>
+				    	<h2>Project History</h2>
+							<p>Originally, Collatinus was meant to produce printed documents, and it is still used for this purpose. Further improvements and adjustments were made when it became apparent that many people were using it for other purposes:</p>
+							<ol>
+							    <li>as a lexical and morphological reference when reading a Latin text disposer,</li>
+							    <li>for lexical and stylistic searches</li>
+							    <li>to provide students with exercises based on Latin texts</li>
+							</ol>
+
+							<h2>How it Works</h2>
+							<p>Unlike the majority of lemmatisers, which use lists of inflected forms, Collatinus uses a lexicon containing the lemmas and all the necessary information for their inflection. The advantage to this approach is that Collatinus, with its 11,000 lemmas, is capable of recognising over half a million forms. Adding lemmas with spelling variants (such as medieval spellings, for example) would make it possible to recognise all of their inflected forms as well.</p>
+							<p>Starting from a lemma and its associated flexional endings, Collatinus is also capable of displaying the corresponding inflection tables, which Latin learners may find useful.</p>
+							<p>Finally, when syllable quantities are known for a given lemma, Collatinus can scan the word and even the entire text. When scanning a text, Collatinus applies the usual rules of elision and hiatus.</p>
+				    </div>
 					</section>
 
 					<section role="tabpanel" class="tab-pane fade" id="news">
@@ -339,9 +342,51 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
       				<p class="text-muted"><small>This software is available only in his desktop version for Mac OS, Windows and Debian GNU/Linux.</small></p>
       			<?php endif; ?>
 
-      			<h3>Sources</h3>
-						<div class="btn-container">
-							<a class="btn btn-lg" href="https://github.com/biblissima/collatinus"><span class="fa fa-github"></span>Collatinus 11 on Github</a>
+      			<div class="row">
+							<div class="col-md-4">
+								<h3>Sources</h3>
+								<div class="btn-container">
+									<a class="btn btn-lg" href="https://github.com/biblissima/collatinus"><span class="fa fa-github"></span>Collatinus 11 on Github</a>
+								</div>
+							</div>
+
+							<div class="col-md-8">
+								<h3>All versions <small>(by operating system)</small></h3>
+								<table class="table table-hover">
+							    <thead>
+						        <tr>
+						          <th></th>
+						          <th>Mac OS</th>
+						          <th>Windows (32 bits)</th>
+						          <th>Windows (64 bits)</th>
+						          <th>GNU/Linux</th>
+						        </tr>
+							    </thead>
+							    <tbody>
+							        <tr>
+						            <td>Full version</small></td>
+						            <td align="center"><a href="<?php echo $link_full.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_full."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_full."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td rowspan="3" class="hasRowSpan debian-logo">
+						            	<a href="https://packages.debian.org/source/buster/collatinus" data-placement="bottom" data-toggle="tooltip" data-original-title="Deb package and source available on Debian repositories"><img src="/images/debian.png" alt="logo Debian" width="32" height="40"><small>Debian package</small></a>
+						            </td>
+							        </tr>
+							        <tr>
+						            <td>Medium version</td>
+						            <td align="center"><a href="<?php echo $link_medium.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_medium."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_medium."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+							        </tr>
+							        <tr>
+						            <td>Light version</small></td>
+						            <td align="center"><a href="<?php echo $link_mini.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_mini."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_mini."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+							        </tr>
+							    </tbody>
+								</table>
+							</div>
 						</div>
 
 						<div class="row">

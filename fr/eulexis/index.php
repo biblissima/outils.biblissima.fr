@@ -124,7 +124,7 @@ $link_base =  $link_prefix.$version;
                 </ul>
 
                 <h2>Aide</h2>
-                <p><a href="/fr/eulexis/aide/" target="_blank noopener">Consultez l'aide en ligne</a></p>
+                <p><a href="/fr/eulexis/aide/" target="_blank" rel="noreferrer noopener">Consultez l'aide en ligne</a></p>
 
 			    <div class="well">
 			        <h2>Crédits</h2>

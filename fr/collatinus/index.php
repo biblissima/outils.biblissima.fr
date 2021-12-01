@@ -131,14 +131,16 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 						<p>
 							En pratique, il est utile surtout au professeur de latin, qui peut ainsi très rapidement, à partir d’un texte hors-manuel, distribuer à ses élèves un texte inédit avec son aide lexicale. Les élèves s’en servent souvent pour lire plus facilement le latin lorsque leurs connaissances lexicales et morphologiques sont encore insuffisantes.
 						</p>
-				    <div class="well">
-				    	<h2>Principales fonctionnalités</h2>
-				    	<ul>
-				    	    <li>lemmatisation de mots latins ou d'un texte latin entier,</li>
-				    	    <li>traduction des lemmes grâce aux dictionnaires de latin incorporés dans l'application,</li>
-				    	    <li>affichage des quantités (durée longue ou brève des syllabes) et des flexions (déclinaison ou conjugaison).</li>
-				    	</ul>
+						<h2>Principales fonctionnalités</h2>
+			    	<ul>
+			    	    <li>lemmatisation de mots latins ou d'un texte latin entier,</li>
+			    	    <li>traduction des lemmes grâce aux dictionnaires de latin incorporés dans l'application,</li>
+			    	    <li>affichage des quantités (durée longue ou brève des syllabes) et des flexions (déclinaison ou conjugaison).</li>
+			    	</ul>
+			    	<h2>Aide</h2>
+            <p><a href="/fr/collatinus/aide/" target="_blank" rel="noreferrer noopener">Consultez l'aide en ligne</a></p>
 
+				    <div class="well">
 				    	<h2>Atouts de Collatinus</h2>
 				    	<ul>
 				    		<li>efficacité de la lemmatisation (~1000 mots/s. ; dépend bien sûr de la machine sur laquelle le programme tourne),</li>
@@ -154,21 +156,22 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 				    		<li>possibilité d'interroger Collatinus à partir d'un client en mode console. Lemmatisation d'un texte à partir d'un fichier</li>
 				    		<li>code source du logiciel organisé en modules de manière à faciliter le développement d'applications plus spécifiques</li>
 				    	</ul>
+
+				    	<h2>Historique</h2>
+							<p>Collatinus était destiné, à l'origine, à produire des documents sur papier, et c'est encore souvent dans ce but que je l'utilise. J'ai commencé à le perfectionner quand je me suis aperçu que de nombreux utilisateurs s'en servaient à d'autres fins :</p>
+							<ol>
+							    <li>disposer, lorsqu'on lit un texte latin, d'une aide lexicale et morphologique immédiate et discrète,</li>
+							    <li>faire des recherches lexicales et stylistiques,</li>
+							    <li>donner aux élèves des tâches d'identification, de relevé, de transformation.</li>
+							</ol>
+
+							<h2>Principes de fonctionnement</h2>
+							<p>Contrairement à la majorité des lemmatiseurs qui utilisent une liste de formes fléchies, Collatinus utilise un lexique contenant les lemmes et les informations nécessaires pour leur flexion. L'avantage est qu'avec 11 000 lemmes, Collatinus est capable de reconnaître plus d'un demi-million de formes. L'ajout du lemme correspondant à une variante orthographique (médiévale, par exemple) permettrait également de reconnaître toutes ses formes fléchies.</p>
+							<p>A partir du lemme et des désinences qui lui sont associées, Collatinus peut aussi donner des tableaux de flexion qui peuvent être utiles lors de l'apprentissage du latin.</p>
+							<p>Enfin, lorsque les quantités sont connues pour le lemme, Collatinus peut scander le mot et par là même tout un texte. Lorsqu'il scande un texte, Collatinus applique les règles habituelles d'allongement et d'élision.</p>
+
+							<p>Le lexique a d'abord été constitué au fil des années par les utilisateurs de Collatinus. Il a ensuite été complété par un dépouillement systématique des dictionnaires numériques (qui sont par ailleurs consultables dans Collatinus). Il compte environ 82 000 lemmes (et probablement quelques erreurs et de nombreux doublons, en particulier avec les formes grecques en -os qui coexistent avec la forme latinisée en -us). Afin d'optimiser le temps de chargement du programme, le lexique a été divisé en deux parties inégales. Le lexique de base compte environ 24 000 lemmes et devrait permettre de lemmatiser une bonne partie de la littérature classique. L'extension du lexique (58 000 lemmes) contient pour sa part des mots peu usités. Bien évidemment, le programme peut encore achopper sur les mots les plus rares ou sur les formes irrégulières.</p>
 				    </div>
-
-						<h3>Historique</h3>
-						<p>Collatinus était destiné, à l'origine, à produire des documents sur papier, et c'est encore souvent dans ce but que je l'utilise. J'ai commencé à le perfectionner quand je me suis aperçu que de nombreux utilisateurs s'en servaient à d'autres fins :</p>
-						<ol>
-						    <li>disposer, lorsqu'on lit un texte latin, d'une aide lexicale et morphologique immédiate et discrète,</li>
-						    <li>faire des recherches lexicales et stylistiques,</li>
-						    <li>donner aux élèves des tâches d'identification, de relevé, de transformation.</li>
-						</ol>
-						<h3>Principes de fonctionnement</h3>
-						<p>Contrairement à la majorité des lemmatiseurs qui utilisent une liste de formes fléchies, Collatinus utilise un lexique contenant les lemmes et les informations nécessaires pour leur flexion. L'avantage est qu'avec 11 000 lemmes, Collatinus est capable de reconnaître plus d'un demi-million de formes. L'ajout du lemme correspondant à une variante orthographique (médiévale, par exemple) permettrait également de reconnaître toutes ses formes fléchies.</p>
-						<p>A partir du lemme et des désinences qui lui sont associées, Collatinus peut aussi donner des tableaux de flexion qui peuvent être utiles lors de l'apprentissage du latin.</p>
-						<p>Enfin, lorsque les quantités sont connues pour le lemme, Collatinus peut scander le mot et par là même tout un texte. Lorsqu'il scande un texte, Collatinus applique les règles habituelles d'allongement et d'élision.</p>
-
-						<p>Le lexique a d'abord été constitué au fil des années par les utilisateurs de Collatinus. Il a ensuite été complété par un dépouillement systématique des dictionnaires numériques (qui sont par ailleurs consultables dans Collatinus). Il compte environ 82 000 lemmes (et probablement quelques erreurs et de nombreux doublons, en particulier avec les formes grecques en -os qui coexistent avec la forme latinisée en -us). Afin d'optimiser le temps de chargement du programme, le lexique a été divisé en deux parties inégales. Le lexique de base compte environ 24 000 lemmes et devrait permettre de lemmatiser une bonne partie de la littérature classique. L'extension du lexique (58 000 lemmes) contient pour sa part des mots peu usités. Bien évidemment, le programme peut encore achopper sur les mots les plus rares ou sur les formes irrégulières.</p>
 					</section>
 					<section role="tabpanel" class="tab-pane fade" id="news">
 						<h1>Nouveautés</h1>
@@ -341,9 +344,51 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
       				<p class="text-muted"><small>Ce programme n'est disponible qu'en version bureau pour Mac OS, Windows, Ubuntu et Debian GNU/Linux.</small></p>
       			<?php endif; ?>
 
-      			<h3>Sources</h3>
-						<div class="btn-container">
-							<a class="btn btn-lg" href="https://github.com/biblissima/collatinus"><span class="fa fa-github"></span>Collatinus 11 sur Github</a>
+      			<div class="row">
+							<div class="col-md-4">
+								<h3>Sources</h3>
+								<div class="btn-container">
+									<a class="btn btn-lg" href="https://github.com/biblissima/collatinus"><span class="fa fa-github"></span>Collatinus 11 sur Github</a>
+								</div>
+							</div>
+
+							<div class="col-md-8">
+								<h3>Toutes les versions <small>(par système)</small></h3>
+								<table class="table table-hover">
+							    <thead>
+						        <tr>
+						          <th></th>
+						          <th>Mac OS</th>
+						          <th>Windows (32 bits)</th>
+						          <th>Windows (64 bits)</th>
+						          <th>GNU/Linux</th>
+						        </tr>
+							    </thead>
+							    <tbody>
+							        <tr>
+						            <td>Version complète</small></td>
+						            <td align="center"><a href="<?php echo $link_full.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_full."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_full."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td rowspan="3" class="hasRowSpan debian-logo">
+						            	<a href="https://packages.debian.org/source/buster/collatinus" data-placement="bottom" data-toggle="tooltip" data-original-title="Paquet .deb et sources disponibles dans les dépôts Debian"><img src="/images/debian.png" alt="logo Debian" width="32" height="40"><small>Paquet Debian</small></a>
+						            </td>
+							        </tr>
+							        <tr>
+						            <td>Version intermédiaire</td>
+						            <td align="center"><a href="<?php echo $link_medium.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_medium."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_medium."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+							        </tr>
+							        <tr>
+						            <td>Version minimale</small></td>
+						            <td align="center"><a href="<?php echo $link_mini.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_mini."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center"><a href="<?php echo $link_mini."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+							        </tr>
+							    </tbody>
+								</table>
+							</div>
 						</div>
 
 						<div class="row">
@@ -589,6 +634,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 					<section role="tabpanel" class="tab-pane fade" id="faq">
 						<h1>FAQ</h1>
 						<ul>
+							<li><a href="#faq0">Mon Mac refuse d'ouvrir Collatinus en disant qu'il provient d'un développeur non identifié.</a></li>
 							<li><a href="#faq1">Comment installer dans Collatinus un lexique ou un dictionnaire téléchargé depuis cette page ?</a></li>
 							<li><a href="#faq2">Comment voir une page d'un dictionnaire en mode image sur Mac ?</a></li>
 							<li><a href="#faq3">Je voudrais ajouter des lemmes dans le lexique de Collatinus. Où sont les données que Collatinus exploite ?</a></li>
@@ -598,6 +644,12 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							<li><a href="#faq7">Comment lemmatiser un texte qui contient des graphies médiévales ?</a></li>
 						</ul>
 						<dl>
+								<dt id="faq0"><span class="glyphicon glyphicon-chevron-right"></span> Mon Mac refuse d'ouvrir Collatinus en disant qu'il provient d'un développeur non identifié.</dt>
+								<dd>
+									<p>En effet Apple tend à privilégier l'utilisation de l'Apple Store et d'applications provenant de développeurs affiliés, dont Collatinus n'est pas. Le Mac refuse donc d'ouvrir une application téléchargée de provenance inconnue. Il s'agit là d'une précaution de sécurité qu'il est facile de contourner. La solution est donnée par Apple lorsque l'on clique sur le point d'interrogation qui figure dans la fenêtre pop-up d'avertissement. Il faut ouvrir l'application en passant par le menu contextuel : au lieu de faire simplement un double-clic sur l'application, on fera donc un "clic-droit" ou un "Ctrl-clic" (un clic en maintenant la touche Ctrl enfoncée) et dans le menu qui s'affiche, on choisira "Ouvrir". Une fenêtre d'avertissement similaire à la précédente s'affiche aussi, mais elle propose un bouton supplémentaire pour ouvrir malgré tout l'application. Cette manœuvre n'est nécessaire que lors de la première utilisation : les lancements suivants de Collatinus pourront se faire avec l'habituel double-clic.</p>
+									<p>Retrouver les instructions détaillées pour votre version de Mac OS sur le <a href="https://support.apple.com/fr-fr/guide/mac-help/mh40616/mac">site support d'Apple</a>.</p>
+								</dd>
+
 								<dt id="faq1"><span class="glyphicon glyphicon-chevron-right"></span> Comment installer dans Collatinus un lexique ou un dictionnaire téléchargé depuis cette page ?</dt>
 								<dd>
 									<p>Les dictionnaires ou les lexiques disponibles sur ce site sont dans un format compressé <code>.col</code>. Ce format est reconnu par Collatinus qui décompressera le fichier téléchargé et installera tous les fichiers nécessaires là où il faut.</p>

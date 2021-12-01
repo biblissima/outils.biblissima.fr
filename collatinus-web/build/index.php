@@ -12,6 +12,7 @@ function generateFormToken($form) {
 }
 $token = generateFormToken('form_lemme');
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -73,15 +74,18 @@ $token = generateFormToken('form_lemme');
 				        <div class="form-group">
 					        <label for="dicos">&nbsp;dans le dictionnaire&nbsp;</label>
 					        <select name="dicos" id="dicos">
-					            <option value="dga ">Gaffiot</option>
-					            <option value="dle ">Lewis &amp; Short</option>
-					            <option value="dge ">Georges</option>
-					            <option value="dje ">Jeanneau</option>
-					            <option value="ddu ">du Cange</option>
-					            <option value="dca ">Calonghi (mode image)</option>
-					            <option value="dfg ">Gaffiot (mode image)</option>
-					            <option value="dra ">De Miguel (mode image)</option>
-					            <option value="dva ">Valbuena (mode image)</option>
+										<option value="dgaf " title="latin-français">Gaffiot</option>
+										<option value="dlew " title="latin-anglais">Lewis &amp; Short</option>
+										<option value="dgeo " title="latin-allemand">Georges</option>
+										<option value="djea " title="latin-français">Jeanneau</option>
+										<option value="dduc " title="glossaire du latin médiéval">du Cange</option>
+										<option value="dram " title="néolatin-allemand">Ramminger</option>
+										<option value="dkoe " title="latin médiéval-allemand">Köbler</option>
+										<option value="dcal " title="latin-italien">Calonghi (mode image)</option>
+										<option value="dfar " title="latin-portugais">Faria (mode image)</option>
+										<option value="dfg "  title="latin-français">Gaffiot (mode image)</option>
+										<option value="drai " title="latin-espagnol">De Miguel (mode image)</option>
+										<option value="dval " title="latin-espagnol">Valbuena (mode image)</option>
 					        </select>
 					        <button type="submit" value="Rechercher" class="btn btn-success" aria-controls="results">Valider</button>
 					    </div>		
@@ -178,6 +182,7 @@ $token = generateFormToken('form_lemme');
 	</div>
 	<!-- /.modal-dialog -->
 </div>
+
       
   <div class="site-cache" id="site-cache"></div>
   <script type="text/javascript" src="/collatinus-web/build/assets/js/vendor/jquery-1.10.2.min.js"></script>
