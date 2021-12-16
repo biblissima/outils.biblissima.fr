@@ -18,7 +18,7 @@ id_stat: 7
             </div>
             <div class="col-sm-5 col-md-4 text-right">
     		    <div class="buttons-container">
-    		    	<a class="btn btn-lg" href="https://github.com/biblissima/eulexis"><span class="fa fa-github"></span>Eulexis-web on Github</a>
+    		    	<a class="btn btn-lg" href="https://github.com/biblissima/outils.biblissima.fr/tree/master/eulexis-web"><span class="fa fa-github"></span>Eulexis-web on Github</a>
                     <a href="/en/eulexis" class="btn btn-lg" data-toggle="tooltip" data-placement="bottom" data-original-title="For Mac OS and Windows">Try the desktop app</a>
     		    </div>
             </div>
