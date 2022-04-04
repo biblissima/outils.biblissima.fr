@@ -110,7 +110,7 @@ slug_en: /xml-editing-tools/
 							</ul>
 
 							<p>
-								<a title="PluCo (PLUgin COllaboratif)" href="http://www.unicaen.fr/recherche/mrsh/sites/default/files/public/document_numerique/pluco.tgz" class="btn"><i class="fa fa-download" aria-hidden="true"></i> Télécharger PluCo</a>
+								<a title="PluCo (PLUgin COllaboratif)" href="https://www.unicaen.fr/recherche/mrsh/document_numerique/outils/pluco" class="btn">Page de téléchargement de PluCo</a>
 								<br /> <small>PluCo (PLUgin COllaboratif) - Pôle Document Numérique, MRSH de Caen
 								<br />
 								<a href="http://www.xmlmind.com/xmleditor/download.shtml" target="_blank" rel="noopener nofollow">Télécharger XXE</a></small>
@@ -125,8 +125,6 @@ slug_en: /xml-editing-tools/
 								</ul>
 							</div>
 
-							<p><a href="http://www.unicaen.fr/recherche/mrsh/document_numerique/outils/pluco">Présentation de l'outil</a> (MRSH de Caen)</p>
-
 							<p>PluCo est régi par la licence open source <a rel="license" href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-fr.html" target="_blank" rel="noopener nofollow">CeCILL-C</a>, il est développé par le <a href="http://www.certic.unicaen.fr" target="_blank" rel="noopener">CERTIC</a> et le <a href="http://www.unicaen.fr/recherche/mrsh/document_numerique/" target="_blank" rel="noopener">Pôle Document Numérique</a>, avec le soutien de Biblissima.</p>
 						</section>
 
@@ -134,7 +132,7 @@ slug_en: /xml-editing-tools/
 							<h1>Publier, diffuser</h1>
 							<p>MaX est un <strong>Moteur d'Affichage XML</strong>. Il est basé sur le système de base de données XML native <a href="http://www.basex.org" target="_blank" rel="noopener nofollow">BaseX</a> et sur les technologies <a href="http://docs.basex.org/wiki/RESTXQ" target="_blank" rel="noopener nofollow">RESTXQ</a> et <a href="https://www.w3.org/TR/xslt20/" target="_blank" rel="noopener nofollow">XSLT</a>.</p>
 
-							<p><a title="MaX (Moteur d'Affichage XML)" href="http://www.unicaen.fr/recherche/mrsh/sites/default/files/public/document_numerique/MaX.tgz" class="btn"><i class="fa fa-download" aria-hidden="true"></i> Télécharger MaX</a>
+							<p><a title="MaX (Moteur d'Affichage XML)" href="https://www.unicaen.fr/recherche/mrsh/document_numerique/outils/max" class="btn">Page de téléchargement de MaX</a>
 								<br /> <small>MaX (Moteur d'Affichage XML) - Pôle Document Numérique, MRSH de Caen</small>
 							</p>
 
@@ -148,8 +146,6 @@ slug_en: /xml-editing-tools/
 								<li>génération d'index ;</li>
 								<li>alignement de versions de textes (transcription/traduction par exemple).</li>
 							</ul>
-
-							<p><a href="http://www.unicaen.fr/recherche/mrsh/document_numerique/outils/max">Présentation de l'outil</a> (MRSH de Caen)</p>
 
 							<p>MaX est régi par la licence open source <a rel="license" href="http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.html" target="_blank" rel="noopener nofollow">CeCILL-B</a>, il est développé par le <a href="http://www.certic.unicaen.fr" target="_blank" rel="noopener">CERTIC</a> et le <a href="http://www.unicaen.fr/recherche/mrsh/document_numerique/" target="_blank" rel="noopener">Pôle Document Numérique</a>, avec le soutien de Biblissima.</p>
 						</section>
