@@ -37,8 +37,8 @@ lang: en
           	<p>June 2021</p>
           	<p class="lead">&mdash; Two languages added to the Collatinus registry: <strong>Dutch</strong> and <strong>Euskara</strong>.</p>
           	<p class="lead">&mdash; Launch of a campaign to review translations of the languages of Spain:</p>
-          	<p>(EN) An extensive campaign to review translations has been launched by our Spanish colleagues. The goal is to review translations of Latin lemmas in the four official languages of Spain: <strong>Castilian</strong>, <strong>Catalan</strong>, <strong>Euskara</strong> and <strong>Galician</strong>. If you would like to participate, <a href="mailto:collatinus@biblissima-condorcet.fr">contact us</a> to put you in touch with the relevant teams.</p>
-          	<p>(ES) Una amplia campaña de verificación de traducciones se ha iniciado por parte de nuestros amigos españoles. Se trata de verificar las traducciones de los términos latinos en las cuatro lenguas oficiales de España: <strong>castellano</strong>, <strong>catalán</strong>, <strong>euskara</strong> y <strong>gallego</strong>. Si desean participar en esta revisión, <a href="mailto:collatinus@biblissima-condorcet.fr">pónganse en contacto con nosotros</a> para que podamos ponerles en contacto con los equipos correspondientes.</p>
+          	<p>(EN) An extensive campaign to review translations has been launched by our Spanish colleagues. The goal is to review translations of Latin lemmas in the four official languages of Spain. The <strong>Euskara</strong> is now corrected (July 2023). The <strong>Castilian</strong>, <strong>Catalan</strong> and <strong>Galician</strong> are still being reviewed. If you would like to participate, <a href="mailto:collatinus@biblissima-condorcet.fr">contact us</a> to put you in touch with the relevant teams.</p>
+          	<p>(ES) Una amplia campaña de verificación de traducciones se ha iniciado por parte de nuestros amigos españoles. Se trata de verificar las traducciones de los términos latinos en las cuatro lenguas oficiales de España. El <strong>euskara</strong> ya está corregido (julio 2023). El <strong>castellano</strong>, <strong>catalán</strong>, y <strong>gallego</strong> aún se están revisando. Si desean participar en esta revisión, <a href="mailto:collatinus@biblissima-condorcet.fr">pónganse en contacto con nosotros</a> para que podamos ponerles en contacto con los equipos correspondientes.</p>
           </div>
 					<p>This online version is based on <strong>version 11.2 of Collatinus</strong>. Its lexical database has been extended with the systematic treatment of the digital dictionaries (Gaffiot 2016, Jeanneau 2017, Lewis &amp; Short 1879 and Georges 1913). The lexical base now contains more than 80.000 lemmas.</p>
 					<p>Due to lack of space on a web-page, the features of Collatinus 11 are not all available. For intensive use, we recommend the installation of the <a href="/en/collatinus" title="Download page of Collatinus">stand-alone version of Collatinus</a>, which is available for Windows, MacOS and Linux/Debian.</p>
@@ -125,7 +125,9 @@ lang: en
 
 		    <div class="well">
 		    	<h3>Credits</h3>
-		    	<p>Collatinus web is developed by Yves Ouvrard, with the support of Philippe Verkerk and Régis Robineau</p>
+		    	<p>Collatinus web is developed by Yves Ouvrard, with the support of Philippe Verkerk and Régis Robineau.</p>
+		    	<p>Many of the Dutch translations were revised by Jan Bart.</p>
+          <p>The Euskara translations have been revised by a group of teachers led by Carlos Cabanillas: Garbiñe Agirre Urteaga ; Ana Botello Fernandez ; Francisco Garayoa Huarte ; Alvaro Hurtado Usoz ; Maite Jurio Bidarte ; Jesús Madinabeitia Ortiz de Lazcano ; Begoña Martinez Lasheras ; Amaia Zubillaga Mina.</p>
 		    </div>
 			</div>
 		</section>
