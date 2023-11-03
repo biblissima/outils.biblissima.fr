@@ -239,6 +239,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 									<li><a download href="/collatinus/ressources/Jeanneau_2017-avr17.col" title="Dictionnaire Latin-Français">Jeanneau 2017</a> (12 Mo &mdash; latin-français)</li>
 									<li><a download href="/collatinus/ressources/Georges_1913-avr17.col" title="Georges K. E., Kleines deutsch-lateinisches Handwörterbuch, 1913">K. E. Georges 1913</a> (16 Mo &mdash; latin-allemand)</li>
 									<li><a download href="/collatinus/ressources/Lewis_and_Short_1879-avr17.col" title="Lewis Ch. T., Short Ch., A Latin Dictionary, 1879">Lewis &amp; Short 1879</a> (22 Mo &mdash; latin-anglais)</li>
+									<li><a download href="/collatinus/ressources/Lebaigue_1921-oct23.col">Lebaigue 1921</a> (223 Mo &mdash; latin-français)</li>
 								</ul>
 								<ul class="list-no-margin">
 									<li><a download href="/collatinus/ressources/du_Cange_1883-7-oct18.col" title="Glossaire du latin médiéval (Du Cange, et al., Glossarium mediæ et infimæ latinitatis. Niort : L. Favre, 1883-1887). École nationale des Chartes)">Du Cange 1883</a> (58 Mo &mdash; glossaire du latin médiéval)</li>
