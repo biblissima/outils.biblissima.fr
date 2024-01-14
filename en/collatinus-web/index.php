@@ -127,7 +127,7 @@ lang: en
 		    	<h3>Credits</h3>
 		    	<p>Collatinus web is developed by Yves Ouvrard, with the support of Philippe Verkerk and Régis Robineau.</p>
 		    	<p>Many of the Dutch translations were revised by Jan Bart.</p>
-		    	<p>The Castilian translations have been revised by a group of latin professors in Extremadura: Ángel Luis Gallego Real, Guadalupe Santos Martín, Juan José Morcillo Romero, Mario del Río González, Santiago Campo Moreno, Juan Carlos Oliva Espinosa and Carlos Cabanillas.</p>
+		    	<p>The Castilian translations have been revised by a group of latin professors in Extremadura: Ángel Luis Gallego Real, Guadalupe Santos Martín, Juan José Morcillo Romero, Mario del Río González, Santiago Campo Moreno, Juan Carlos Oliva Muñoz and Carlos Cabanillas.</p>
           <p>The Euskara translations have been revised by a group of teachers led by Carlos Cabanillas: Garbiñe Agirre Urteaga, Ana Botello Fernandez, Francisco Garayoa Huarte, Alvaro Hurtado Usoz, Maite Jurio Bidarte, Jesús Madinabeitia Ortiz de Lazcano, Begoña Martinez Lasheras, Amaia Zubillaga Mina.</p>
 		    </div>
 			</div>
