@@ -6,11 +6,11 @@ EXCLUDE=~/rsync_exclude.txt
 VM=$1
 
 # dev
-if [ "$VM" == "cc-web-dev" ]; then
+if [ "$VM" == "dev" ]; then
 	REMOTE="biblissima-web-dev"
 	DEST="/var/www/html/outils-dev.biblissima.fr/root"
 # prod
-elif [ "$VM" == "cc-web" ] ; then	
+elif [ "$VM" == "prod" ] ; then	
 	echo "NOTICE: le site a-t-il été généré avec 'jekyll build --config=_config.yml,_config_prod.yml' ?"
 	read -p "Confirmer ? [Y/n]" -n 1 -r -s
 	echo #
