@@ -280,10 +280,14 @@ if (!$consultation) {
             // $tutu = "<a href='index.php?lemme=" . $lem . "#haut_de_page'>";
             $tutu = "<a href='#' data-lemme='". $lem . "'>";
             for ($i = 0; $i < count($eclat); $i++) {
-              $mot_t = $eclat[$i];
               // Pour le sigma final, chaque mot doit être traité séparément
-              if (strrpos($mot_t, 's') == (strlen($mot_t) - 1) && strlen($mot_t) != 1)
-                $mot_t = substr($mot_t, 0, strlen($mot_t) - 1) . 'ς';
+              $mot_t = $eclat[$i];
+              $l_mot = strlen($mot_t); // c'est la longueur du mot
+              $der_let = substr($mot_t, $l_mot - 1, 1); // c'est le dernier caractère.
+              if ($der_let == 's' && $l_mot > 1)
+                $mot_t = substr($mot_t, 0, $l_mot - 1) . 'ς';
+              else if (ctype_digit($der_let) && strrpos($mot_t, 's') == ($l_mot - 2) && $l_mot > 2)
+                $mot_t = substr($mot_t, 0, $l_mot - 2) . 'ς' . $der_let;
               $eclat[$i] = str_replace($betacode, $unicode, $mot_t);
             }
             $titi = implode(", ", $eclat);
