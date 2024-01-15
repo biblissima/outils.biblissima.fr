@@ -282,12 +282,12 @@ if (!$consultation) {
             for ($i = 0; $i < count($eclat); $i++) {
               // Pour le sigma final, chaque mot doit être traité séparément
               $mot_t = $eclat[$i];
-              $l_mot = strlen($mot_t); // c'est la longueur du mot
-              $der_let = substr($mot_t, $l_mot - 1, 1); // c'est le dernier caractère.
-              if ($der_let == 's' && $l_mot > 1)
-                $mot_t = substr($mot_t, 0, $l_mot - 1) . 'ς';
-              else if (ctype_digit($der_let) && strrpos($mot_t, 's') == ($l_mot - 2) && $l_mot > 2)
-                $mot_t = substr($mot_t, 0, $l_mot - 2) . 'ς' . $der_let;
+              $long_mot = strlen($mot_t); // c'est la longueur du mot
+              $der_let = substr($mot_t, $long_mot - 1, 1); // c'est le dernier caractère.
+              if ($der_let == 's' && $long_mot > 1)
+                $mot_t = substr($mot_t, 0, $long_mot - 1) . 'ς';
+              else if (ctype_digit($der_let) && strrpos($mot_t, 's') == ($long_mot - 2) && $long_mot > 2)
+                $mot_t = substr($mot_t, 0, $long_mot - 2) . 'ς' . $der_let;
               $eclat[$i] = str_replace($betacode, $unicode, $mot_t);
             }
             $titi = implode(", ", $eclat);
