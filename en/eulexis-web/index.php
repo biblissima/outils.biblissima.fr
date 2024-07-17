@@ -31,13 +31,8 @@ id_stat: 7
 			<div class="region region-content">
 			    <div class="intro">
                     <p class="lead">Eulexis is a <strong>lemmatiser for Ancient Greek texts</strong>.</p>
-                    <div class="news bg-warning">
-                        <p class="lead">The &laquo; Bailly 2020 Hugo Chávez &raquo; is available on Eulexis!</p>
-                        <p>Thanks to the hard work of a team of volunteers led by Gérard Gréco, with special contribution of André Charbonnet, Mark De Wilde and Bernard Maréchal, the Bailly 2020 Hugo Chávez is <a href="http://gerardgreco.free.fr/spip.php?article52">available under conditions in PDF</a> since April 2020. You can now consult it online. If you find this work useful, do not hesitate to encourage it and <a href="http://gerardgreco.free.fr/spip.php?article52">make a donation</a>.</p>
-                    </div>
-                    <p>This application has been made available with no guarantee and may be subject to further corrections and improvements. If you notice any errors or typos, please do not hesitate to <a href="mailto:eulexis@biblissima-condorcet.fr">report them</a>!</p>
-                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-info">More information</button>
                 </div>
+                <hr/>
 			    <!-- Recherche -->
                 <form method="post" role="form" class="form-lemme form-inline">
                     <div class="form-group">
@@ -82,6 +77,16 @@ id_stat: 7
                     </div>
                 </form>
                 <div id="results"></div>
+
+                <div class="news bg-info">
+                    <p>This application has been made available with no guarantee and may be subject to further corrections and improvements.</p> 
+                    <p>If you notice any errors or typos, please do not hesitate to <a href="mailto:eulexis@biblissima-condorcet.fr">report them</a>!</p>
+                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-info">More information</button>
+                </div>
+                <div class="news bg-warning">
+                    <p class="lead">The &laquo; Bailly 2020 Hugo Chávez &raquo; is available on Eulexis!</p>
+                    <p>Thanks to the hard work of a team of volunteers led by Gérard Gréco, with special contribution of André Charbonnet, Mark De Wilde and Bernard Maréchal, the Bailly 2020 Hugo Chávez is <a href="http://gerardgreco.free.fr/spip.php?article52">available under conditions in PDF</a> since April 2020. You can now consult it online. If you find this work useful, do not hesitate to encourage it and <a href="http://gerardgreco.free.fr/spip.php?article52">make a donation</a>.</p>
+                </div>
                 <div class="well">
                     <h3>Credits</h3>
                     <p>Many thanks to Philipp Roelli, André Charbonnet, Mark De Wilde, Gérard Gréco, Peter J. Heslin, Yves Ouvrard, Eduard Frunzeanu and Régis Robineau.</p>

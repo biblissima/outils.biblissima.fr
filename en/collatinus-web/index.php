@@ -31,18 +31,7 @@ lang: en
 			<div class="region region-content">
 				<div class="intro">
 					<p class="lead">
-						Online version of <a href="/en/collatinus" title="Download page of Collatinus">Collatinus</a>, a multi-OS application to <strong>lemmatise</strong> and <strong>analyse the morphology</strong> of Latin texts.
-					</p>
-					<div class="news bg-warning">
-          	<p>June 2021</p>
-          	<p class="lead">&mdash; Two languages added to the Collatinus registry: <strong>Dutch</strong> and <strong>Euskara</strong>.</p>
-          	<p class="lead">&mdash; Launch of a campaign to review translations of the languages of Spain:</p>
-          	<p>(EN) An extensive campaign to review translations has been launched by our Spanish colleagues. The goal is to review translations of Latin lemmas in the four official languages of Spain. The <strong>Castilian</strong> and <strong>Euskara</strong> are now corrected (July 2023). The <strong>Catalan</strong> and <strong>Galician</strong> are still being reviewed. If you would like to participate, <a href="mailto:collatinus@biblissima-condorcet.fr">contact us</a> to put you in touch with the relevant teams.</p>
-          	<p>(ES) Una amplia campaña de verificación de traducciones se ha iniciado por parte de nuestros amigos españoles. Se trata de verificar las traducciones de los términos latinos en las cuatro lenguas oficiales de España. El <strong>castellano</strong> y el <strong>euskara</strong> ya están corregidos (julio 2023). El <strong>catalán</strong> y <strong>gallego</strong> aún se están revisando. Si desean participar en esta revisión, <a href="mailto:collatinus@biblissima-condorcet.fr">pónganse en contacto con nosotros</a> para que podamos ponerles en contacto con los equipos correspondientes.</p>
-          </div>
-					<p>This online version is based on <strong>version 11.2 of Collatinus</strong>. Its lexical database has been extended with the systematic treatment of the digital dictionaries (Gaffiot 2016, Jeanneau 2017, Lewis &amp; Short 1879 and Georges 1913). The lexical base now contains more than 80.000 lemmas.</p>
-					<p>Due to lack of space on a web-page, the features of Collatinus 11 are not all available. For intensive use, we recommend the installation of the <a href="/en/collatinus" title="Download page of Collatinus">stand-alone version of Collatinus</a>, which is available for Windows, MacOS and Linux/Debian.</p>
-					<p>This application has been made available with no guarantee and may be subject to further corrections and improvements.
+						Online version of <a href="/en/collatinus" title="Download page of Collatinus">Collatinus</a>, a multi-OS application to <strong>lemmatise and analyse the morphology of Latin texts</strong>.
 					</p>
 				</div>
 				<form method="post" role="form" class="form-lemme form-inline" id="form">
@@ -122,6 +111,21 @@ lang: en
 					<div id="results" aria-live="polite" aria-label="Collatinus response to your request">
 					</div>
 				</div>
+
+				<div class="news bg-info">
+					<p>This online version is based on <strong>version 11.2 of Collatinus</strong>. Its lexical database has been extended with the systematic treatment of the digital dictionaries (Gaffiot 2016, Jeanneau 2017, Lewis &amp; Short 1879 and Georges 1913). The lexical base now contains more than 80.000 lemmas.</p>
+					<p>Due to lack of space on a web-page, the features of Collatinus 11 are not all available. For intensive use, we recommend the installation of the <a href="/en/collatinus" title="Download page of Collatinus">stand-alone version of Collatinus</a>, which is available for Windows, MacOS and Linux/Debian.</p>
+					<p>This application has been made available with no guarantee and may be subject to further corrections and improvements.
+					</p>
+				</div>
+
+				<div class="news bg-warning">
+        	<p>&mdash; July 2023: Two languages reviewed, <strong>Castilian</strong> and <strong>Euskara</strong></p>
+        	<p>&mdash; June 2021: Two languages added to the Collatinus registry, <strong>Dutch</strong> and <strong>Euskara</strong>.</p>
+        	<p>&mdash; June 2021: Launch of a campaign to <strong>review translations of the languages of Spain</strong>:</p>
+        	<p>(EN) An extensive campaign to review translations has been launched by our Spanish colleagues. The goal is to review translations of Latin lemmas in the four official languages of Spain. The Castilian and Euskara are now corrected (July 2023). The Catalan and Galician are still being reviewed. If you would like to participate, <a href="mailto:collatinus@biblissima-condorcet.fr">contact us</a> to put you in touch with the relevant teams.</p>
+        	<p>(ES) Una amplia campaña de verificación de traducciones se ha iniciado por parte de nuestros amigos españoles. Se trata de verificar las traducciones de los términos latinos en las cuatro lenguas oficiales de España. El castellano y el euskara ya están corregidos (julio 2023). El catalán y gallego aún se están revisando. Si desean participar en esta revisión, <a href="mailto:collatinus@biblissima-condorcet.fr">pónganse en contacto con nosotros</a> para que podamos ponerles en contacto con los equipos correspondientes.</p>
+        </div>
 
 		    <div class="well">
 		    	<h3>Credits</h3>
