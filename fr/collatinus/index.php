@@ -31,7 +31,7 @@ elseif ( $os == 'win') {
   $ext = '.exe';
 }
 elseif ( $os == 'mac') {
-  $oslabel = 'Mac OS';
+  $oslabel = 'MacOS';
   $ext = '.dmg';
 }
 
@@ -39,8 +39,10 @@ elseif ( $os == 'mac') {
 $version = '11.2';
 $version_txt = '11.2';
 $prev_version = '11.1';
-$link_prefix = './index.php?file=Collatinus_';
-$link_base =  $link_prefix.$version;
+//$link_prefix = './index.php?file=Collatinus_';
+$link_prefix = 'https://sharedocs.huma-num.fr/wl/?id=NXicQKuXHYB3M9ZHqhI3zAUuFKZzflKU&path=';
+//$link_base =  $link_prefix.$version;
+$link_base =  $link_prefix.$oslabel."_Collatinus_".$version;
 $link_full		=  $link_base.'_full';
 $link_medium 	=  $link_base.'_medium';
 $link_mini 		=  $link_base.'_mini';
@@ -220,11 +222,11 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 					<section role="tabpanel" class="tab-pane fade" id="downloads">
 						<h1>Téléchargements</h1>
 
-						<p>Collatinus est proposé en <strong>trois versions</strong>, qui se distinguent par le nombre de dictionnaires pré-installés :</p>
+						<p class="lead">Collatinus est proposé en <strong>trois versions</strong>, qui se distinguent par le nombre de dictionnaires pré-installés :</p>
 						<ul>
-							<li>complète (9 dictionnaires)</li>
-							<li>intermédiaire (5 dictionnaires)</li>
-							<li>minimale (2 dictionnaires)</li>
+							<li><strong>complète</strong> (9 dictionnaires)</li>
+							<li><strong>intermédiaire</strong> (5 dictionnaires)</li>
+							<li><strong>minimale</strong> (2 dictionnaires)</li>
 						</ul>
  
 						<p>Ces versions peuvent être complétées à tout moment en <strong>téléchargeant un ou plusieurs dictionnaires</strong> proposés ci-dessous et en les installant depuis le menu <code>Extra</code> de Collatinus.</p>
@@ -239,7 +241,6 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 									<li><a download href="/collatinus/ressources/Jeanneau_2017-avr17.col" title="Dictionnaire Latin-Français">Jeanneau 2017</a> (12 Mo &mdash; latin-français)</li>
 									<li><a download href="/collatinus/ressources/Georges_1913-avr17.col" title="Georges K. E., Kleines deutsch-lateinisches Handwörterbuch, 1913">K. E. Georges 1913</a> (16 Mo &mdash; latin-allemand)</li>
 									<li><a download href="/collatinus/ressources/Lewis_and_Short_1879-avr17.col" title="Lewis Ch. T., Short Ch., A Latin Dictionary, 1879">Lewis &amp; Short 1879</a> (22 Mo &mdash; latin-anglais)</li>
-									<li><a download href="/collatinus/ressources/Lebaigue_1921-oct23.col">Lebaigue 1921</a> (223 Mo &mdash; latin-français)</li>
 								</ul>
 								<ul class="list-no-margin">
 									<li><a download href="/collatinus/ressources/du_Cange_1883-7-oct18.col" title="Glossaire du latin médiéval (Du Cange, et al., Glossarium mediæ et infimæ latinitatis. Niort : L. Favre, 1883-1887). École nationale des Chartes)">Du Cange 1883</a> (58 Mo &mdash; glossaire du latin médiéval)</li>
@@ -256,6 +257,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							    <li><a download href="/collatinus/ressources/Gaffiot_1934-avr17.col" title="Gaffiot F., Dictionnaire illustré latin-français, 1934">Gaffiot 1934</a> (101 Mo &mdash; latin-français)</li>
 									<li><a download href="/collatinus/ressources/Noel_1851-nov19.col" title="">Nöel 1851</a> (218 Mo &mdash; latin-français)</li>
 							    <li><a download href="/collatinus/ressources/Valbuena_1819-avr17.col" title="Valbuena, Diccionario universal latino-español">Valbuena 1819</a> (86 Mo &mdash; latin-espagnol)</li>
+							    <li><a download href="/collatinus/ressources/Lebaigue_1921-oct23.col">Lebaigue 1921</a> (223 Mo &mdash; latin-français)</li>
 							  </ul>
 							  <ul class="list-no-margin">
 							    <li><a download href="/collatinus/ressources/Quicherat_1836-avr17.col">Quicherat 1836</a> (303 Mo &mdash; prosodique français)</li>
@@ -368,31 +370,49 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							    <tbody>
 							        <tr>
 						            <td>Version complète</small></td>
-						            <td align="center"><a href="<?php echo $link_full.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_full."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_full."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_full.dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_full_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_full_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
 						            <td rowspan="3" class="hasRowSpan debian-logo">
 						            	<a href="https://packages.debian.org/source/buster/collatinus" data-placement="bottom" data-toggle="tooltip" data-original-title="Paquet .deb et sources disponibles dans les dépôts Debian"><img src="/images/debian.png" alt="logo Debian" width="32" height="40"><small>Paquet Debian</small></a>
 						            </td>
 							        </tr>
 							        <tr>
 						            <td>Version intermédiaire</td>
-						            <td align="center"><a href="<?php echo $link_medium.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_medium."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_medium."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_medium.dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_medium_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_medium_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
 							        </tr>
 							        <tr>
 						            <td>Version minimale</small></td>
-						            <td align="center"><a href="<?php echo $link_mini.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_mini."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_mini."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_mini.dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_mini_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_mini_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
 							        </tr>
 							    </tbody>
 								</table>
 							</div>
 						</div>
 
-						<div class="row">
+<!-- 						<div class="row">
 							<h2>Archives (versions antérieures)</h2>
 
 							<h3>Collatinus 11.1</h3>
@@ -629,7 +649,8 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							    <li><a href="/collatinus/ressources/Valbuena_1819.djvu" title="Valbuena, Diccionario universal latino-español">Valbuena 1819</a> (djvu, 82 Mo)</li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
+
 					</section>
 
 					<section role="tabpanel" class="tab-pane fade" id="faq">

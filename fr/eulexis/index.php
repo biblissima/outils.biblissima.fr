@@ -38,7 +38,8 @@ elseif ( $os == 'mac') {
 $version = '1.1';
 $version_txt = 'version 1.1';
 //$prev_version = '10.2.2';
-$link_prefix = './index.php?file=Eulexis_';
+//$link_prefix = './index.php?file=Eulexis_';
+$link_prefix = 'https://sharedocs.huma-num.fr/wl/?id=Zn03Ug1ElokjeE3nm0Q5z4MYl5NnjAqM&path=Eulexis_';
 $link_base =  $link_prefix.$version;
 ?>
 
@@ -91,11 +92,11 @@ $link_base =  $link_prefix.$version;
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <h3>Pour Mac OS</h3>
-                        <a href="index.php?file=Eulexis_1.1.dmg" class="btn btn-lg"><span class="fa fa-apple"></span>Télécharger (.dmg)</a>
+                        <a href="<?php echo $link_base.".dmg"; ?>" class="btn btn-lg"><span class="fa fa-apple"></span>Télécharger (.dmg)</a>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <h3>Pour Windows</h3>
-                        <a href="index.php?file=Eulexis_1.1.exe" class="btn btn-lg"><span class="fa fa-windows"></span>Télécharger (.exe)</a>
+                        <a href="<?php echo $link_base.".exe"; ?>" class="btn btn-lg"><span class="fa fa-windows"></span>Télécharger (.exe)</a>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <h3>Sources</h3>

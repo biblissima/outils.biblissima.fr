@@ -30,7 +30,7 @@ elseif ( $os == 'win') {
   $ext = '.exe';
 }
 elseif ( $os == 'mac') {
-  $oslabel = 'Mac OS';
+  $oslabel = 'MacOS';
   $ext = '.dmg';
 }
 
@@ -38,8 +38,10 @@ elseif ( $os == 'mac') {
 $version = '11.2';
 $version_txt = '11.2';
 $prev_version = '11.1';
-$link_prefix = './index.php?file=Collatinus_';
-$link_base =  $link_prefix.$version;
+//$link_prefix = './index.php?file=Collatinus_';
+$link_prefix = 'https://sharedocs.huma-num.fr/wl/?id=NXicQKuXHYB3M9ZHqhI3zAUuFKZzflKU&path=';
+//$link_base =  $link_prefix.$version;
+$link_base =  $link_prefix.$oslabel."_Collatinus_".$version;
 $link_full		=  $link_base.'_full';
 $link_medium 	=  $link_base.'_medium';
 $link_mini 		=  $link_base.'_mini';
@@ -219,11 +221,11 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 					<section role="tabpanel" class="tab-pane fade" id="downloads">
 						<h1>Downloads</h1>
 
-						<p>There are <strong>three versions</strong> of Collatinus available (customisable). The difference is the number of pre-installed dictionaries that come with the application:</p>
+						<p class="lead">There are <strong>three versions</strong> of Collatinus available (customisable). The difference is the number of pre-installed dictionaries that come with the application:</p>
 						<ul>
-							<li>full (9 dictionaries)</li>
-							<li>medium (5 dictionaries)</li>
-							<li>light (2 dictionaries)</li>
+							<li><strong>full</strong> (9 dictionaries)</li>
+							<li><strong>medium</strong> (5 dictionaries)</li>
+							<li><strong>light</strong> (2 dictionaries)</li>
 						</ul>
 
 						<p>These versions can be completed at any time by <strong>downloading one or more of the dictionaries</strong> listed below and by installing them from the <code>Extra</code> menu in Collatinus.</p>
@@ -238,7 +240,6 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 									<li><a download href="/collatinus/ressources/Jeanneau_2017-avr17.col" title="Dictionnaire Latin-Français">Jeanneau 2017</a> (12 Mo &mdash; latin-french)</li>
 									<li><a download href="/collatinus/ressources/Georges_1913-avr17.col" title="Georges K. E., Kleines deutsch-lateinisches Handwörterbuch, 1913">K. E. Georges 1913</a> (16 Mo &mdash; latin-german)</li>
 									<li><a download href="/collatinus/ressources/Lewis_and_Short_1879-avr17.col" title="Lewis Ch. T., Short Ch., A Latin Dictionary, 1879">Lewis &amp; Short 1879</a> (22 Mo &mdash; latin-english)</li>
-									<li><a download href="/collatinus/ressources/Lebaigue_1921-oct23.col">Lebaigue 1921</a> (223 Mo &mdash; latin-french)</li>
 								</ul>
 								<ul class="list-no-margin">
 									<li><a download href="/collatinus/ressources/du_Cange_1883-7-oct18.col" title="Glossaire du latin médiéval (Du Cange, et al., Glossarium mediæ et infimæ latinitatis. Niort : L. Favre, 1883-1887). École nationale des Chartes)">Du Cange 1883</a> (58 Mo &mdash; glossary of medieval latin)</li>
@@ -255,6 +256,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							    <li><a download href="/collatinus/ressources/Gaffiot_1934-avr17.col" title="Gaffiot F., Dictionnaire illustré latin-français, 1934">Gaffiot 1934</a> (101 Mo &mdash; latin-french)</li>
 							    <li><a download href="/collatinus/ressources/Noel_1851-nov19.col" title="">Nöel 1851</a> (218 Mo &mdash; latin-french)</li>
 							    <li><a download href="/collatinus/ressources/Valbuena_1819-avr17.col" title="Valbuena, Diccionario universal latino-español">Valbuena 1819</a> (86 Mo &mdash; latin-spanish)</li>
+							    <li><a download href="/collatinus/ressources/Lebaigue_1921-oct23.col">Lebaigue 1921</a> (223 Mo &mdash; latin-french)</li>
 							  </ul>
 							  <ul class="list-no-margin">
 							    <li><a download href="/collatinus/ressources/Quicherat_1836-avr17.col">Quicherat 1836</a> (303 Mo &mdash; prosodic french)</li>
@@ -366,31 +368,47 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							    <tbody>
 							        <tr>
 						            <td>Full version</small></td>
-						            <td align="center"><a href="<?php echo $link_full.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_full."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_full."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_full.dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_full_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_full_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
 						            <td rowspan="3" class="hasRowSpan debian-logo">
 						            	<a href="https://packages.debian.org/source/buster/collatinus" data-placement="bottom" data-toggle="tooltip" data-original-title="Deb package and source available on Debian repositories"><img src="/images/debian.png" alt="logo Debian" width="32" height="40"><small>Debian package</small></a>
 						            </td>
 							        </tr>
 							        <tr>
 						            <td>Medium version</td>
-						            <td align="center"><a href="<?php echo $link_medium.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_medium."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_medium."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_medium.dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_medium_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_medium_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
 							        </tr>
 							        <tr>
 						            <td>Light version</small></td>
-						            <td align="center"><a href="<?php echo $link_mini.".dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_mini."_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
-						            <td align="center"><a href="<?php echo $link_mini."_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a></td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_mini.dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_mini_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            </td>
+						            <td align="center">
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_mini_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
 							        </tr>
 							    </tbody>
 								</table>
 							</div>
 						</div>
 
-						<div class="row">
+						<!-- <div class="row">
 							<h2>Archives (previous versions)</h2>
 
 							<h3>Collatinus 11.1</h3>
@@ -601,7 +619,8 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 								    </tbody>
 								</table>
 							</div>
-						</div>
+						</div> -->
+						
 					</section>
 
  			<section role="tabpanel" class="tab-pane fade" id="faq">
