@@ -64,6 +64,11 @@ function verifyFormToken($form) {
  * - p1 = appel du tagueur probabiliste
  * - a0 = scansion
  * - a10 = accentuation (ecclésiastique)
+ * - i2 = lemmatisation (avec les formes du texte, option médiévale)
+ * - i6 = analyse (avec morpho et formes, option médiévale)
+ * - q1 = appel du tagueur probabiliste, option médiévale
+ * - b0 = scansion, option médiévale
+ * - b10 = accentuation (ecclésiastique, option médiévale)
  * - F = flexion (attention à la majuscule !)
  *
  * Quand les traductions sont importantes dans la réponse,
@@ -119,22 +124,49 @@ if (isset($_POST['opera'])) {
     case 'traite_txt' :
       $langue = $_POST['langue'];
       $texte = strip_tags($_POST['texte']);
-      switch($_POST['action']) {
-        case 'Lemmatiser' :
-          $requete = "-h2" . $langue . $texte;
-          break;
-        case 'Analyser' :
-          $requete = "-h6" . $langue . $texte;
-          break;
-        case 'Taguer' :
-          $requete = "-p1" . $langue . $texte;
-          break;
-        case 'Scander' :
-          $requete = "-a0 " . $texte;
-          break;
-        case 'Accentuer' :
-          $requete = "-a10 " . $texte;
-          break;
+    if (isset($_POST['medieval']))
+      $_SESSION['medieval'] = true;
+    else
+      $_SESSION['medieval'] = false;
+    // La checkbox n'existe que si elle est validée
+    $medieval = $_SESSION['medieval'];
+      if ($medieval) {
+        switch($_POST['action']) {
+          case 'Lemmatiser' :
+            $requete = "-i2" . $langue . $texte;
+            break;
+          case 'Analyser' :
+            $requete = "-i6" . $langue . $texte;
+            break;
+          case 'Taguer' :
+            $requete = "-q1" . $langue . $texte;
+            break;
+          case 'Scander' :
+            $requete = "-b0 " . $texte;
+            break;
+          case 'Accentuer' :
+            $requete = "-b10 " . $texte;
+            break;
+        }
+      }
+      else {
+        switch($_POST['action']) {
+          case 'Lemmatiser' :
+            $requete = "-h2" . $langue . $texte;
+            break;
+          case 'Analyser' :
+            $requete = "-h6" . $langue . $texte;
+            break;
+          case 'Taguer' :
+            $requete = "-p1" . $langue . $texte;
+            break;
+          case 'Scander' :
+            $requete = "-a0 " . $texte;
+            break;
+          case 'Accentuer' :
+            $requete = "-a10 " . $texte;
+            break;
+        }
       }
       break;
   }
