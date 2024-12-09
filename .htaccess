@@ -10,7 +10,8 @@ RewriteRule ^eulexis(/)?$ /fr/eulexis$1 [R=301,NC]
 RewriteRule ^praelector(/)?$ /fr/praelector$1 [R=301,NC]
 
 # redirige la racine (uniquement) vers baobab
-RewriteRule ^/?(fr|en)?/?(index\.html)?/?$ https://baobab.biblissima.fr/$1 [R=301]
+#RewriteRule ^/?(fr|en)?/?(index\.html)?/?$ https://baobab.biblissima.fr/$1 [R=301]
+RewriteRule ^/?(fr|en)?/?(index\.html)?/?$ https://projet.biblissima.fr/fr/ressources/ressources-biblissima?field_resources_type_target_id=35#block-biblissima-barrio-views-block-ressources-block-1 [R=301,NE]
 
 # redirige l'ancienne URL d'Eulexis
 Redirect 301 /lemmatiseur_grec https://outils.biblissima.fr/fr/eulexis/
