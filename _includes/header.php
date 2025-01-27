@@ -33,11 +33,21 @@ if (stream_resolve_include_path('menu-bbma.php')) include 'menu-bbma.php'; ?>
                         <!-- bloc de resaux sociaux -->
                         <div class="bloc-social-links tool-box-bloc clearfix">
                             <ul class="nav">
-                                <li><a href="https://facebook.com/biblissima" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="https://twitter.com/biblissima" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="http://www.slideshare.net/biblissima" title="Slideshare"><i class="fa fa-slideshare"></i></a></li>
-                                <li><a href="https://github.com/biblissima" title="Github"><i class="fa fa-github"></i></a></li>
-                                <li><a href="https://www.youtube.com/channel/UCaHWzwUV0xBAQ-sEdE9EtKg" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+                                <li>
+                                    <a href="https://listes.campus-condorcet.fr/sympa/arc/biblissima-info-membres" title="Liste de diffusion"><i class="bi bi-envelope-fill"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://universites.social/@biblissima" title="Mastodon"><i class="bi bi-mastodon"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCaHWzwUV0xBAQ-sEdE9EtKg" title="Youtube"><i class="bi bi-youtube"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/biblissima" title="Github"><i class="bi bi-github"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://gitlab.huma-num.fr/biblissima" title="Gitlab"><i class="bi bi-gitlab"></i></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
