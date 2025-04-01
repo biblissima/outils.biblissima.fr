@@ -9,9 +9,9 @@ RewriteRule ^collatinus(/)?$ /fr/collatinus$1 [R=301,NC]
 RewriteRule ^eulexis(/)?$ /fr/eulexis$1 [R=301,NC]
 RewriteRule ^praelector(/)?$ /fr/praelector$1 [R=301,NC]
 
-# redirige la racine (uniquement) vers baobab
+# redirige la racine (uniquement) vers site projet
 #RewriteRule ^/?(fr|en)?/?(index\.html)?/?$ https://baobab.biblissima.fr/$1 [R=301]
-RewriteRule ^/?(fr|en)?/?(index\.html)?/?$ https://projet.biblissima.fr/fr/ressources/ressources-biblissima?field_resources_type_target_id=35#block-biblissima-barrio-views-block-ressources-block-1 [R=301,NE]
+#RewriteRule ^/?(fr|en)?/?(index\.html)?/?$ https://projet.biblissima.fr/fr/ressources/ressources-biblissima?field_resources_type_target_id=35#block-biblissima-barrio-views-block-ressources-block-1 [R=301,NE]
 
 # redirige l'ancienne URL d'Eulexis
 Redirect 301 /lemmatiseur_grec https://outils.biblissima.fr/fr/eulexis/
@@ -19,3 +19,14 @@ Redirect 301 /lemmatiseur_grec https://outils.biblissima.fr/fr/eulexis/
 # redirige les url de requêtes ajax
 RewriteRule ^ajax/eulexis/eulexis.php /eulexis/eulexis.php [R=301,NC]
 RewriteRule ^ajax/collatinus-web/collatinus-web.php /collatinus-web/collatinus-web.php [R=301,NC]
+
+# redirige les pages obsolètes (février 2025)
+# praelector
+RewriteRule ^/(fr|en)/praelector/?(index\.php)?$ /$1/collatinus [R=301,NC]
+# outils xml mrsh
+RewriteRule ^/fr/outils-edition-xml/?$ https://mrsh.unicaen.fr/pluridisciplinaire/pole-document-numerique/outils/ [R=301,NC]
+RewriteRule ^/en/xml-editing-tools/?$ https://mrsh.unicaen.fr/pluridisciplinaire/pole-document-numerique/outils/ [R=301,NC]
+# schémas reliure
+RewriteRule ^/fr/schemas-tei-reliure/?$ https://doi.org/10.5281/zenodo.14847307 [R=301,NC]
+RewriteRule ^/en/tei-schemas-bookbindings/?$ https://doi.org/10.5281/zenodo.14847307 [R=301,NC]
+
