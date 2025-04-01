@@ -1,82 +1,51 @@
 ---
-title: Accueil
+title: Home
 id: home
-description: Biblissima Toolkit (Baobab)
-description_meta: Biblissima Toolkit (Baobab)
+description: Biblissima Tools
 categories: [pages] 
 layout: default
 id_stat: 4
 lang: en
 ---
 
-<div class="region region-content">
-    <section>
-	    <h1>Biblissima Toolkit (Baobab) <small class="text-danger">Website under construction…</small></h1>
-	    <p class="lead text-muted">
-	        Expected to launch in 2017
-	    </p>
-        <p>The <strong>Biblissima toolkit (Baobab)</strong> contains a coherent collection of resources, tools, guidelines and tutorials for <strong>collecting and producing data</strong> about <strong>the circulation of texts, the history of libraries and the transmission of knowledge in Europe from the 8th to 18th centuries</strong>.</p>
-        <p>The toolkit is designed for anyone with an interest in this field, from those who are just starting out to full-time researchers, including teachers and professors, as well as librarians, archivists, curators, etc. Anyone working with medieval documents and manuscripts or early printed books may find it useful, although the primary target group is the people who are contributing to the <a href="https://projet.biblissima.fr/en/project/phase-2-data-sets">Biblissima data cluster</a>, for example through <strong>data entry, cataloguing manuscripts and printed editions, or the transcription, edition or translation of texts.
-        </p>
-        <p>This website is part of Phase 1 of the Biblissima project: <a href="https://projet.biblissima.fr/en/project/phase-1-biblissima-observatory">the Biblissima Observatory</a>.</p>
-        <div class="row baobab-screenshots">
-            <div class="col-sm-6">
-                <img alt="screenshot" title="Page d'accueil de Baobab" src="/images/baobab-home.jpg">
-            </div>
-            <div class="col-sm-6">
-                <img alt="screenshot" title="Page de résultats Baobab" src="/images/baobab-results.jpg">
-            </div>
+<div class="main-container container" role="main">
+  <div class="row">
+    <section class="col-sm-12">
+      <div class="my-4">
+
+        <div class="alert alert-info mt-4">
+          <p class="fs-2">About</p>
+          <p class="lead">This site provides access to tools hosted and maintained by the Biblissima+ portal team. To view the complete list of tools developed as part of Biblissima (2012-2021) and Biblissima+ (2021-2029), please refer to the page <a href="https://projet.biblissima.fr/en/ressources/biblissima-resources">Ressources Biblissima</a> du site du projet.</p>
         </div>
+
+        <p class="text-center m-5"><a href="https://projet.biblissima.fr/en/ressources/biblissima-resources?field_resources_type_target_id=35" class="btn btn-lg fs-4"><i class="bi bi-tools"></i>&nbsp; View all tools</a></p>
+
+        <hr />
+
+        <h1 class="text-center mb-5 fs-2">Tools available on this site</h1>
+
+        <div class="row cards-outils">
+          <div class="card">
+            <img src="/images/pseudo-sappho.png" class="card-img-top" alt="visuel Collatinus">
+            <div class="card-body">
+              <h2 class="card-title">Collatinus</h2>
+              <p class="card-text">Tool for lemmatisation and morphological analysis of <strong>Latin texts</strong></p>
+              <p><a href="/en/collatinus" class="card-link">Desktop version (PC, Mac)</a></p>
+              <p><a href="/en/collatinus-web" class="card-link">Online version</a></p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/images/thaleia-muse.png" class="card-img-top" alt="visuel Eulexis">
+            <div class="card-body">
+              <h2 class="card-title">Eulexis</h2>
+              <p class="card-text">Tool for lemmatisation of <strong>Ancient Greek texts</strong></p>
+              <p><a href="/en/eulexis" class="card-link">Desktop version (PC, Mac)</a></p>
+              <p><a href="/en/eulexis-web" class="card-link">Online version</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
-    <div class="row sm-flex outils">
-        <div class="col-sm-4 sm-flex">
-            <div class="well">
-                <a href="/en/collatinus"><img src="/images/pseudo-sappho.png" alt="">
-	                <div class="caption text-center">
-	                    <h2>Collatinus</h2>
-	                    <p>
-	                        Lemmatiser and morphological analyser for Latin texts
-	                        <br> <small>(desktop versions for Mac, Windows, GNU/Linux)</small>
-	                    </p>
-	                </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 sm-flex">
-            <div class="well">
-                <a href="/en/collatinus-web"><img src="/images/pseudo-sappho.png" alt="">
-	                <div class="caption text-center">
-	                    <h2>Collatinus-web</h2>
-	                    <p>
-	                        Online version of Collatinus
-	                    </p>
-	                </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 sm-flex">
-            <div class="well">
-                <a href="/en/eulexis"><img src="/images/thaleia-muse.png" alt="">
-	                <div class="caption text-center">
-	                    <h2>Eulexis</h2>
-	                    <p>
-	                        Lemmatiser for ancient Greek texts
-	                    </p>
-	                </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 sm-flex">
-            <div class="well">
-                <a href="/fr/tei-schemas-bookbindings"><img src="/images/reliure.png" alt="">
-                    <div class="caption text-center">
-                        <h2>TEI Schemas for Bookbindings</h2>
-                        <p>
-                            XML-TEI descriptive schemas for bookbindings and their documentation
-                        </p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
