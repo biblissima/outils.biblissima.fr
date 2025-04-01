@@ -1,6 +1,15 @@
 (function($) {
 	$(function () {
-		$('[data-toggle="tooltip"]').tooltip({container: 'body'});
+
+		// enable BS tooltips
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {html: true}));
+
+    // enable BS popovers
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+		const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
+			html: true,
+		}));
 
 		// simple light box
 		$('.gallery a').simpleLightbox({
@@ -37,21 +46,5 @@
 				return this.defaultValue;
 			});
 		});
-		// var clear = $('<span class="clear-input glyphicon glyphicon-remove"></span>');
-  //   $('.form-lemme input[type="text"]').keyup( function(){
-  //   	//$("#searchclear").toggle(Boolean($(this).val()));
-  //   	//$(this).next('.clear-input').show();
-  //   	$(this).after(clear);
-  //   });
-  //   $('.clear-input').click(function(){
-  //   //   $("#searchinput").val('').focus();
-  //   	$(this).hide();
-  //   	$(this).prev('input[type="text"]').val('');
-  //   });
-  //   // $("#searchclear").toggle(Boolean($("#searchinput").val()));
-  //   // 	$("#searchclear").click(function(){
-  //   //   $("#searchinput").val('').focus();
-  //   //   $(this).hide();
-  //   // });
 	});
 }(jQuery))

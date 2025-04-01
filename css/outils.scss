@@ -3,15 +3,493 @@
 ---
 @charset "utf-8";
 
-/* ----------------------------------------
-== VARIABLES
----------------------------------------- */
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic,700);
 
-$green: #48b089;
+/* VARIABLES
+-------------------------------------------------*/
+/* colors */
+$green: #60BE9B;
+$light-green: #F1F9F6;
 $red: #e75252;
 $grey: #f5f5f5;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$light-gray: #cfd8dc;
+$red: #dc3545;
+$text-color: #343a40;
+$text-hover-color: #000;
+$nav-text-color: $text-color;
+$nav-hover-color: #7DCAAD;
+$btn-hover-color: $nav-hover-color;
+$link-color: #3B9171;
+$blue-bbma: #16232d;
 
-$indent: 175px;
+/* Font, line-height, and color for body text, headings, and more */
+$font-family-sans-serif: "Source Sans Pro",Arial,Helvetica,sans-serif;
+$font-family-serif: "Source Serif Pro", Georgia, Times, serif !default;
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 1rem; /* Assumes the browser default, typically `16px`*/
+$font-size-xxl: $font-size-base * 1.75;
+$font-size-xl: $font-size-base * 1.5;
+$font-size-lg: $font-size-base * 1.25;
+$font-size-md: $font-size-base * 1.125;
+$font-size-sm: $font-size-base * .875;
+$font-size-xs: $font-size-base * .75;
+$line-height-base: 1.5;
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+
+/* GLOBALS
+--------------------------------------------------*/
+body {
+  font-family: $font-family-sans-serif;
+  color: $text-color;
+}
+
+strong {
+  font-weight: bold;
+}
+
+hr {
+  margin: 1.75rem 0;
+}
+
+/* TOP BAR
+--------------------------------------------------*/
+
+.top-bar-bbma {
+  .nav-link {
+    color: #fff;
+    font-size: 1.125rem;
+    padding: .75rem !important;
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+/* HEADER
+--------------------------------------------------*/
+#navbar-main {
+
+  background: $green;
+  font-family: $font-family-serif;
+  padding: 0;
+
+  .navbar-brand {
+      font-family: $font-family-serif;
+      font-variant: small-caps;
+      font-size: $h3-font-size;
+      margin-top: 0.3125rem;
+      margin-bottom: 0.3125rem;
+      padding: 0;
+      color: $nav-text-color;
+  }
+
+  .nav-link {
+    font-size: $font-size-md;
+    padding: .875rem !important;
+    color: $nav-text-color;
+    &:hover {
+      background-color: $nav-hover-color;
+      color: $text-hover-color;
+    }
+  }
+
+  .language-switcher {
+    .nav-link {
+      position: relative;
+      &:first-child {
+        &:after {
+          content: '|';
+          position: absolute;
+          right: -2px;
+          color: $nav-text-color;
+          z-index: 100;
+        }
+      }
+    }
+    .language-link {
+      text-transform: uppercase;
+      color: $nav-text-color;
+      text-decoration: none;
+    }
+  }
+}
+
+/*@include media-breakpoint-up(xl) {
+    #navbar-main .navbar-brand {
+        margin-right: 3rem !important;
+    }
+}*/
+@media (min-width: 1200px) {
+  #navbar-main .navbar-brand {
+    margin-right: 3rem !important;
+  }
+}
+
+/* FORMS
+--------------------------------------------------*/
+
+.forms form {
+  margin: 1.5rem 0;
+  align-items: flex-end;
+}
+
+.form-label {
+  margin: 0 .25rem .25rem 0;
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  border-color: $gray-400 !important;
+  border-radius: 0;
+
+  &:focus {
+    box-shadow: 0 0 0 .25rem rgba(96, 190, 155, .25);
+  }
+}
+
+.form-control {
+  &::placeholder {
+    color: $gray-500;
+  }
+}
+
+.form-check-input {
+  border-color: $gray-400 !important;
+}
+
+form {
+  button {
+    height: 38px;
+  }
+  .btn-outline-danger {
+    background: none;
+    color: $red;
+    border: 1px solid $red;
+    &:hover,
+    &:focus {
+      background: $red !important;
+      color: white;
+      border: 1px solid $red !important;
+    }
+  }
+}
+
+#traitement {
+  .form-select {
+    max-width: 130px;
+  }
+}
+
+.btn-group-traitement {
+  button {
+    margin-right: .25rem;
+  }
+}
+
+.form-check-input {
+  margin-right: .25rem;
+}
+
+@media (max-width: 575.98px) {
+  form {
+    .btn-outline-danger {
+      margin-top: .5rem;
+    }
+    .btn-group-traitement {
+      button {
+        margin-bottom: .5rem;
+      }
+    }
+  }
+}
+
+/* RESULTS
+--------------------------------------------------*/
+
+.results-container {
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 3px solid $green;
+
+  .results-header {
+    width: 100%;
+    border-top: 3px solid $green;
+    z-index: 1000;
+    text-align: center;
+
+    .scrolltop {
+      display: inline-block;
+      font-size: $font-size-md;
+      padding: .375rem .75rem;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, .8);
+      border: 0.9px solid darken($green, 20%) !important;
+      border-top-width: 0 !important;
+      color: darken($green, 20%);
+    }
+  }
+}
+
+#results {
+
+  padding-top: 3rem;
+
+  .attribution {
+    font-size: $font-size-sm;
+    font-style: italic;
+    color: $gray-600;
+  }
+
+  .liste-liens {
+    margin-bottom: 1.5rem;
+  }
+
+  .pager {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      a {
+        background-color: $green;
+        color: $text-color;
+        word-break: break-all;
+        padding: .375rem .75rem;
+        border: none;
+        border-radius: 0px;
+        text-decoration: none;
+
+        &:hover {
+          background: $nav-hover-color !important;
+          color: $text-hover-color;
+          border: none !important;
+        }
+      }
+    }
+  }
+
+  h4 {
+    font-family: $font-family-serif;
+    font-size: $h5-font-size;
+  }
+
+  /*.selectLayoutDiv {
+    display: none;
+  }*/
+
+  #colMots {
+    display: block;
+    background: none;
+    color: #333;
+    padding-left: 0px;
+
+    .glyphicon-list {
+      padding-right: 5px;
+    }
+  }
+
+  /* Eulexis-web */
+
+  .selectLayoutDiv {
+    text-align: right;
+
+    .columnBtn,
+    .rowBtn {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      opacity: .4;
+
+      &.selected {
+        opacity: 1;
+        cursor: default;
+      }
+    }
+
+    .columnBtn {
+      background: transparent url(/images/ui-column-layout.png) left top no-repeat;
+    }
+
+    .rowBtn {
+      background: transparent url(/images/ui-row-layout.png) left top no-repeat;
+    }
+  }
+
+  .table-dicos {
+    display: table;
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    .col {
+      display: table;
+      vertical-align: top;
+
+      &.mots {
+        display: table-cell;
+        .lead {
+          margin: .5rem 0;
+          color: $text-color;
+        }
+      }
+
+      &.dicos {
+        width: 100%;
+        table-layout: fixed;
+        padding: 0 1.5rem;
+      }
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    .row {
+      display: table-row;
+    }
+
+    .column {
+      display: table-cell;
+      width: 33%;
+      vertical-align: top;
+      padding: 0 1.5rem;
+    }
+
+    /* classes bailly 2020 */
+    .pp {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 30px;
+    }
+
+    .rub {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 15px;
+    }
+
+    .norm {
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .entree-dico {
+    margin: 20px 0;
+  }
+
+  table {
+    tbody {
+      tr {
+        &:first-child td {
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+        &:nth-child(2n+1) {
+          td {
+            background-color: $light-gray;
+          }
+        }
+      }
+    }
+  }
+
+  table tbody tr:nth-child(2n+1) td {
+  background-color: #eceded;
+}
+
+  /* workaround to make a clearer distinction between the different tables (see results for conjugate/decline a word) */
+  /* response should be better formatted by collatinus itself, not in css... */
+  .table-responsive~p {
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 1.1em;
+  }
+
+  #colMots {
+    display: none;
+  }
+
+  .mots {
+    a {
+      text-decoration: none;
+      list-style: none;
+    }
+  }
+}
+
+
+/* CONTENT BOTTOM
+-------------------------------------------------*/
+
+.content-bottom {
+  background-color: $light-gray;
+  padding: 1.5rem 0;
+  margin-top: 1.5rem;
+  color: $gray-700;
+}
+
+
+/* FOOTER
+-------------------------------------------------*/
+
+.footer {
+  background-color: $blue-bbma;
+  font-size: $font-size-sm;
+  padding: 1rem 0;
+
+  .region-footer {
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      margin: 1rem 0;
+      padding: 0 1rem;
+      border-left: .9px solid $gray-600;
+    }
+
+    p {
+      color: $gray-500;
+    }
+
+    .nav-item {
+      font-family: $font-family-serif;
+      padding-bottom: .25rem;
+    }
+
+    .icons-rs a {
+      font-size: $font-size-xxl;
+      margin-right: 1.5rem;
+    }
+
+    .title-block-footer {
+      font-family: $font-family-serif;
+      font-size: 1rem;
+    }
+  }
+}
+
+
 
 /* ----------------------------------------
 == TEMPORAIRES
@@ -28,95 +506,9 @@ $indent: 175px;
 == GLOBALS
 ---------------------------------------- */
 
-h1 {
-  small {
-    display: block;
-    line-height: 1.2;
-  }
-}
-
 dt {
   font-size: 1.2em;
   margin: 30px 0 15px 0
-}
-
-span.caret {
-  display: inline-block;
-}
-
-.tooltip {
-  display: block !important;
-
-  .tooltip-inner {
-    border-radius: 0;
-  }
-}
-
-.form-lemme {
-select {
-    min-width: 122px;
-  }
-
-  input[type="search"] {
-  	appearance: auto;
-
-  	&::-webkit-search-cancel-button {
-  		color: $green;
-  		appearance: auto;
-  		-moz-appearance: auto;
-  		-webkit-appearance: auto;
-  	}
-  }
-}
-
-.form-traitement {
-	display: flex;
-	flex-direction: column;
-
-	.form-flex {
-		display: flex;
-    	flex-direction: row;
-    	justify-content: space-between;
-	}
-}
-
-form {
-  padding: 15px 0px;
-
-  .form-control {
-    &:focus {
-      border-color: $green;
-    }
-  }
-
-  label {
-    display: inline-block;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    font-weight: 600;
-
-    &[for="recherche_lemme"],
-    // Collatinus web
-    &[for="flexion_lemme"],
-    &[for="traitement_texte"] {
-      width: 137px;
-      vertical-align: middle;
-    }
-  }
-
-  select {
-    display: inline-block;
-    width: auto;
-    height: 40px;
-  }
-
-  .btn {
-    height: 40px;
-  }
-
-  textarea {
-    margin-bottom: 10px;
-  }
 }
 
 table.table {
@@ -124,7 +516,7 @@ table.table {
     background: $green;
 
     th {
-      color: #FFF;
+      color: #000;
       white-space: nowrap;
     }
   }
@@ -136,16 +528,6 @@ table.table {
 
       a {
         vertical-align: middle;
-      }
-    }
-
-    .debian-logo {
-      text-align: center;
-      vertical-align: middle;
-
-      img {
-        display: block;
-        margin: 0 auto;
       }
     }
   }
@@ -178,57 +560,94 @@ table.table {
   }
 }
 
-.indent {
-  padding-left: $indent;
+.tab-content {
+  margin-bottom: 3.5rem;
 }
 
-input[type="checkbox"]+label {
-  margin-right: 5px;
-}
+.card-quote {
+  display: flex;
+  background-color: $light-green;
+  border-color: $green;
+  margin-top: 1rem;
 
-.news {
-  font-weight: 300;
-  padding: 24px;
-  margin: 15px 0;
-
-  p:last-child {
-    margin-bottom: 0;
+  .icon-quote {
+    font-size: 3.5rem;
+    align-content: center;
+    margin-right: .875rem;
+    color: $gray-700;
+  }
+  .text-quote {
+    h3 {
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 0 !important;
+      color: $gray-600;
+    }
   }
 }
 
-.well {
-  margin-top: 30px;
+/* BUTTONS & LINKS
+-------------------------------------------------*/
+
+.main-container a {
+  &:not(.btn) {
+    color: $link-color;
+    border-bottom: .9px solid $link-color;
+    text-decoration: none;
+    &:hover {
+      border-bottom: 2px solid $link-color;
+    }
+  }
+  &:has(img),
+  &:has(i) {
+    border-bottom: none !important;
+  }
 }
 
-/* ----------------------------------------
-== BOUTONS & LIENS 
----------------------------------------- */
+.content-bottom {
+  a {
+    color: $gray-700;
+    text-decoration: none;
+    border-bottom: .9px solid $gray-700;
+    &:hover {
+      border-bottom: 2px solid $gray-700;  
+    }
+  }
+}
+
+.footer {
+  a {
+    color: $gray-500;
+    text-decoration: none;
+    &:hover {
+      color: $green;
+    }
+  }
+}
 
 .btn {
   background-color: $green;
-  color: #FFF;
+  color: $text-color;
   white-space: normal;
   margin: 0;
+  border: none;
+  border-radius: 0;
 
   &:hover,
   &:focus,
   &:active,
   &.focus {
     opacity: 1;
-    background: lighten($green, 7%);
-    color: #FFF;
-  }
-
-  .fa {
-    font-size: 1.1em;
-    padding-right: 7px;
-    vertical-align: middle;
+    background: $btn-hover-color !important;
+    color: $text-hover-color;
+    border: none !important;
   }
 
   &.btn-clear {
     background: none;
-    border:  1px solid $red;
-    color:  $red;
+    border: 1px solid $red;
+    color: $red;
   }
 
   &.btn-danger[disabled="disabled"],
@@ -248,70 +667,6 @@ input[type="checkbox"]+label {
   }
 }
 
-/* ----------------------------------------
-==== HEADER
----------------------------------------- */
-
-.navbar {
-  background: $green;
-
-  .lead {
-    color: #fff;
-  }
-
-  .tool-box-bloc {
-    border: none;
-    padding: 0px;
-
-    a {
-      color: #FFF;
-    }
-  }
-
-  .menu-biblissima {
-    li {
-      a {
-
-        &.active,
-        &:hover {
-          color: $green;
-        }
-      }
-    }
-  }
-
-  .header__icon.navbar-toggle {
-    .icon-bar {
-      background: #FFF;
-    }
-  }
-
-  .langue-box ul li {
-    border-color: #FFF;
-
-    a {
-      color: #FFF;
-    }
-  }
-}
-
-/* ----------------------------------------
-==== CONTENT BOTTOM
----------------------------------------- */
-
-.content-bottom {
-  .license {
-
-    img {
-      padding-right: 10px;
-    }
-  }
-
-  .glyphicon-envelope {
-    vertical-align: middle;
-    padding-right: 7px;
-  }
-}
 
 /* ----------------------------------------
 ==== BANNER + GENERAL STYLES + COLLATINUS
@@ -320,23 +675,36 @@ input[type="checkbox"]+label {
 .top-banner {
   background: url(/images/bg-collatinus.jpg) no-repeat center center;
   background-size: cover;
-  padding: 105px 0px 30px 0;
-  min-height: 291px; // égal à collatinus en desktop
+  padding-bottom: 30px;
+  height: 300px; /* égal à collatinus en desktop */
 
-  .banner-image {
-    background: url(/images/pseudo-sappho.png) no-repeat;
-    height: 275px;
+  .container {
+    height: 100%;
   }
 
   .banner-content {
-    h1 {
-      font-size: 54px;
-      line-height: 54px;
-      color: #FFF;
-      margin: 0px 0px 10px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 
-      small {
+    .page-identity {
+      text-shadow: 1px 1px 3px rgba(0,0,0,.65);
+
+      .page-name {
+        font-family: $font-family-serif;
+        font-size: 3.5rem;
+        font-weight: 600;
         color: #FFF;
+        margin: 0px 0px 10px;
+
+        .page-slogan {
+          font-family: $font-family-sans-serif;
+          font-size: $h5-font-size;
+          font-weight: normal;
+          display: block;
+          margin-top: .5rem;
+        }
       }
     }
 
@@ -349,74 +717,51 @@ input[type="checkbox"]+label {
       margin-bottom: 0;
     }
 
-    .text-right {
-      //boutons
-      align-self: flex-end;
-    }
-
     .buttons-container {
       display: inline-block;
-      width: 300px;
+      max-width: 320px;
+      min-width: 290px;
 
       .btn-group {
         width: 100%;
 
-        .btn {
-          z-index: 10;
-          margin: 0;
+        .dropdown-toggle {
+          &.show {
+            background: $btn-hover-color;
+          }
         }
 
-        /*.dropdown-toggle {
-					width: 35px;
-					position: absolute;
-					top: 0;bottom: 0;right: 0;
-					box-shadow: none;
-					border-left: solid 1px darken($green, 5%);
-					outline: 0;
-				}*/
         .dropdown-menu {
           background: $green;
           border: none;
           border-radius: 0;
-          width: 100%;
           padding: 0;
           margin: 0;
-          border-top: solid 1px darken($green, 5%);
+          width: 100%;
 
           li {
-            border-bottom: solid 1px darken($green, 5%);
-
             a {
-              background: none;
-              color: #FFF;
-              text-decoration: none;
-              padding: 5px 20px;
-
               &:hover {
                 background: lighten($green, 5%);
               }
             }
           }
 
-          .divider {
-            border: none;
-            margin: 0;
+          .dropdown-divider {
+            border-top: solid 1px darken($green, 30%);
           }
         }
       }
 
       .btn {
         width: 100%;
-        margin-top: 10px;
+        margin-bottom: .5rem;
       }
     }
   }
 }
 
 .region-content {
-  .intro {
-    margin: 30px 0;
-  }
 
   h2 {
     border: none;
@@ -433,126 +778,13 @@ input[type="checkbox"]+label {
   }
 }
 
-.forms {
-  margin-bottom: 30px;
-}
 
-.results-container {
-  margin-bottom: 40px;
-
-  .results-header {
-    width: 100%;
-    top: 0;
-    border-top: 3px solid rgba(72, 176, 137, .85);
-    z-index: 1000;
-
-    .scroll-form {
-      display: block;
-      margin: 0 auto;
-      font-size: 1.15em;
-      box-shadow: 2px 2px 2px -2px rgba(0, 0, 0, 0.5);
-      background-color: rgba(72, 176, 137, .85);
-
-      .glyphicon {
-        margin-right: 5px;
-      }
-    }
-  }
-}
-
-#results {
-  /*border: 1px dashed #48b089;
-	border-top: 0;*/
-  padding: 20px 0;
-
-  > ul:first-child {
-    border-bottom: 3px solid rgba(72, 176, 137, .85);
-    padding: 0 20px 20px 20px;
-    margin-left: 0;
-    text-indent: 0;
-  }
-
-  h4 {
-  	font-family: Georgia, serif;
-  }
-
-  img {
-    display: block;
-    margin: 0 auto;
-  }
-
-  .attribution {
-    font-size: .85em;
-    margin-top: 30px;
-    font-style: italic;
-  }
-
-  .entree-dico {
-    margin: 20px 0;
-  }
-
-  .pager {
-    margin-left: 0;
-    text-indent: 0;
-
-    li {
-      &:before {
-        content: none;
-      }
-
-      a {
-        background: $green;
-        border: none;
-        border-radius: 0px;
-        color: #FFF;
-        text-decoration: none;
-      }
-    }
-  }
-
-  table {
-    tbody {
-      tr {
-        &:first-child td {
-          font-weight: bold;
-        }
-      }
-    }
-  }
-
-  /* workaround to make a clearer distinction between the different tables (see results for conjugate/decline a word) */
-  /* response should be better formatted by collatinus itself, not in css... */
-  .table-responsive~p {
-    font-weight: bold;
-    margin-top: 15px;
-    font-size: 1.1em;
-  }
-
-  #colMots {
-    display: none;
-  }
-
-  .mots {
-    a {
-      text-decoration: none;
-      list-style: none;
-
-      .lead {
-        color: $green;
-        padding-left: 10px;
-      }
-    }
-  }
-}
 
 .nav-pills {
-  margin-top: 20px;
-  text-align: center;
-  border-bottom: solid 1px #48b089;
+  border-bottom: solid 1px $green;
 
   li {
-    padding: 0 5px;
-
+    margin-right: .75rem;
     &:first-child {
       padding-left: 0;
     }
@@ -561,35 +793,27 @@ input[type="checkbox"]+label {
       padding-right: 0;
     }
 
-    &.active {
-
-      a,
-      a:hover,
-      a:active,
-      a:focus {
-        background: $green;
-      }
-    }
-
-    a {
-      background: none;
-      padding: 10px 10px;
+    .nav-link {
       border-radius: 0;
-      color: #333;
-      text-decoration: none;
+      color: $text-color;
       white-space: nowrap;
       font-weight: 600;
-      font-size: 1.1em;
+      font-size: $font-size-md;
+      border: none !important;
 
+      &.active,
       &:hover,
       &:active,
       &:focus {
-        background: lighten($green, 20%);
-        color: #FFF;
-        opacity: 1;
+        background: $nav-hover-color;
+        color: $nav-text-color;
       }
     }
   }
+}
+
+.tab-pane {
+  margin: 1.5rem 0;
 }
 
 /* ----------------------------------------
@@ -644,123 +868,11 @@ body.navbar-is-fixed-top.scroll-demo {
   }
 }
 
-.collatinus-web,
-.eulexis,
-.eulexis-web {
-  .top-banner {
-    padding-top: 147px;
-  }
-}
-
 .eulexis,
 .eulexis-web {
   .top-banner {
     background: url(/images/bg-eulexis.jpg) no-repeat;
     background-size: cover;
-  }
-
-  .region-content {
-    >p:first-child {
-      margin-bottom: 5px;
-    }
-  }
-
-  form {
-
-    label[for="recherche_lemme"],
-    label[for="flexion_lemme"],
-    label[for="lemmatiser_texte"] {
-      width: calc(#{$indent} - 2px);
-    }
-
-    input[type="text"] {
-      max-width: 310px;
-    }
-  }
-
-  .selectLayoutDiv {
-    text-align: right;
-
-    .columnBtn,
-    .rowBtn {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      margin-right: 5px;
-      opacity: .4;
-
-      &.selected {
-        opacity: 1;
-        cursor: default;
-      }
-    }
-
-    .columnBtn {
-      background: transparent url(/images/ui-column-layout.png) left top no-repeat;
-    }
-
-    .rowBtn {
-      background: transparent url(/images/ui-row-layout.png) left top no-repeat;
-    }
-  }
-
-  .table-dicos {
-    display: table;
-    width: 100%;
-
-    .col {
-      display: table;
-      vertical-align: top;
-
-      &.mots {
-        display: table-cell;
-
-        .lead {
-          margin: 5px 0;
-        }
-      }
-
-      &.dicos {
-        width: 100%;
-        table-layout: fixed;
-        padding: 0 15px;
-      }
-
-      h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-      }
-    }
-
-    .row {
-      display: table-row;
-      margin: 0;
-    }
-
-    .column {
-      display: table-cell;
-      width: 33.33333333%;
-      vertical-align: top;
-      padding: 0 15px;
-    }
-
-    /* classes bailly 2020 */
-    .pp {
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-left: 30px;
-    }
-
-    .rub {
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-left: 15px;
-    }
-
-    .norm {
-      margin-top: 5px;
-      margin-bottom: 0;
-    }
   }
 }
 
@@ -768,69 +880,32 @@ body.navbar-is-fixed-top.scroll-demo {
   background-color: #FFFBCC;
 }
 
-/* ----------------------------------------
-==== RELIURE
----------------------------------------- */
 
-.schemas-reliure {
-  .top-banner {
-    background: url(/images/bg-reliure.jpg) no-repeat;
-    background-size: cover;
-    padding-top: 147px;
-  }
-}
-
-/* ----------------------------------------
-==== OUTILS EDITION
----------------------------------------- */
-
-.outils-edition {
-  .top-banner {
-    background: url(/images/bg-outils-xml.jpg) no-repeat;
-    background-size: cover;
-    padding-top: 165px;
-  }
-
-  .nav-justified {
-    display: flex;
-
-    li {
-      width: auto;
-      display: block;
-
-      a {
-        white-space: normal;
-      }
-    }
-  }
-}
-
-
-/* ----------------------------------------
-==== HOME
----------------------------------------- */
+/* HOME
+-------------------------------------------------*/
 
 .home {
-  .baobab-screenshots {
-    margin: 20px -15px 40px;
+  .cards-outils {
+    column-gap: 5rem;
+    row-gap: 2.5rem;
+    justify-content: center;
   }
-
-  .outils {
-    a {
-      text-decoration: none;
-      display: block;
-      text-align: center;
-
-      img {
-        width: 275px;
-      }
-
-      h2 {
-        margin-top: 10px;
-      }
-    }
+  .card {
+    border: none !important;
+    text-align: center;
+    background-color: $grey;
+    padding: .5rem;
+    width: 300px;
   }
+  .card-link {
+    font-weight: 600;
+  }  
 }
+
+
+/* MEDIA QUERIES
+-------------------------------------------------*/
+
 
 @media (min-width: 992px) {
   .form-traitement {
@@ -841,20 +916,6 @@ body.navbar-is-fixed-top.scroll-demo {
 }
 
 @media (max-width: 991px) {
-  .collatinus-web {
-    .banner-content {
-      h1 {
-        font-size: 46px;
-      }
-    }
-
-    label {
-      &[for="dicos"] {
-        width: 137px;
-        vertical-align: middle;
-      }
-    }
-  }
 
   .eulexis {
     form {
@@ -875,6 +936,15 @@ body.navbar-is-fixed-top.scroll-demo {
 @media (min-width: 768px) {
   .form-inline .form-group {
     margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 580px) {
+  .form-traitement .form-flex {
+    flex-direction: column;
+    > div {
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -901,26 +971,7 @@ body.navbar-is-fixed-top.scroll-demo {
     }
   }
 
-  .collatinus-web,
-  .eulexis {
-    .top-banner {
-      padding: 70px 0px 30px;
-    }
-
-    form {
-      label {
-        width: auto;
-        padding-right: 10px;
-      }
-    }
-
-    .form-group {
-      margin-bottom: 5px;
-    }
-  }
-
   .top-banner {
-    padding: 30px 0;
 
     .banner-content {
       h1 {
@@ -957,96 +1008,5 @@ body.navbar-is-fixed-top.scroll-demo {
       background-position-x: 40%;
     }
   }
-
-  #results {
-    .pager {
-      position: relative;
-      margin-top: 30px;
-
-      &:first-child {
-        //pagination du haut
-        margin-top: 20px;
-        margin-bottom: 45px;
-
-        .lead {
-          top: 50px;
-        }
-      }
-
-      li {
-        display: block;
-        float: left;
-        width: 48%;
-
-        &.next {
-          margin-left: 4%;
-        }
-
-        &.lead {
-          width: 100%;
-          position: absolute;
-          top: -25px;
-        }
-
-        a {
-          display: block;
-          width: 100%;
-          word-break: break-all;
-        }
-      }
-    }
-
-    .selectLayoutDiv {
-      display: none;
-    }
-
-    #colMots {
-      display: block;
-      background: none;
-      color: #333;
-      padding-left: 0px;
-
-      .glyphicon-list {
-        padding-right: 5px;
-      }
-    }
-
-    .table-dicos {
-      display: block;
-      margin-top: 10px;
-      border-top: solid 1px #666;
-      border-bottom: solid 1px #666;
-
-      .col {
-        display: block;
-        padding: 0;
-      }
-
-      .mots {
-        max-height: 0;
-        overflow-y: hidden;
-        transition: .4s ease;
-
-        &.open {
-          max-height: 555px;
-        }
-      }
-
-      .dicos {
-        padding-top: 15px;
-
-        .row,
-        .column {
-          display: block;
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .outils-edition {
-    .nav-pills {
-      display: block;
-    }
-  }
 }
+

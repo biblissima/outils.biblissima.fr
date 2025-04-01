@@ -9,4 +9,4 @@ categories: [pages]
 layout: eulexis-web
 ---
 
-{% include eulexis-web.html %}
+{% include eulexis-web.php %}

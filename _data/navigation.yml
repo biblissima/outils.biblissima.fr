@@ -1,10 +1,5 @@
 fr:
 -
-  name: Baobab
-  name_short: Baobab
-  desc: Boîte à outils Biblissima
-  url: /fr/
--
   name: Collatinus
   name_short: Collatinus
   desc: Lemmatiseur et analyseur morphologique de textes latins
@@ -15,12 +10,6 @@ fr:
   desc: Version web du lemmatiseur et analyseur morphologique de textes latins
   category: collatinus-web
   url: /fr/collatinus-web/
--
-  name: Praelector
-  name_short: Praelector
-  desc: Assistant de lecture du latin
-  category: praelector
-  url: /fr/praelector/
 - 
   name: Eulexis
   name_short: Eulexis
@@ -31,22 +20,7 @@ fr:
   name_short: Eulexis-web
   desc: Version en ligne du lemmatiseur de textes grecs
   url: /fr/eulexis-web/
-- 
-  name: Schémas TEI reliure
-  name_short: Schémas TEI reliure
-  desc: Les schémas de description XML-TEI des reliures et leur documentation, utilisés pour la constitution de la base des reliures numérisées de la BnF
-  url: /fr/schemas-tei-reliure/
-- 
-  name: Outils d'édition XML (TEI et EAD)
-  name_short: Outils d'édition XML
-  desc: Outils XML pour travailler sur les documents anciens (édition scientifique de sources historiques en TEI, catalogage de manuscrits et imprimés en EAD, publication électronique)
-  url: /fr/outils-edition-xml/
 en:
--
-  name: Baobab
-  name_short: Baobab
-  desc: Boîte à outils Biblissima
-  url: /en/
 -
   name: Collatinus
   name_short: Collatinus
@@ -58,12 +32,6 @@ en:
   desc: Online lemmatiser and morphological analyser of Latin texts
   category: collatinus-web
   url: /en/collatinus-web/
--
-  name: Praelector
-  name_short: Praelector
-  desc: Latin reading assistant
-  category: praelector
-  url: /en/praelector/
 - 
   name: Eulexis
   name_short: Eulexis
@@ -74,13 +42,3 @@ en:
   name_short: Eulexis-web
   desc: Online Lemmatiser for ancient Greek texts
   url: /en/eulexis-web/
-- 
-  name: TEI Schemas for Bookbindings
-  name_short: TEI Schemas for Bookbindings
-  desc: XML-TEI descriptive schemas for bookbindings and their documentation, as used in the BnF's database of digitised bookbindings
-  url: /en/tei-schemas-bookbindings/
-- 
-  name: XML Editing Tools (TEI and EAD)
-  name_short: XML Editing Tools
-  desc: Tools and environments to work in XML on ancient documents (digital edition of historical sources in TEI, cataloguing of manuscripts and printed books in EAD, electronic publishing)
-  url: /en/xml-editing-tools/

@@ -9,7 +9,10 @@ categories: [pages]
 layout: default-banner
 id_stat: 5
 ---
+
 <?php 
+date_default_timezone_set('Europe/Paris');
+$formatter = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
 
 // détection mobile
 require_once ($_SERVER['DOCUMENT_ROOT']. '/libs/Mobile_Detect.php');
@@ -37,7 +40,7 @@ elseif ( $os == 'mac') {
 
 // construction des liens de download
 $version = '11.2';
-$version_txt = '11.2';
+$version_txt = '11.2.0';
 $prev_version = '11.1';
 //$link_prefix = './index.php?file=Collatinus_';
 $link_prefix = 'https://sharedocs.huma-num.fr/wl/?id=NXicQKuXHYB3M9ZHqhI3zAUuFKZzflKU&path=';
@@ -59,50 +62,50 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 
 <section class="top-banner">
 	<div class="container">
-		<div class="banner-content row sm-flex">
-			<div class="col-sm-7 col-md-8">
-				<h1>Collatinus <small><?php echo $version_txt; ?></small></h1>
-				<h2>Lemmatiseur et analyseur <br/>morphologique de textes latins</h2>
+		<div class="banner-content row">
+			<div class="page-identity col-sm-7 col-md-8">
+				<h1 class="page-name">Collatinus <small><?php echo $version_txt; ?></small>
+					<span class="page-slogan">
+						Lemmatiseur et analyseur <br/>morphologique de textes latins
+					</span>
+				</h1>
 			</div>
-		    <div class="col-sm-5 col-md-4 text-right">
-		    	<div class="buttons-container">
-
-				    <?php if( !$detect->isMobile() ): ?>
-
-				    <div class="btn-group">
-				    	<?php if ($os == 'mac'): ?>
-				    		<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-apple"></span>Télécharger pour <?php echo $oslabel ?> <span class="caret"></span></button>
+		  <div class="col-sm-5 col-md-4 text-sm-end">
+		    <div class="buttons-container">
+					<?php if( !$detect->isMobile() ): ?>
+				  	<div class="btn-group" role="group">
+				    <?php if ($os == 'mac'): ?>
+				    	<button type="button" class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-apple"></i> Télécharger pour <?php echo $oslabel ?></button>
 				    	<?php elseif ($os == 'win'): ?>
-				    		<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-windows"></span>Télécharger pour <?php echo $oslabel ?> <span class="caret"></span></button>
+				    	<button type="button" class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-windows"></i> Télécharger pour <?php echo $oslabel ?></button>
 				    	<?php elseif($os == 'linux'): ?>
-				    		<button type="button" class="btn btn-lg" href="https://packages.ubuntu.com/cosmic/collatinus" data-toggle="tooltip" data-placement="bottom" data-original-title="Disponible dans les dépôts Universe d'Ubuntu 18.10 (Cosmic). Pour Debian : disponible uniquement dans les dépôts unstable (sid)"><span class="fa fa-linux"></span>Paquet disponible pour Ubuntu/Debian</button>
+				    		<a class="btn btn-lg" href="https://packages.ubuntu.com/collatinus" data-bs-toggle="tooltip" data-placement="bottom" data-original-title="Disponible dans les dépôts Ubuntu et Debian"><i class="bi bi-ubuntu"></i> Paquet Ubuntu/Debian</a>
 						<?php endif; ?>
 
-				    	<!-- <button class="btn btn-lg dropdown-toggle" data-toggle="dropdown" aria-exanded="false"><span class="caret"><span class="sr-only">Toggle Dropdown</span></span></button> -->
+				    	<!-- <button class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-exanded="false"><span class="caret"><span class="sr-only">Toggle Dropdown</span></span></button> -->
 					    <ul class="dropdown-menu">
 					    <?php if ($os == 'mac'): ?>
-					    	<li><a href="<?php echo $link_full.$ext; ?>"><?php echo $label_full ?></a></li>
-					    	<li><a href="<?php echo $link_medium.$ext; ?>"><?php echo $label_medium ?></a></li>
-					    	<li><a href="<?php echo $link_mini.$ext; ?>"><?php echo $label_mini ?></a></li>
+					    	<li><a class="dropdown-item" href="<?php echo $link_full.$ext; ?>"><?php echo $label_full ?></a></li>
+					    	<li><a class="dropdown-item" href="<?php echo $link_medium.$ext; ?>"><?php echo $label_medium ?></a></li>
+					    	<li><a class="dropdown-item" href="<?php echo $link_mini.$ext; ?>"><?php echo $label_mini ?></a></li>
 					    <?php elseif ($os == 'win'): ?>
-					    	<li><a href="<?php echo $link_full."_win64".$ext; ?>"><?php echo $label_full ?> - 64 bits</a></li>
-					    	<li><a href="<?php echo $link_medium."_win64".$ext; ?>"><?php echo $label_medium ?> - 64 bits</a></li>
-					    	<li><a href="<?php echo $link_mini."_win64".$ext; ?>"><?php echo $label_mini ?> - 64 bits</a></li>
-					    	<li role="separator" class="divider"></li>
-					    	<li><a href="<?php echo $link_full."_win32".$ext; ?>"><?php echo $label_full ?> - 32 bits</a></li>
-					    	<li><a href="<?php echo $link_medium."_win32".$ext; ?>"><?php echo $label_medium ?> - 32 bits</a></li>
-					    	<li><a href="<?php echo $link_mini."_win32".$ext; ?>"><?php echo $label_mini ?> - 32 bits</a></li>
+					    	<li><a class="dropdown-item" href="<?php echo $link_full."_win64".$ext; ?>"><?php echo $label_full ?> - 64 bits</a></li>
+					    	<li><a class="dropdown-item" href="<?php echo $link_medium."_win64".$ext; ?>"><?php echo $label_medium ?> - 64 bits</a></li>
+					    	<li><a class="dropdown-item" href="<?php echo $link_mini."_win64".$ext; ?>"><?php echo $label_mini ?> - 64 bits</a></li>
+					    	<li><hr class="dropdown-divider"></li>
+					    	<li><a class="dropdown-item" href="<?php echo $link_full."_win32".$ext; ?>"><?php echo $label_full ?> - 32 bits</a></li>
+					    	<li><a class="dropdown-item" href="<?php echo $link_medium."_win32".$ext; ?>"><?php echo $label_medium ?> - 32 bits</a></li>
+					    	<li><a class="dropdown-item" href="<?php echo $link_mini."_win32".$ext; ?>"><?php echo $label_mini ?> - 32 bits</a></li>
 					    <?php endif; ?>
 					    </ul>
 				    </div>
 
 					<?php else: ?>
-						<button class="btn btn-lg btn-danger" type="button" disabled="disabled">Pas de version disponible pour votre système</button>
+						<button class="btn btn-lg btn-warning" type="button" disabled>Pas de version disponible pour votre système</button>
 					<?php endif; ?>
 
-			    <div class="clearfix"></div>
-	    		<a href="https://github.com/biblissima/collatinus" class="btn btn-lg"><span class="fa fa-github"></span>Collatinus sur Github</a>
-	    		<a href="/fr/collatinus-web" class="btn btn-lg" data-toggle="tooltip" data-placement="bottom" data-original-title="Utilise la version 11.2 de Collatinus">Tester la version web</a>
+	    		<a href="https://github.com/biblissima/collatinus" class="btn btn-lg"><i class="bi bi-github"></i> Code source sur Github</a>
+	    		<a href="/fr/collatinus-web" class="btn btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Utilise la version 11.2 de Collatinus">Tester la version en ligne</a>
 		    </div>
 		  </div>
 		</div>
@@ -111,19 +114,32 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 
 <div class="main-container container" role="main">
 	<div class="row">
-	    <section class="col-sm-12">
-			<div class="region region-content">
-				<ul class="nav nav-pills nav-justified" id="collatinusTabs" role="tablist">
-					<li role="presentation" class="active"><a href="#presentation" aria-controls="presentation" role="tab">Présentation</a></li>
-					<li role="presentation"><a href="#news" aria-controls="news" role="tab">Nouveautés</a></li>
-					<li role="presentation"><a href="#screenshots" aria-controls="screenshots" role="tab">Captures d'écran</a></li>
-					<li role="presentation"><a href="#downloads" aria-controls="downloads" role="tab">Téléchargements</a></li>
-					<li role="presentation"><a href="#faq" aria-controls="faq" role="tab">FAQ</a></li>
-					<li role="presentation"><a href="#credits" aria-controls="credits" role="tab">Crédits</a></li>
+		<section class="col-sm-12">
+			<div class="my-4">
+				<ul class="nav nav-pills nav-justified flex-column flex-md-row" id="collatinusTabs" role="tablist">
+					<li class="nav-item" role="presentation">
+						<a class="nav-link active" href="#presentation" aria-controls="presentation" role="tab">Présentation</a>
+					</li>
+					<li class="nav-item" role="presentation">
+						<a class="nav-link" href="#news" aria-controls="news" role="tab">Nouveautés</a>
+					</li>
+					<li class="nav-item" role="presentation">
+						<a class="nav-link" href="#screenshots" aria-controls="screenshots" role="tab">Captures d'écran</a>
+					</li>
+					<li class="nav-item" role="presentation">
+						<a class="nav-link" href="#downloads" aria-controls="downloads" role="tab">Téléchargements</a>
+					</li>
+					<li class="nav-item" role="presentation">
+						<a class="nav-link" href="#faq" aria-controls="faq" role="tab">FAQ</a>
+					</li>
+					<li class="nav-item" role="presentation">
+						<a class="nav-link" href="#credits" aria-controls="credits" role="tab">Crédits</a>
+					</li>
 				</ul>
+
 				<div class="tab-content">
-					<section role="tabpanel" class="tab-pane active fade in" id="presentation">
-						<h1>Présentation</h1>
+					<section role="tabpanel" class="tab-pane fade show active" id="presentation">
+						<h2>Présentation</h2>
 						<p class="lead">
 							Collatinus est une application libre, gratuite et multi-plateforme (Mac, Windows, Ubuntu et Debian GNU/Linux), simple à installer et facile à utiliser.
 						</p>
@@ -133,17 +149,17 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 						<p>
 							En pratique, il est utile surtout au professeur de latin, qui peut ainsi très rapidement, à partir d’un texte hors-manuel, distribuer à ses élèves un texte inédit avec son aide lexicale. Les élèves s’en servent souvent pour lire plus facilement le latin lorsque leurs connaissances lexicales et morphologiques sont encore insuffisantes.
 						</p>
-						<h2>Principales fonctionnalités</h2>
+						<h3>Principales fonctionnalités</h3>
 			    	<ul>
 			    	    <li>lemmatisation de mots latins ou d'un texte latin entier,</li>
 			    	    <li>traduction des lemmes grâce aux dictionnaires de latin incorporés dans l'application,</li>
 			    	    <li>affichage des quantités (durée longue ou brève des syllabes) et des flexions (déclinaison ou conjugaison).</li>
 			    	</ul>
-			    	<h2>Aide</h2>
+			    	<h3>Aide</h3>
             <p><a href="/fr/collatinus/aide/" target="_blank" rel="noreferrer noopener">Consultez l'aide en ligne</a></p>
 
-				    <div class="well">
-				    	<h2>Atouts de Collatinus</h2>
+				    <div class="alert alert-light">
+				    	<h3>Atouts de Collatinus</h3>
 				    	<ul>
 				    		<li>efficacité de la lemmatisation (~1000 mots/s. ; dépend bien sûr de la machine sur laquelle le programme tourne),</li>
 				    		<li>lemmes extraits du <em>Lewis & Short 1879</em> et du <em>Gaffiot 2016</em> (avec l'autorisation de l'auteur) avec les traductions en anglais et en français. Collation avec ceux issus du <em>Georges 1913</em> et du <em>Jeanneau 2017</em> (avec l'autorisation de l'auteur),</li>
@@ -159,7 +175,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 				    		<li>code source du logiciel organisé en modules de manière à faciliter le développement d'applications plus spécifiques</li>
 				    	</ul>
 
-				    	<h2>Historique</h2>
+				    	<h3>Historique</h3>
 							<p>Collatinus était destiné, à l'origine, à produire des documents sur papier, et c'est encore souvent dans ce but que je l'utilise. J'ai commencé à le perfectionner quand je me suis aperçu que de nombreux utilisateurs s'en servaient à d'autres fins :</p>
 							<ol>
 							    <li>disposer, lorsqu'on lit un texte latin, d'une aide lexicale et morphologique immédiate et discrète,</li>
@@ -167,7 +183,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							    <li>donner aux élèves des tâches d'identification, de relevé, de transformation.</li>
 							</ol>
 
-							<h2>Principes de fonctionnement</h2>
+							<h3>Principes de fonctionnement</h3>
 							<p>Contrairement à la majorité des lemmatiseurs qui utilisent une liste de formes fléchies, Collatinus utilise un lexique contenant les lemmes et les informations nécessaires pour leur flexion. L'avantage est qu'avec 11 000 lemmes, Collatinus est capable de reconnaître plus d'un demi-million de formes. L'ajout du lemme correspondant à une variante orthographique (médiévale, par exemple) permettrait également de reconnaître toutes ses formes fléchies.</p>
 							<p>A partir du lemme et des désinences qui lui sont associées, Collatinus peut aussi donner des tableaux de flexion qui peuvent être utiles lors de l'apprentissage du latin.</p>
 							<p>Enfin, lorsque les quantités sont connues pour le lemme, Collatinus peut scander le mot et par là même tout un texte. Lorsqu'il scande un texte, Collatinus applique les règles habituelles d'allongement et d'élision.</p>
@@ -175,8 +191,9 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							<p>Le lexique a d'abord été constitué au fil des années par les utilisateurs de Collatinus. Il a ensuite été complété par un dépouillement systématique des dictionnaires numériques (qui sont par ailleurs consultables dans Collatinus). Il compte environ 82 000 lemmes (et probablement quelques erreurs et de nombreux doublons, en particulier avec les formes grecques en -os qui coexistent avec la forme latinisée en -us). Afin d'optimiser le temps de chargement du programme, le lexique a été divisé en deux parties inégales. Le lexique de base compte environ 24 000 lemmes et devrait permettre de lemmatiser une bonne partie de la littérature classique. L'extension du lexique (58 000 lemmes) contient pour sa part des mots peu usités. Bien évidemment, le programme peut encore achopper sur les mots les plus rares ou sur les formes irrégulières.</p>
 				    </div>
 					</section>
+
 					<section role="tabpanel" class="tab-pane fade" id="news">
-						<h1>Nouveautés</h1>
+						<h2>Nouveautés</h2>
 						<p>
 							La version actuelle de Collatinus, numérotée <strong><?php echo $version_txt; ?></strong>, apporte son lot de nouveautés et d'améliorations :
 						</p>
@@ -205,10 +222,10 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							<li>ajout d'un tagueur probabiliste qui tient compte du contexte (tags) pour trouver la lemmatisation "la plus probable"</li>
 							<li>serveur sur un port interne qui permet une utilisation en ligne de commande avec la possibilité d'interroger Collatinus sans quitter son traitement de texte</li>
 						</ul>
-
 					</section>
+
 					<section role="tabpanel" class="tab-pane fade" id="screenshots">
-						<h1>Captures d'écran</h1>
+						<h2>Captures d'écran</h2>
 						<div class="row">
 							<div class="gallery">
 								<a href="/images/captures/Coll_capt1.png" class="col-xs-6 col-md-3" title="Onglet Lexiques : lemmatisation et traduction de tous les mots d'un texte"><img src="/images/captures/Coll_capt1_min.png" alt="Capture d'écran 1"></a>
@@ -220,7 +237,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 					</section>
 
 					<section role="tabpanel" class="tab-pane fade" id="downloads">
-						<h1>Téléchargements</h1>
+						<h2>Téléchargements</h2>
 
 						<p class="lead">Collatinus est proposé en <strong>trois versions</strong>, qui se distinguent par le nombre de dictionnaires pré-installés :</p>
 						<ul>
@@ -231,11 +248,11 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
  
 						<p>Ces versions peuvent être complétées à tout moment en <strong>téléchargeant un ou plusieurs dictionnaires</strong> proposés ci-dessous et en les installant depuis le menu <code>Extra</code> de Collatinus.</p>
 
-						<h2>Dictionnaires</h2>
+						<h3>Dictionnaires</h3>
 						<p>Les dictionnaires suivants sont compatibles avec la <strong>version 11 et supérieure</strong> de Collatinus.</p>
 						<div class="row">
 							<div class="col-md-6 col-sm-12">
-								<h4 style="margin-top:15px;">En mode texte :</h4>
+								<h4>En mode texte :</h4>
 								<ul class="list-no-margin">
 									<li><a download href="/collatinus/ressources/Gaffiot_2016-avr17.col" title="Gaffiot 2016, par Gérard Gréco (2015-2016, CC BY-NC-ND)">Gaffiot 2016</a> (15 Mo &mdash; latin-français)</li>
 									<li><a download href="/collatinus/ressources/Jeanneau_2017-avr17.col" title="Dictionnaire Latin-Français">Jeanneau 2017</a> (12 Mo &mdash; latin-français)</li>
@@ -244,16 +261,16 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 								</ul>
 								<ul class="list-no-margin">
 									<li><a download href="/collatinus/ressources/du_Cange_1883-7-oct18.col" title="Glossaire du latin médiéval (Du Cange, et al., Glossarium mediæ et infimæ latinitatis. Niort : L. Favre, 1883-1887). École nationale des Chartes)">Du Cange 1883</a> (58 Mo &mdash; glossaire du latin médiéval)</li>
-									<li><a download href="/collatinus/ressources/Koebler_2010-jan20.col">Köbler 2010</a> (34 Mo &mdash; latin médiéval-allemand) <span class="label label-info">Nouveau</span></li>
-									<li><a download href="/collatinus/ressources/Ramminger_2020-jan20.col">Ramminger 2020</a> (9 Mo &mdash; néolatin-allemand) <span class="label label-info">Nouveau</span></li>
+									<li><a download href="/collatinus/ressources/Koebler_2010-jan20.col">Köbler 2010</a> (34 Mo &mdash; latin médiéval-allemand)</li>
+									<li><a download href="/collatinus/ressources/Ramminger_2020-jan20.col">Ramminger 2020</a> (9 Mo &mdash; néolatin-allemand)</li>
 								</ul>
 							</div>
 							<div class="col-md-6 col-sm-12">
-								<h4 style="margin-top:15px;">En mode image :</h4>
+								<h4>En mode image :</h4>
 								<ul class="list-no-margin">
 									<li><a download href="/collatinus/ressources/Calonghi_1898-avr17.col" title="Calonghi F., Dizionario latino-italiano, 1898">Calonghi 1898</a> (62 Mo &mdash; latin-italien)</li>
 									<li><a download href="/collatinus/ressources/de_Miguel_1867-dec18.col">De Miguel 1867</a> (153 Mo &mdash; latin-espagnol)</li>
-									<li><a download href="/collatinus/ressources/Faria_Junqueira_1975-sep20.col">Faria 1975</a> (171 Mo — latin-portugais) <span class="label label-info">Nouveau</span></li>
+									<li><a download href="/collatinus/ressources/Faria_Junqueira_1975-sep20.col">Faria 1975</a> (171 Mo — latin-portugais)</li>
 							    <li><a download href="/collatinus/ressources/Gaffiot_1934-avr17.col" title="Gaffiot F., Dictionnaire illustré latin-français, 1934">Gaffiot 1934</a> (101 Mo &mdash; latin-français)</li>
 									<li><a download href="/collatinus/ressources/Noel_1851-nov19.col" title="">Nöel 1851</a> (218 Mo &mdash; latin-français)</li>
 							    <li><a download href="/collatinus/ressources/Valbuena_1819-avr17.col" title="Valbuena, Diccionario universal latino-español">Valbuena 1819</a> (86 Mo &mdash; latin-espagnol)</li>
@@ -261,33 +278,33 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							  </ul>
 							  <ul class="list-no-margin">
 							    <li><a download href="/collatinus/ressources/Quicherat_1836-avr17.col">Quicherat 1836</a> (303 Mo &mdash; prosodique français)</li>
-							    <li><a download href="/collatinus/ressources/Franklin_1875-mai19.col" title="Dictionnaire des noms, surnoms et pseudonymes latins de l'histoire littéraire du Moyen Âge (1100 à 1530)">Franklin 1867</a> (17 Mo &mdash; noms propres)</li>
+							    <li><a download href="/collatinus/ressources/Franklin_1875-mai19.col" title="Dictionnaire des noms, surnoms et pseudonymes latins de l'histoire littéraire du Moyen Âge (1100 à 1530)">Franklin 1875</a> (17 Mo &mdash; noms propres)</li>
 							    <li><a download href="/collatinus/ressources/Noel_1824-mai19.col" title="Dictionnaire étymologique des noms propres et surnoms hébreux, arabes, grecs et romains">Noël 1824</a> (21 Mo &mdash; étymologique des noms propres)</li>
 								</ul>
 							</div>
 						</div>
 
-						<h2>Collatinus <?php echo $version_txt; ?> (version courante)</h2>
+						<h3 class="my-3">Collatinus <?php echo $version_txt; ?> (version courante)</h3>
 
 						<?php if (!$detect->isMobile()): ?>
 
 						<div class="row">
 							<div class="col-md-4 col-sm-6">
-								<h3>Version complète<br />
-								<small>(9 dictionnaires inclus)</small></h3>
+								<h4>Version complète<br />
+								<small>(9 dictionnaires inclus)</small></h4>
 
 								<?php if($os == 'mac'): ?>
-									<a href="<?php echo $link_full.$ext; ?>" class="btn btn-lg">
-										<span class="fa fa-apple"></span>Télécharger pour <?php echo $oslabel; ?>
-									</a>
+									<p><a href="<?php echo $link_full.$ext; ?>" class="btn btn-lg">
+										<i class="bi bi-apple"></i> Télécharger pour <?php echo $oslabel; ?>
+									</a></p>
 
 								<?php elseif ($os == 'win'): ?>
-									Télécharger pour <?php echo $oslabel ?> : <a class="btn" href="<?php echo $link_full."_win32".$ext; ?>">32 bits</a> &mdash; <a class="btn" href="<?php echo $link_full."_win64".$ext; ?>">64 bits</a>
+									<p>Télécharger pour <?php echo $oslabel ?> : <a class="btn" href="<?php echo $link_full."_win32".$ext; ?>">32 bits</a> &mdash; <a class="btn" href="<?php echo $link_full."_win64".$ext; ?>">64 bits</a></p>
 
 								<?php elseif ($os == 'linux'): ?>
-									<a class="btn btn-lg" href="https://packages.ubuntu.com/cosmic/collatinus" data-toggle="tooltip" data-placement="bottom" data-original-title="Disponible dans les dépôts Universe d'Ubuntu 18.10 (Cosmic). Pour Debian : disponible uniquement dans les dépôts unstable (sid)">
-										<span class="fa fa-linux"></span>Paquet disponible pour Ubuntu/Debian
-									</a>
+									<p><a class="btn btn-lg" href="https://packages.ubuntu.com/collatinus" data-bs-toggle="tooltip" data-placement="bottom" data-original-title="Disponible dans les dépôts Ubuntu et Debian">
+										<i class="bi bi-ubuntu"></i> Paquet disponible pour Ubuntu/Debian
+									</a></p>
 									<p class="text-danger"><small>Le paquet Ubuntu/Debian est fourni sans dictionnaire.<br />
 									Vous pouvez les télécharger depuis la section "Dictionnaires" (ci-dessous) et installer via le menu "Extra > Installer les dictionnaires téléchargés" de Collatinus.<br />
 									Le paquet (recommandé) <a href="https://packages.ubuntu.com/cosmic/felix-latin-data" target="_blank">felix-latin-data</a> permet d'activer le dictionnaire Gaffiot latin-français</small></p>
@@ -306,14 +323,14 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							</div>
 
 							<div class="col-md-4 col-sm-6">
-								<h3>Version intermédiaire<br />
-								<small>(5 dictionnaires inclus)</small></h3>
+								<h4>Version intermédiaire<br />
+								<small>(5 dictionnaires inclus)</small></h4>
 
 								<?php if($os == 'mac'): ?>
-								  <a href="<?php echo $link_medium.$ext; ?>" class="btn btn-lg"><span class="fa fa-apple"></span>Télécharger pour <?php echo $oslabel; ?></a>
+								  <p><a href="<?php echo $link_medium.$ext; ?>" class="btn btn-lg"><i class="bi bi-apple"></i> Télécharger pour <?php echo $oslabel; ?></a></p>
 
 								<?php elseif ($os == 'win'): ?>
-									Télécharger pour <?php echo $oslabel ?> : <a class="btn" href="<?php echo $link_medium."_win32".$ext; ?>">32 bits</a> &mdash; <a class="btn" href="<?php echo $link_medium."_win64".$ext; ?>">64 bits</a>
+									<p>Télécharger pour <?php echo $oslabel ?> : <a class="btn" href="<?php echo $link_medium."_win32".$ext; ?>">32 bits</a> &mdash; <a class="btn" href="<?php echo $link_medium."_win64".$ext; ?>">64 bits</a></p>
 								<?php endif; ?>
 								<ul class="small">
 									<li>Lewis &amp; Short, 1879 (latin-anglais)</li>
@@ -325,14 +342,14 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							</div>
 
 							<div class="col-md-4 col-sm-6">
-								<h3>Version minimale<br />
-								<small>(2 dictionnaires inclus)</small></h3>
+								<h4>Version minimale<br />
+								<small>(2 dictionnaires inclus)</small></h4>
 
 								<?php if ($os == 'mac'): ?>
-								  <a href="<?php echo $link_mini.$ext ?>" class="btn btn-lg"><span class="fa fa-apple"></span>Télécharger pour <?php echo $oslabel ?></a>
+								  <p><a href="<?php echo $link_mini.$ext ?>" class="btn btn-lg"><i class="bi bi-apple"></i> Télécharger pour <?php echo $oslabel ?></a></p>
 
 								<?php elseif ($os == 'win'): ?>
-									Télécharger pour <?php echo $oslabel ?> : <a class="btn" href="<?php echo $link_mini."_win32".$ext; ?>">32 bits</a> &mdash; <a class="btn" href="<?php echo $link_mini."_win64".$ext; ?>">64 bits</a>
+									<p>Télécharger pour <?php echo $oslabel ?> : <a class="btn" href="<?php echo $link_mini."_win32".$ext; ?>">32 bits</a> &mdash; <a class="btn" href="<?php echo $link_mini."_win64".$ext; ?>">64 bits</a></p>
 
 								<?php endif; ?>
 								<ul class="small">
@@ -349,9 +366,9 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 
       			<div class="row">
 							<div class="col-md-4">
-								<h3>Sources</h3>
+								<h4>Sources</h4>
 								<div class="btn-container">
-									<a class="btn btn-lg" href="https://github.com/biblissima/collatinus"><span class="fa fa-github"></span>Collatinus 11 sur Github</a>
+									<a class="btn btn-lg" href="https://github.com/biblissima/collatinus"><i class="bi bi-github"></i> Collatinus 11 sur Github</a>
 								</div>
 							</div>
 
@@ -371,40 +388,40 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							        <tr>
 						            <td>Version complète</small></td>
 						            <td align="center">
-						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_full.dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_full.dmg"; ?>"><i class="bi bi-download"></i></a>
 						            </td>
 						            <td align="center">
-						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_full_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_full_win32.exe"; ?>"><i class="bi bi-download"></i></a>
 						            </td>
 						            <td align="center">
-						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_full_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_full_win64.exe"; ?>"><i class="bi bi-download"></i></a>
 						            </td>
-						            <td rowspan="3" class="hasRowSpan debian-logo">
-						            	<a href="https://packages.debian.org/source/buster/collatinus" data-placement="bottom" data-toggle="tooltip" data-original-title="Paquet .deb et sources disponibles dans les dépôts Debian"><img src="/images/debian.png" alt="logo Debian" width="32" height="40"><small>Paquet Debian</small></a>
+						            <td rowspan="3" class="hasRowSpan text-center align-middle">
+						            	<a href="https://packages.ubuntu.com/collatinus" data-placement="bottom" data-bs-toggle="tooltip" data-original-title="Paquet disponible dans les dépôts Ubuntu"><i class="bi bi-ubuntu"></i><br/><small>Paquet Ubuntu</small></a>
 						            </td>
 							        </tr>
 							        <tr>
 						            <td>Version intermédiaire</td>
 						            <td align="center">
-						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_medium.dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_medium.dmg"; ?>"><i class="bi bi-download"></i></a>
 						            </td>
 						            <td align="center">
-						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_medium_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_medium_win32.exe"; ?>"><i class="bi bi-download"></i></a>
 						            </td>
 						            <td align="center">
-						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_medium_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_medium_win64.exe"; ?>"><i class="bi bi-download"></i></a>
 						            </td>
 							        </tr>
 							        <tr>
 						            <td>Version minimale</small></td>
 						            <td align="center">
-						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_mini.dmg"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            	<a href="<?php echo $link_prefix."MacOS_Collatinus_".$version."_mini.dmg"; ?>"><i class="bi bi-download"></i></a>
 						            </td>
 						            <td align="center">
-						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_mini_win32.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_mini_win32.exe"; ?>"><i class="bi bi-download"></i></a>
 						            </td>
 						            <td align="center">
-						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_mini_win64.exe"; ?>"><span class="glyphicon glyphicon-download"></span></a>
+						            	<a href="<?php echo $link_prefix."Windows_Collatinus_".$version."_mini_win64.exe"; ?>"><i class="bi bi-download"></i></a>
 						            </td>
 							        </tr>
 							    </tbody>
@@ -459,7 +476,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 										  <a href="index.php?file=Collatinus_11.1_mini_winXP.exe" class="btn btn-sm">Télécharger pour <?php echo $oslabel ?> (Windows XP)</a>
 										    <small class="text-muted">&nbsp;(.exe)</small>
 										<?php elseif ($os == 'linux'): ?>
-											<a href="https://packages.debian.org/cosmic/collatinus" role="button" class="btn btn-sm" data-toggle="tooltip" data-placement="bottom" data-original-title="Disponible dans les dépôts Universe d'Ubuntu 18.10 (Cosmic). Pour Debian : disponible uniquement dans les dépôts unstable (sid)">Disponible dans les dépôts Debian</a>
+											<a href="https://packages.debian.org/cosmic/collatinus" role="button" class="btn btn-sm" data-bs-toggle="tooltip" data-placement="bottom" data-original-title="Disponible dans les dépôts Universe d'Ubuntu 18.10 (Cosmic). Pour Debian : disponible uniquement dans les dépôts unstable (sid)">Disponible dans les dépôts Debian</a>
 							        <p class="text-danger"><small>Le paquet Ubuntu/Debian est fourni sans dictionnaire.<br />
 							        	Vous pouvez les télécharger depuis la section "Dictionnaires" (ci-dessous) et installer via le menu "Extra > Installer les dictionnaires téléchargés" de Collatinus.<br />
 							        	Le paquet (recommandé) <a href="https://packages.ubuntu.com/cosmic/felix-latin-data" target="_blank">felix-latin-data</a> permet d'activer le dictionnaire Gaffiot latin-français</small></p>
@@ -613,7 +630,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 						            <td align="center"><a href="index.php?file=Collatinus_10.2.2_mac_fr.zip"><span class="glyphicon glyphicon-download"></span></a></td>
 						            <td align="center"><a href="index.php?file=Collatinus_10.2.2_win_fr.exe"><span class="glyphicon glyphicon-download"></span></a></td>
 						            <td rowspan="5" class="hasRowSpan debian-logo">
-						            	<a href="https://packages.debian.org/jessie/collatinus" data-placement="bottom" data-toggle="tooltip" data-original-title="Paquet .deb et sources disponibles dans les dépôts Debian testing (jessie)"><img src="/images/debian.png" alt="logo Debian" width="32" height="40"><small>Paquet Debian</small></a>
+						            	<a href="https://packages.debian.org/jessie/collatinus" data-placement="bottom" data-bs-toggle="tooltip" data-original-title="Paquet .deb et sources disponibles dans les dépôts Debian testing (jessie)"><img src="/images/debian.png" alt="logo Debian" width="32" height="40"><small>Paquet Debian</small></a>
 						            </td>
 							        </tr>
 							        <tr>
@@ -650,11 +667,10 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 								</ul>
 							</div>
 						</div> -->
-
 					</section>
 
 					<section role="tabpanel" class="tab-pane fade" id="faq">
-						<h1>FAQ</h1>
+						<h2>FAQ</h2>
 						<ul>
 							<li><a href="#faq0">Mon Mac refuse d'ouvrir Collatinus en disant qu'il provient d'un développeur non identifié.</a></li>
 							<li><a href="#faq1">Comment installer dans Collatinus un lexique ou un dictionnaire téléchargé depuis cette page ?</a></li>
@@ -666,13 +682,13 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 							<li><a href="#faq7">Comment lemmatiser un texte qui contient des graphies médiévales ?</a></li>
 						</ul>
 						<dl>
-								<dt id="faq0"><span class="glyphicon glyphicon-chevron-right"></span> Mon Mac refuse d'ouvrir Collatinus en disant qu'il provient d'un développeur non identifié.</dt>
+								<dt id="faq0"><i class="bi bi-chevron-right"></i> Mon Mac refuse d'ouvrir Collatinus en disant qu'il provient d'un développeur non identifié.</dt>
 								<dd>
 									<p>En effet Apple tend à privilégier l'utilisation de l'Apple Store et d'applications provenant de développeurs affiliés, dont Collatinus n'est pas. Le Mac refuse donc d'ouvrir une application téléchargée de provenance inconnue. Il s'agit là d'une précaution de sécurité qu'il est facile de contourner. La solution est donnée par Apple lorsque l'on clique sur le point d'interrogation qui figure dans la fenêtre pop-up d'avertissement. Il faut ouvrir l'application en passant par le menu contextuel : au lieu de faire simplement un double-clic sur l'application, on fera donc un "clic-droit" ou un "Ctrl-clic" (un clic en maintenant la touche Ctrl enfoncée) et dans le menu qui s'affiche, on choisira "Ouvrir". Une fenêtre d'avertissement similaire à la précédente s'affiche aussi, mais elle propose un bouton supplémentaire pour ouvrir malgré tout l'application. Cette manœuvre n'est nécessaire que lors de la première utilisation : les lancements suivants de Collatinus pourront se faire avec l'habituel double-clic.</p>
 									<p>Retrouver les instructions détaillées pour votre version de Mac OS sur le <a href="https://support.apple.com/fr-fr/guide/mac-help/mh40616/mac">site support d'Apple</a>.</p>
 								</dd>
 
-								<dt id="faq1"><span class="glyphicon glyphicon-chevron-right"></span> Comment installer dans Collatinus un lexique ou un dictionnaire téléchargé depuis cette page ?</dt>
+								<dt id="faq1"><i class="bi bi-chevron-right"></i> Comment installer dans Collatinus un lexique ou un dictionnaire téléchargé depuis cette page ?</dt>
 								<dd>
 									<p>Les dictionnaires ou les lexiques disponibles sur ce site sont dans un format compressé <code>.col</code>. Ce format est reconnu par Collatinus qui décompressera le fichier téléchargé et installera tous les fichiers nécessaires là où il faut.</p>
 									<p>Pour installer un dictionnaire ou un lexique, il faut procéder en deux temps :</p>
@@ -682,21 +698,21 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 									</ol>
 								</dd>
 
-						    <dt id="faq2"><span class="glyphicon glyphicon-chevron-right"></span> Comment voir une page d'un dictionnaire en mode image sur Mac ?</dt>
+						    <dt id="faq2"><i class="bi bi-chevron-right"></i> Comment voir une page d'un dictionnaire en mode image sur Mac ?</dt>
 						    <dd>
 						        <p>Pour afficher une page d'un dictionnaire en mode image, Collatinus utilise un programme externe qui convertit une page du fichier Djvu en une image Tiff. Il faut donc installer l'utilitaire <strong>DjVuLibre</strong> (libre et gratuit) que l'on trouvera sur SourceForge :
 						            <a href="http://sourceforge.net/projects/djvu/files/">http://sourceforge.net/projects/djvu/files/</a></p>
 						        <p>L'installation est standard et une application <strong>DjView</strong> (ou DjView.app) doit apparaître dans le dossier <code>Applications</code>. Vous êtes alors prêt pour consulter le dictionnaire dans Collatinus.</p>
 						    </dd>
 
-						    <dt id="faq3"><span class="glyphicon glyphicon-chevron-right"></span> Je voudrais ajouter des lemmes dans le lexique de Collatinus. Où sont les données que Collatinus exploite ?</dt>
+						    <dt id="faq3"><i class="bi bi-chevron-right"></i> Je voudrais ajouter des lemmes dans le lexique de Collatinus. Où sont les données que Collatinus exploite ?</dt>
 						    <dd>
 						        <p>Sous Windows, toutes les données sont dans le répertoire <code>data/</code> à côté de l'exécutable <code>Collatinus.exe</code>. Sur un Mac, elles sont un peu plus cachées. Pour les voir, il faut commencer par <em>"Afficher le contenu du paquet"</em> avec un clic droit (ou ctrl-clic) sur <code>Collatinus.app</code>. On avance alors dans l'arborescence <code>Contents/MacOS/data</code> et là on trouve tous les fichiers qu'utilise Collatinus. Attention, à manipuler avec précaution !</p>
 						        <p>Si on veut ajouter des lemmes dans le lexique de Collatinus, on ouvrira <code>lemmes.la</code> avec un éditeur de texte ou un tableur (le fichier est au format CSV avec le caractère "|" comme séparateur de champs). On se réfèrera à l'aide en ligne pour connaître l'usage des divers champs. Si toutes les données sont correctes, Collatinus sait fléchir ce nouveau lemme et reconnaître dans un texte toutes ses formes. Pour donner une traduction à ce nouveau mot, il faut intervenir dans les <code>lemmes.*</code> (lemmes.fr pour les traductions françaises).</p>
 						        <p>Des données erronées peuvent conduire à un comportement imprévisible. Si on prévoit de revenir souvent dans le répertoire <code>data/</code>, on peut en faire un alias que l'on met à un endroit plus accessible et qui pointera vers l'emplacement souhaité.</p>
 						    </dd>
 
-						    <dt id="faq4"><span class="glyphicon glyphicon-chevron-right"></span> Je souhaite ajouter un nouveau dictionnaire à Collatinus. Comment faire ?</dt>
+						    <dt id="faq4"><i class="bi bi-chevron-right"></i> Je souhaite ajouter un nouveau dictionnaire à Collatinus. Comment faire ?</dt>
 						    <dd>
 						        <p>Tout d'abord, il faut distinguer deux types d'objets différents qui correspondent au sens courant de dictionnaire :</p>
 						        <ul>
@@ -709,13 +725,13 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 						        <p>Pour les dictionnaires en XML/HTML, la constitution de l'index doit passer par un programme et nécessite quelques manipulations trop complexes pour être décrites ici, mais nous pouvons le faire pour vous. Les règles générales pour le format du fichier .xml sont que chaque article occupe une seule ligne ou soit encadré par des balises spéciales (c'est-à-dire qui ne sont pas utilisées par ailleurs, par exemple <code>&lt;item&gt;...&lt;/item&gt;</code> ou <code>&lt;entryFree&gt;...&lt;/entryFree&gt;</code> ou même <code>&lt;div&gt;...&lt;/div&gt;</code> à condition qu'il n'y en ait pas d'autres), et que le lemme doit être facilement identifiable (par exemple, le premier mot entre des balises <code>&lt;H1&gt;&lt;/H1&gt;</code> ou l'attribut key de la balise EntryFree...).</p>
 						    </dd>
 
-						    <dt id="faq5"><span class="glyphicon glyphicon-chevron-right"></span> Collatinus ne reconnaît pas certains mots pourtant assez courants. Pourquoi ?</dt>
+						    <dt id="faq5"><i class="bi bi-chevron-right"></i> Collatinus ne reconnaît pas certains mots pourtant assez courants. Pourquoi ?</dt>
 						    <dd>
 						    	<p>Pour optimiser le démarrage du programme, le lexique que connaît Collatinus a été divisé en deux parties. Le lexique de base contient 24000 lemmes et il est systématiquement chargé. Il permet de lemmatiser beaucoup de textes classiques. Toutefois, si on va chercher des textes un peu "exotiques", ce vocabulaire classique peut être insuffisant. Il convient alors d'activer "l'extension du lexique" qui contient 58000 lemmes supplémentaires. Pour ce faire, on ira dans le menu <code>Lexique</code> et on sélectionnera l'entrée <code>Extension du lexique</code>.</p>
 						    	<p>Désactiver l'extension après l'avoir activée ne revient pas exactement à la situation initiale (avant la première activation). L'extension sera utilisée dans ce cas comme un "réservoir" d'information. Si une forme peut être lemmatisée avec le seul lexique de base, seules ces solutions seront proposées. Cela évite d'être "pollué" par des lemmatisations très improbables. En revanche, si le lexique de base ne suffit pas pour lemmatiser une forme, la recherche se fera aussi dans l'extension et toutes les solutions (s'il y en a) seront proposées.</p>
 						    </dd>
 
-						    <dt id="faq6"><span class="glyphicon glyphicon-chevron-right"></span> Pour préparer les listes de vocabulaire pour mes étudiants, je voudrais supprimer les mots trop courants qu'ils connaissent. Collatinus peut-il le faire ?</dt>
+						    <dt id="faq6"><i class="bi bi-chevron-right"></i> Pour préparer les listes de vocabulaire pour mes étudiants, je voudrais supprimer les mots trop courants qu'ils connaissent. Collatinus peut-il le faire ?</dt>
 						    <dd>
 						    	<p>Quand on donne des listes de vocabulaire, il est souvent inutile de donner la traduction des mots trop courants comme "et", "cum" etc... Collatinus peut lire une liste de mots connus (menu <code>Fichier > Lire une liste de mots connus</code>) qui est particulièrement facile à déterminer si les étudiants ont des listes de vocabulaire à apprendre. Une liste de mots connus est un fichier de type texte (.txt), contenant un seul mot par ligne. On trouvera un exemple de liste dans le fichier <a href="https://github.com/biblissima/collatinus/raw/master/doc-usr/Exemple_liste.txt.zip" target="_blank">Exemple_liste.txt.zip</a>. On peut évidemment définir autant de listes que l'on souhaite, une pour chaque niveau, par exemple. Remarque : les listes ne se cumulent pas, seule la dernière liste chargée est active (les précédentes sont effacées).</p>
 						    	<p>L'effet de la lecture d'une liste de mots connus est double : lorsque l'on lemmatise un texte (dans la fenêtre supérieure de Collatinus), celui-ci est colorisé et les mots connus n'apparaissent pas dans la liste de vocabulaire (dans l'onglet "Lexique et morphologie" qui doit être actif). Le code couleur par défaut est :</p>
@@ -727,7 +743,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 						    	<p>Attention, quand un lemme est donné dans la liste de mots connus, il est implicitement supposé que l'étudiant connaît toutes les formes qui peuvent en découler. Par exemple, si "sum" apparaît dans la liste de mots connus, une forme un peu exotique comme "forent" sera supposée connue&hellip;</p>
 						    </dd>
 
-						    <dt id="faq7"><span class="glyphicon glyphicon-chevron-right"></span> Comment lemmatiser un texte qui contient des graphies médiévales ?</dt>
+						    <dt id="faq7"><i class="bi bi-chevron-right"></i> Comment lemmatiser un texte qui contient des graphies médiévales ?</dt>
 						    <dd>
 						    	<p>Dans la version 11.2 a été ajoutée une option expérimentale pour que Collatinus puisse reconnaître certaines graphies médiévales. Dans le menu <code>Lexique</code>, on activera l'option <code>Graphies médiévales</code>. Attention, cela peut introduire de fausses lemmatisations si on travaille sur un texte classique ou un texte dont la graphie a été "normalisée". On évitera donc soigneusement d'utiliser cette option sur des textes classiques.</p>
 						    	<p>Le résultat de la lemmatisation ou de la scansion est classicisé : si le texte contient "celum", on obtiendra les lemmatisations "cāelŭm, cōelum, i, n.".<p>
@@ -735,17 +751,30 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 						    </dd>
 						</dl>
 					</section>
+
 					<section role="tabpanel" class="tab-pane fade" id="credits">
-						<h1>Crédits</h1>
+						<h2>Crédits</h2>
 						<p>Collatinus est développé par Yves Ouvrard, avec l'aide précieuse de Philippe Verkerk.</p>
 						<p>Il est publié sous licence GPL.</p>
 						<p>Remerciements : William Whitaker †, Jose Luis Redrejo, Georges Khaznadar, Matthias Bussonier, Gérard Jeanneau, Philippe Verkerk, Jean-Paul Woitrain, Philipp Roelli, Perseus Digital Library.</p>
 					</section>
-				</div>
+
+				</div><!-- /.tab-content -->
+
+				<div class="alert alert-dark card-quote" role="alert">
+					<div class="icon-quote">
+        		<i class="bi bi-quote"></i>
+        	</div>
+        	<div class="text-quote">
+        		<h2 class="fs-3">Comment nous citer ?</h2>
+        		<p class="blockquote">OUVRARD, Yves, VERKERK, Philippe (<?php echo date("Y") ?>). <em>Collatinus</em> (<?php echo $version_txt; ?>). Disponible sur : <a href="https://outils.biblissima/fr/collatinus">https://outils.biblissima/fr/collatinus</a> (consulté le <?php echo $formatter->format(time()); ?>)</p>
+        	</div>
+      	</div>
+
 			</div>
-	    </section>
-	</div>
-</div>
+	  </section>
+	</div><!-- /.row -->
+</div><!-- /.container -->
 
 <section class="content-bottom">  
 	<div class="container">
@@ -755,7 +784,7 @@ $desc_mini		= "Lewis &amp; Short 1879 / Gaffiot 2016";
 		    </div>
 		    <div class="col-sm-3">
 		        <p>Des remarques ou questions ? :<br/>
-		        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:collatinus@biblissima-condorcet.fr">Nous contacter</a></p>
+		        <i class="bi bi-envelope-fill"></i>  <a href="mailto:collatinus@biblissima-condorcet.fr">Nous contacter</a></p>
 		    </div>
 		</div>
 	</div>

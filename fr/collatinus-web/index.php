@@ -10,4 +10,4 @@ layout: default-banner
 id_stat: 6
 ---
 
-{% include collatinus-web.html %}
+{% include collatinus-web.php %}

@@ -1,6 +1,6 @@
 # Site settings
-title: "Boîte à Outils Biblissima"
-description: "Boîte à outils Biblissima (Baobab)"
+title: "Outils Biblissima+"
+description: "Outils Biblissima+"
 url: "http://localhost:4000"
 common_baseurl: "https://static.biblissima.fr"
 include_baseurl: "http://localhost:8888/biblissima-menu"

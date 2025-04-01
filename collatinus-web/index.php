@@ -9,4 +9,4 @@ categories: [pages]
 layout: collatinus-web
 ---
 
-{% include collatinus-web.html %}
+{% include collatinus-web.php %}

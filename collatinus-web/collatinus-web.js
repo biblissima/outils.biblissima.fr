@@ -2,92 +2,16 @@
   $(document).ready(function() {
     var header = 185; // 20px more than the size of reduced header
 
-    // Affix on header of results div
-    $('#myAffix').width($('#myAffix-wrapper').width());
-    $('#myAffix').affix({
-      offset: {
-        top: function() {
-          return (this.top = $('#myAffix-wrapper').offset().top - 10);
-        }
-      }
-    });
-
-    // Button to go back to form
-    var btnScrollForm = $("<button class='btn scroll-form fb' href='#form-collatinus'></button");
-    var chevronUp = $("<span class='glyphicon glyphicon-chevron-up' aria-hidden='true'></span>");
-    btnScrollForm.append(chevronUp);
-    if ($("body").hasClass("fr")) {
-      btnScrollForm.append("Retour au formulaire");
-    } else if ($("body").hasClass("en")) {
-      btnScrollForm.append("Back to form");
-    }
-    $('#myAffix').append(btnScrollForm);
-    btnScrollForm.hide();
-    $('#myAffix').on('affixed.bs.affix', function() {
-      btnScrollForm.show();
-    });
-    $('#myAffix').on('affixed-top.bs.affix', function() {
-      btnScrollForm.hide();
-    });
-    btnScrollForm.click(function() {
-      $("html, body").animate({
-        scrollTop: $("#form").offset().top
-      }, 500);
-    });
-    $('body').scrollspy({ target: '#myAffix-wrapper' });
-
-    // handle window resize
-    $(window).on("resize", function() {
-      $('#myAffix').each(function() {
-        $(this).width($('#myAffix-wrapper').width());
-        $(this).data('bs.affix').options.offset.top = $('#myAffix-wrapper').offset().top
-      })
-    })
-
-    // Tooltips
-    $('body.fr').tooltip({
-      selector: ".next a",
-      title: "Mot suivant",
-      placement: "bottom"
-    });
-    $('body.fr .container').tooltip({
-      selector: ".previous a",
-      title: "Mot précédent",
-      placement: "bottom"
-    });
-    $('body.en').tooltip({
-      selector: ".next a",
-      title: "Next word",
-      placement: "bottom"
-    });
-    $('body.en .container').tooltip({
-      selector: ".previous a",
-      title: "Previous word",
-      placement: "bottom"
-    });
-
-    // tooltips on lemmas
-    // $('#results').tooltip({
-    //     selector: "[data-toggle=tooltip]",
-    //     container: "body",
-    //     html: "true",
-    //     placement: "bottom"
-    // });
-
-    // Reset textarea
-    $(".form-lemme input[type='reset']").click(function(event) {
-      event.preventDefault();
-      $("#traitement_texte").empty();
-    });
-
     // submit form via Ajax for processing by collatinus-web.php
-    $(".form-lemme button[type='submit']").click(function(event) {
+    $('button[type="submit"]').on('click', function(event){
       event.preventDefault();
+
+      var form = $(this).closest('form');
 
       // Type of operation
-      var opera = $(this).parent().siblings("input[name='opera']").val();
+      var opera = form.find("input[name='opera']").val();
       // Valeur du token
-      var token = $(this).parent().siblings("input[name='token']").val();
+      var token = form.find("input[name='token']").val();
       // variables and POST parameters depending on operation
       switch (opera) {
         case "consult":
@@ -111,7 +35,8 @@
           $("#langue").change(function() {
             var langue = $(this).val();
           });
-          var dataString = 'texte=' + texte + '&langue=' + langue + '&opera=' + opera + '&action=' + action + '&token=' + token;
+          var medieval = $("#medieval").is(":checked");
+          var dataString = 'texte=' + texte + '&langue=' + langue + '&opera=' + opera + '&action=' + action + '&token=' + token + '&medieval=' + medieval;
           break;
       }
 
@@ -119,7 +44,7 @@
         ajaxRequest(dataString);
       }
       else {
-        $("#modal-error").modal()
+        $("#modal-error").modal();
       }
     });
 
@@ -151,21 +76,6 @@
         var divResultsHeight = divResults.height();
         var windowWidth = $(window).width();
         var positionRight = (windowWidth - divResultsWidth) / 2 - 60;
-
-        // $(window).scroll(function() {
-        //     if ($(this).scrollTop() > divResultsOffsetTop) {
-        //         $("#scrollToTop").css("right", positionRight).fadeIn();
-        //     } else {
-        //         $("#scrollToTop").fadeOut();
-        //     }
-        // });
-        // Click event to go to top of #results
-        // $("#scrollToTop a").click(function() {
-        //     $("html, body").stop(true).animate({
-        //         scrollTop: $("#results").offset().top
-        //     }, 800);
-        //     return false;
-        // });
 
         // ScrollToTop
         $("html, body").stop(true).animate({

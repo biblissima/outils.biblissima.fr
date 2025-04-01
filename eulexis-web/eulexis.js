@@ -1,24 +1,13 @@
 (function($){
     $(document).ready(function() {
-        // Infobulles sur les références auteurs
-        $('#results').tooltip({
-            selector: "[data-toggle=tooltip]",
-            container: "body",
-            html: "false",
-            placement: "bottom"
-        });
-
-        // Reset texte
-        $(".form-lemme input[type='reset']").click(function(event) {
-            event.preventDefault();
-            $("#lemmatiser_texte").empty();
-        });
 
         // Soumission du formulaire pour traitement
-        $(".form-lemme input[type='submit']").click(function(event) {
+        //$(".form-lemme input[type='submit']").click(function(event) {
+        $('form').on('submit', function(event){
             event.preventDefault();
+
             // Type d'operation
-            var opera = $(this).siblings("input[value='true']").attr("name");
+            var opera = $(this).find("input[value='true']").attr("name");
             // Valeur du token
             //var token = $(this).siblings("input[name='token']").val();
             // Definition variables et parametres POST en fonction de l'operation
@@ -114,38 +103,12 @@
                 cache: false,
             }).done(function(data) {
                 $("#results").html(data);
-                /*
-                 * ScrollToTop top button
-                 */
-                var divResults = $("#results");
 
-                /*var imgDico = $("#results img");
-                var imgDicoWidth = imgDico.width();*/
+                // enable BS tooltips
+                const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+                const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {html: true}));
 
-                // Calculate best horizontal position
-                var divResultsOffsetTop = divResults.offset().top;
-                var divResultsOffsetTop = divResultsOffsetTop + 20;
-                var divResultsWidth = divResults.width();
-                var divResultsHeight = divResults.height();
-                var windowWidth = $(window).width();
-                var positionRight = (windowWidth - divResultsWidth) / 2 - 60;
-
-                // $(window).scroll(function() {
-                //     console.log(divResultsOffsetTop);
-                //     if ($(this).scrollTop() > divResultsOffsetTop) {
-                //         $("#scrollToTop").css("right", positionRight).fadeIn();
-                //     } else {
-                //         $("#scrollToTop").fadeOut();
-                //     }
-                // });
-                var headerHeight = 230;
-                // Click event to go to top of #results
-                $("#scrollToTop a").click(function() {
-                    $("html, body").stop(true).animate({
-                        scrollTop: $("#results").offset().top - headerHeight
-                    }, 800);
-                    return false;
-                });
+                var headerHeight = 230;    
                 $('html, body').stop(true).animate({
                     scrollTop: $("#results").offset().top - headerHeight
                 }, 600);
@@ -231,7 +194,8 @@
              * Requetes pour les liens sur lemmes
              */
             // Dans les entrees de dicos
-            $("a[data-lemme]").click(function(event) {
+            //$("a[data-lemme]").click(function(event) {
+            $('a[data-lemme]').on('click', function(event){
                 event.preventDefault();
                 var lemme = $(this).attr("data-lemme");
                 var dataString = 'lemme=' + lemme;

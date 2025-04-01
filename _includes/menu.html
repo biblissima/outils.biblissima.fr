@@ -1,25 +1,54 @@
 <!-- MENU -->
-<nav class="menu-navigation menu-responsive" role="navigation">
-    <div class="navbar-collapse collapse" id="navbar-collapse-1">
-        <div class="region region-navigation">
-            <div class="menu-biblissima clearfix">
-                <ul class="menu nav container">
-                    {% for item in site.data.navigation[page.lang] %}
-                        {% comment %}
-                            Il est nécessaire d'avoir une variable "phpurl" car jekyll ne réécrit pas les pages php dans sa variable php.url. (E.g: page html eulexis : /fr/eulexis/, page php collatinus : /fr/eulexis/index.php)
-                        {% endcomment %}
+<nav id="navbar-main" class="navbar navbar-expand-lg" role="navigation">
+    <div class="container">
+        <div class="site-identity d-flex">
+            <a href="/fr" class="navbar-brand">
+                Outils Biblissima
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-between" id="CollapsingNavbar">
+            <nav role="navigation">
+                <ul class="clearfix nav navbar-nav">
+                {% for item in site.data.navigation[page.lang] %}
+                    {% comment %}
+                        Il est nécessaire d'avoir une variable "phpurl" car jekyll ne réécrit pas les pages php dans sa variable php.url. (E.g: page html eulexis : /fr/eulexis/, page php collatinus : /fr/eulexis/index.php)
+                    {% endcomment %}
 
-                        {% assign phpurl = item.url | append: 'index.php' %}
-                        {% if page.url == item.url or phpurl == page.url %}
-                            {% assign class = 'active' %} 
-                        {% else %}
-                            {% assign class = '' %} 
-                        {% endif %}
-                        <li>
-                            <a href="{{ item.url }}" class="{{ class }}" title="{{item.desc}}">{{ item.name_short }}</a>
-                        </li>
-                    {% endfor %}
+                    {% assign phpurl = item.url | append: 'index.php' %}
+                    {% if page.url == item.url or phpurl == page.url %}
+                        {% assign class = 'is-active' %} 
+                    {% else %}
+                        {% assign class = '' %} 
+                    {% endif %}
+                    <li class="nav-item">
+                        <a href="{{ item.url }}" class="{{ class }} nav-link" title="{{item.desc}}">{{ item.name_short }}</a>
+                    </li>
+                {% endfor %}
                 </ul>
+            </nav>
+            <div class="form-inline navbar-form">
+                <nav class="nav language-switcher">
+                    <!-- slug_en / slug_fr is used and should be defined in the template when page slugs are different in each language -->
+                    {% if page.lang == 'fr' %}
+                        {% if page.slug_en %}
+                            {% assign link = page.slug_en | prepend: '/en' | split: '/fr' %}
+                        {% else %}
+                            {% assign link = page.url | prepend: '/en' | split: '/fr' %}
+                        {% endif %}
+                        <span hreflang="fr" class="fr nav-link is-active" aria-current="page"><a href="{{page.url}}" class="language-link is-active" hreflang="fr"aria-current="page">fr</a></span>
+                        <span hreflang="en" class="en nav-link"><a href="{{link}}" class="language-link" hreflang="en">en</a>
+                        </span>
+                    {% else %}
+                        {% if page.slug_fr %}
+                            {% assign link = page.slug_fr | prepend: '/fr' | split: '/en' %}
+                        {% else %}
+                            {% assign link = page.url | prepend: '/fr' | split: '/en' %}
+                        {% endif %}
+                        <span hreflang="fr" class="fr nav-link" aria-current="page"><a href="{{link}}" class="language-link" hreflang="fr"aria-current="page">fr</a></span>
+                        <span hreflang="en" class="en nav-link is-active"><a href="{{page.url}}" class="language-link is-active" hreflang="en">en</a></span>
+                    {% endif %}
+                </nav>
             </div>
         </div>
     </div>

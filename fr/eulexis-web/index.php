@@ -9,5 +9,5 @@ layout: default-banner
 id_stat: 7
 ---
 
-{% include eulexis-web.html %}
+{% include eulexis-web.php %}
 
