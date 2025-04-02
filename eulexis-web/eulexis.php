@@ -105,8 +105,8 @@ function nettoie($mot) {
   $mot = str_ireplace($lettres, 'ω', $mot);
   $lettres = array('ὼ', 'ώ', 'ώ', 'ώ', 'ὠ', 'ὡ', 'ὼ', 'ῶ', 'ῳ', 'ὢ', 'ὣ', 'ὤ', 'ὥ', 'ὦ', 'ὧ', 'ᾠ', 'ᾡ', 'ῲ', 'ῴ', 'ῷ', 'ᾢ', 'ᾣ', 'ᾤ', 'ᾥ', 'ᾦ', 'ᾧ');
   $mot = str_replace($lettres, 'ω', $mot);
-  $lettres = array('Α', 'Β', 'Γ', 'Δ', 'Ε', 'Ζ', 'Η', 'Θ', 'Ι', 'Κ', 'Λ', 'Μ', 'Ν', 'Ξ', 'Ο', 'Π', 'Ρ', 'Σ', 'Τ', 'Υ', 'Φ', 'Χ', 'Ψ', 'Ω');
-  $grec = array('α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω');
+  $lettres = array('Α', 'Β', 'ϐ', 'Γ', 'Δ', 'Ε', 'Ζ', 'Η', 'Θ', 'Ι', 'Κ', 'Λ', 'Μ', 'Ν', 'Ξ', 'Ο', 'Π', 'Ρ', 'Σ', 'Τ', 'Υ', 'Φ', 'Χ', 'Ψ', 'Ω');
+  $grec = array('α', 'β', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω');
   $mot = str_replace($lettres, $grec, $mot);
   // Ajout pour remplacer un éventuel σ en fin de mot par un ς
   if ( (mb_strrpos($mot, 'σ') == mb_strlen($mot) - 1) && mb_strlen($mot) > 1 )
@@ -258,6 +258,11 @@ if (!$consultation) {
           // Je garde le betacode
           if (strrpos($mot_tr, 's') == (strlen($mot_tr) - 1) && strlen($mot_tr) != 1)
             $mot_tr = substr($mot_tr, 0, strlen($mot_tr) - 1) . 'ς';
+          if ($beta_int) {
+            if (strpos($mot_tr, 'b') == 0) $mot_tr = 'β' . substr($mot_tr, 1);
+          } else {
+            $mot_tr = str_replace('b', 'β', $mot_tr);
+          }
           $mot_tr = str_replace($betacode, $unicode, $mot_tr);
           if ($mot_beta == $mot_tr2)
             $l_formes[$nn_f] = "<span style='color:red'><b>" . $mot_tr . "</b></span>";
@@ -287,6 +292,11 @@ if (!$consultation) {
                 $mot_t = substr($mot_t, 0, $long_mot - 1) . 'ς';
               else if (ctype_digit($der_let) && strrpos($mot_t, 's') == ($long_mot - 2) && $long_mot > 2)
                 $mot_t = substr($mot_t, 0, $long_mot - 2) . 'ς' . $der_let;
+              if ($beta_int) {
+                if (strpos($mot_t, 'b') == 0) $mot_t = 'β' . substr($mot_t, 1);
+              } else {
+                $mot_t = str_replace('b', 'β', $mot_t);
+              }
               $eclat[$i] = str_replace($betacode, $unicode, $mot_t);
             }
             $titi = implode(", ", $eclat);
@@ -408,6 +418,7 @@ if (!$consultation) {
     $mot_t = $liste[0];
     if (strrpos($mot_t, 's') == (strlen($mot_t) - 1) && strlen($mot_t) != 1)
       $mot_t = substr($mot_t, 0, strlen($mot_t) - 1) . 'ς';
+    if (strpos($mot_t, 'b') == 0) $mot_t = 'β' . substr($mot_t, 1);
     $lem = str_replace($betacode, $unicode, $mot_t);
     $tableau .= "<b>" . $lem . "</b><ul>\n";
     $jj = 0;
@@ -419,6 +430,7 @@ if (!$consultation) {
       // Pour le sigma final, chaque mot doit être traité séparément
       if (strrpos($mot_t, 's') == (strlen($mot_t) - 1) && strlen($mot_t) != 1)
         $mot_t = substr($mot_t, 0, strlen($mot_t) - 1) . 'ς';
+      if (strpos($mot_t, 'b') == 0) $mot_t = 'β' . substr($mot_t, 1);
       $forme = str_replace($betacode, $unicode, $mot_t);
       $eclats[0] = substr($eclats[0], strpos($eclats[0], " (") + 2, strlen($eclats[0]));
       for ($j = 0; $j < count($eclats); $j++) {
