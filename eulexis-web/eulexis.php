@@ -702,7 +702,7 @@ if (!$consultation) {
        $eclats = explode(chr(9), $ligne);
        $ref_avant[$x_ref] = $eclats[0];
        $tooltip = str_replace("'", "&#39;", $eclats[4]);
-       $ref_apres[$x_ref] = "<span class='info-lemme' data-toggle='tooltip' title='" . $tooltip . "'><a target='_blank' href='/ajax/eulexis/data/Liste_Auteurs_LSJ/index.htm#" . $eclats[3] . "'>" . $eclats[0] . "</a></span>";
+       $ref_apres[$x_ref] = "<span class='info-lemme' data-bs-toggle='tooltip' data-bs-title='" . $tooltip . "'><a target='_blank' href='/eulexis-web/data/Liste_Auteurs_LSJ/index.htm#" . $eclats[3] . "'>" . $eclats[0] . "</a></span>";
        $ref_pendant[$x_ref] = "@" . $x_ref . "@";
        $x_ref = $x_ref + 1;
        }
@@ -948,10 +948,12 @@ if ($consultation) {
   echo "<h3>Aide à la lecture</h3>\n";
   for ($x = 0; $x < count($mots); $x++) {
     //echo "<a href='#mot" . $x . "'><span class='info-lemme' data-toggle='tooltip' title='" . $titre[$x] . "'>" . $mots[$x] . "</span></a> \n";
-    echo "<a href='#mot" . $x . "'><span class='info-lemme' data-toggle='tooltip' title='" . $titre[$x] . "'>";
-    echo str_replace(chr(13),"<br />", $mots[$x]) . "</span></a> \n";
+    if (!empty($titre[$x])) {
+      echo "<a href='#mot" . $x . "'><span class='info-lemme' data-bs-toggle='tooltip' data-bs-title='" . $titre[$x] . "'>";
+      echo str_replace(chr(13),"<br />", $mots[$x]) . "</span></a> \n";
+    }    
   }
-  echo "<h3>Lemmatisation avec les formes du texte</h3>\n";
+  echo "<h3 class='mt-4'>Lemmatisation avec les formes du texte</h3>\n";
   for ($x = 0; $x < count($mots); $x++) {
     echo "<a name='mot" . $x . "'></a>\n";
     echo "<b>" . str_replace($ponct, "", $mots[$x]) . "</b>&nbsp;: \n";
