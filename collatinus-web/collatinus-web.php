@@ -153,17 +153,9 @@ if (isset($_POST['opera'])) {
  **               Traitement                 **
  *********************************************/
 
-if ($requete != '') {    
-  // Controle du token
-  if (verifyFormToken('form_lemme')) {
-    $requete = trim($requete);
-    $sol = interroge($requete);
-  // sauf pour les requetes de type "page prec/suiv"
-  } elseif (isset($_POST["r"])) {
-    $sol = interroge($requete);
-  } else {
-    echo "<p class='text-danger'><strong>Votre session a expiré</strong>. Veuillez recharger la page pour commencer une nouvelle session.</p> <button type='button' class='btn btn-default' onclick='javascript:window.location.reload()'><span class='glyphicon glyphicon-refresh'></span> Recharger la page</button>";
-  }
+if ($requete != '') { 
+  $requete = trim($requete);
+  $sol = interroge($requete);   
   echo $sol;
 }
 
