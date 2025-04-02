@@ -104,7 +104,7 @@ $desc_mini    = "Lewis &amp; Short 1879 / Gaffiot 2016";
           <?php endif; ?>
 
           <a href="https://github.com/biblissima/collatinus" class="btn btn-lg"><i class="bi bi-github"></i> Source code on Github</a>
-          <a href="/fr/collatinus-web" class="btn btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Based on Collatinus 11.2">Try the online app</a>
+          <a href="/en/collatinus-web" class="btn btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Based on Collatinus 11.2">Try the online app</a>
         </div>
       </div>
     </div>

@@ -72,7 +72,7 @@ $link_base =  $link_prefix.$version;
           <?php endif; ?>
 
             <a class="btn btn-lg" href="https://github.com/PhVerkerk/Eulexis_off_line"><i class="bi bi-github"></i> Source code sur Github</a>
-          <a href="/fr/eulexis-web" class="btn btn-lg">Try the online app</a>
+          <a href="/en/eulexis-web" class="btn btn-lg">Try the online app</a>
             </div>
       </div>
         </div>

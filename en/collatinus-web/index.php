@@ -17,7 +17,7 @@ $formatter = new IntlDateFormatter('en_GB', IntlDateFormatter::LONG, IntlDateFor
 	<div class="container">
 		<div class="banner-content row">
 			<div class="page-identity col-sm-7 col-md-8">
-				<h1 class="page-name">Collatinus web <br/>
+				<h1 class="page-name">Collatinus-web <br/>
 					<span class="page-slogan">Online lemmatiser and morphological analyser<br /> for Latin texts</span></h1>
 			</div>
 		  <div class="col-sm-5 col-md-4 text-sm-end">
@@ -177,7 +177,7 @@ $formatter = new IntlDateFormatter('en_GB', IntlDateFormatter::LONG, IntlDateFor
         </div>
         <div class="text-quote">
           <h2 class="fs-3">How to cite us?</h2>
-          <p class="blockquote">OUVRARD, Yves, VERKERK, Philippe (<?php echo date("Y") ?>). <em>Collatinus web</em>. Available at: <a href="https://outils.biblissima/en/collatinus-web">https://outils.biblissima/en/collatinus-web</a> (Accessed on <?php echo $formatter->format(time()); ?>)</p>
+          <p class="blockquote">OUVRARD, Yves, VERKERK, Philippe (<?php echo date("Y") ?>). <em>Collatinus-web</em>. Available at: <a href="https://outils.biblissima/en/collatinus-web">https://outils.biblissima/en/collatinus-web</a> (Accessed on <?php echo $formatter->format(time()); ?>)</p>
         </div>
       </div>
 

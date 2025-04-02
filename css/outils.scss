@@ -103,6 +103,10 @@ hr {
       background-color: $nav-hover-color;
       color: $text-hover-color;
     }
+    &.is-active {
+      background-color: #6EC4A3;
+      color: $text-hover-color;
+    }
   }
 
   .language-switcher {
