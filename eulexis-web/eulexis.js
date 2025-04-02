@@ -26,9 +26,16 @@
                 case "lemmatisation":
                     //var action = $(this).val();
                     var grec = $("#lemmatiser_texte").val();
-                    var exacte = $("input:checked");
-                    if (exacte.length) {
+                    var exacte = $("#exacte:checked");
+                    var beta_int = $("#beta_int:checked");
+                    if (exacte.length !== 0 && beta_int.length !== 0) {
+                        var dataString = 'grec=' + grec + '&' + opera + '=' + '&' + 'exacte=' + '&' + 'beta_int=';
+                    } 
+                    else if (exacte.length !== 0) {
                         var dataString = 'grec=' + grec + '&' + opera + '=' + '&' + 'exacte=';
+                    } 
+                    else if (beta_int.length !== 0) {
+                        var dataString = 'grec=' + grec + '&' + opera + '=' + '&' + 'beta_int=';
                     } else {
                         var dataString = 'grec=' + grec + '&' + opera + '=';
                     }

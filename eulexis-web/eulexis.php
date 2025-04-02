@@ -186,6 +186,10 @@ if (!isset($_SESSION['exacte']))
   $_SESSION['exacte'] = false;
 $f_exacte = $_SESSION['exacte'];
 
+if (!isset($_SESSION['beta_int']))
+  $_SESSION['beta_int'] = false;
+$beta_int = $_SESSION['beta_int'];
+
 $pos_ind = -1;
 
 //if (isset($_GET['pos_ind']))
@@ -214,14 +218,19 @@ $Bailly_tot = '';
 //    if ($pos_ind==-1 && $lemme=='')
 if (!$consultation) {
   /*********
-   **              J'ai un texte à traiter
+   ** J'ai un texte à traiter
    ************/
   if (isset($_POST['exacte'])) 
     $_SESSION['exacte'] = true;
   else
     $_SESSION['exacte'] = false;
+  if (isset($_POST['beta_int'])) 
+    $_SESSION['beta_int'] = true;
+  else
+    $_SESSION['beta_int'] = false;
   // La checkbox n'existe que si elle est validée
   $f_exacte = $_SESSION['exacte'];
+  $beta_int = $_SESSION['beta_int'];
   $mots = explode(" ", $grec);
   // $lemmata = $mots;
   $ponct = array('"', ",", ";", ":", ".", "?", chr(13), chr(10));
