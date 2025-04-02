@@ -85,7 +85,9 @@ $formatter = new IntlDateFormatter('en_GB', IntlDateFormatter::LONG, IntlDateFor
           <div class="col-lg-8 col-md-11 d-sm-flex align-items-center">
             <div class="col-md-8 col-sm-8 d-flex align-items-center">
               <button type="submit" name="action" value="Lemmatise" class="btn btn-success me-4" aria-controls="results">Lemmatise</button>
+              
               <input type="checkbox" name="exacte" id="exacte" class="form-check-input"> <label for="exacte" class="form-check-label">Exact forms only</label>
+              <a role="button" class="ms-1" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="This option only displays the lemmatisations of forms with the same diacritical marks as the form in the text (and possibly the initial capital letter). If there are no exact solutions, all solutions are displayed."><i class="bi bi-info-circle"></i></a>
             </div>
             <div class="col-md-4 col-sm-4 text-end">
               <button type="reset" name="action" value="Clear" class="btn btn-sm btn-outline-danger btn-clear"><i class="bi bi-x-circle"></i> Clear input</button>

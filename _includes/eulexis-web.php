@@ -72,11 +72,16 @@ $formatter = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFor
             <textarea name="grec" id="lemmatiser_texte" value="" class="form-control" rows="6" cols="80" placeholder="Entrez un texte grec..." required></textarea>
           </div>
           <div class="col-lg-8 col-md-11 d-sm-flex align-items-center">
-            <div class="col-md-8 col-sm-8 d-flex align-items-center">
-              <button type="submit" name="action" value="Lemmatiser" class="btn btn-success me-4" aria-controls="results">Lemmatiser</button>
+            <div class="col-md-9 col-sm-8 d-flex align-items-center">
+              <button type="submit" name="action" value="Lemmatiser" class="btn btn-success me-3" aria-controls="results">Lemmatiser</button>
+
               <input type="checkbox" name="exacte" id="exacte" class="form-check-input"> <label for="exacte" class="form-check-label">Formes exactes seulement</label>
+              <a role="button" class="ms-1" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Cette option permet de n'afficher que les lemmatisations des formes avec les mêmes signes diacritiques que la forme du texte (et éventuellement la majuscule initiale). S'il n'y a pas de solutions exactes, toutes les solutions sont affichées."><i class="bi bi-info-circle"></i></a>
+
+              <input type="checkbox" name="beta_int" id="beta_int" class="form-check-input ms-3"> <label for="beta_int" class="form-check-label">Bêta intérieur</label>
+              <a role="button" class="ms-1" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Cette option permet de distinguer, dans les réponses, le bêta initial 'β' du bêta intérieur 'ϐ'. Cette distinction correspond à la tradition française pour la typographie du grec ancien. Que cette option soit validée ou pas, le bêta intérieur est reconnu dans le texte saisi."><i class="bi bi-info-circle"></i></a>
             </div>
-            <div class="col-md-4 col-sm-4 text-end">
+            <div class="col-md-3 col-sm-4 text-end">
               <button type="reset" name="action" value="Effacer" class="btn btn-sm btn-outline-danger btn-clear"><i class="bi bi-x-circle"></i> Effacer la saisie</button>
             </div>
           </div>
