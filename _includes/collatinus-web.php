@@ -93,11 +93,9 @@ $formatter = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFor
                 <option value="it ">Italiano</option>
                 <option value="nl ">Nederlands</option>
               </select>
-              <input class="form-check-input" type="checkbox" id="medieval" name="medieval" autocomplete="off">
-              <label for="medieval" class="form-check-label">
-                Graphies médiévales
-              </label>
-              <a role="button" class="ms-1" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Cette option ne prend en compte que les variations graphiques les plus courantes entre latin classique et médiéval. Pour connaître le détail des règles de transformation, voir le fichier <a href='https://github.com/biblissima/collatinus/blob/Daemon/bin/data/medieval.txt' target='_blank'>medieval.txt</a>"><i class="bi bi-info-circle"></i></a>
+              <!-- <input class="form-check-input" type="checkbox" id="medieval" name="medieval" autocomplete="off"> -->
+              <!-- <label for="medieval" class="form-check-label">Graphies médiévales</label> -->
+              <!-- <a role="button" class="ms-1" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Cette option ne prend en compte que les variations graphiques les plus courantes entre latin classique et médiéval. Pour connaître le détail des règles de transformation, voir le fichier <a href='https://github.com/biblissima/collatinus/blob/Daemon/bin/data/medieval.txt' target='_blank'>medieval.txt</a>"><i class="bi bi-info-circle"></i></a> -->
             </div>
             <div class="col-md-4 col-sm-4 text-end">
             	<button type="button" name="action" value="Effacer" class="btn btn-sm btn-outline-danger btn-clear" aria-controls="results"><i class="bi bi-x-circle"></i> Effacer la saisie</button>
