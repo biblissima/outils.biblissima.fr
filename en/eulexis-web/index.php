@@ -39,8 +39,11 @@ $formatter = new IntlDateFormatter('en_GB', IntlDateFormatter::LONG, IntlDateFor
       </div>
       <div class="alert alert-warning">
         This application has been made available with no guarantee and may be subject to further corrections and improvements.<br /> If you notice any errors or typos, please do not hesitate to <a href="mailto:eulexis@biblissima-condorcet.fr">report them</a>! <br/>
-        <a href="#" data-bs-toggle="modal" data-bs-target="#modalInfo">Read more about Eulexis-web</a>
       </div>
+
+      <p><a href="#" class="btn btn-small" data-bs-toggle="modal" data-bs-target="#modalInfo"><i class="bi bi-info-circle"></i> More info on Eulexis-web</a></p>
+
+      <p>For a detailed presentation of Eulexis (desktop and web versions), read <a href="https://www.arretetonchar.fr/memini12-le-lemmatiseur-eulexis-un-precieux-outil-danalyse-de-texte-et-dapprentissage-en-grec-ancien/">this article</a> published on <em>Arrête ton Char</em> (in French).</p>
 
       <hr/>
 

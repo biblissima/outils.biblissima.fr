@@ -89,6 +89,8 @@ $link_base =  $link_prefix.$version;
 
         <p class="lead">Eulexis also exists as an online app</strong>: <a href="/en/eulexis-web">Try Eulexis-web</a></p>
 
+        <p>For a detailed presentation of Eulexis (desktop and web versions), read <a href="https://www.arretetonchar.fr/memini12-le-lemmatiseur-eulexis-un-precieux-outil-danalyse-de-texte-et-dapprentissage-en-grec-ancien/">this article</a> published on <em>Arrête ton Char</em> (in French).</p>
+
         <h2 class="mt-4 mb-4">Downloads</h2>
         <div class="row">
           <div class="col-md-3 col-sm-6">

@@ -27,9 +27,11 @@ $formatter = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFor
         <h2 class="lead">Version web du logiciel multi-plateforme <a href="/fr/eulexis">Eulexis</a>, un <strong>lemmatiseur de textes en grec ancien</strong>.</h2>
       </div>
       <div class="alert alert-warning">
-        Cette application est mise à disposition sans aucune garantie et reste soumise à corrections et améliorations.<br/>Si vous remarquez des erreurs ou des coquilles, n'hésitez pas à <a href="mailto:eulexis@biblissima-condorcet.fr">nous les signaler</a> ! <br/>
-        <a href="#" data-bs-toggle="modal" data-bs-target="#modalInfo">En savoir plus sur Eulexis-web</a>
+        Cette application est mise à disposition sans aucune garantie et reste soumise à corrections et améliorations.<br/>Si vous remarquez des erreurs ou des coquilles, n'hésitez pas à <a href="mailto:eulexis@biblissima-condorcet.fr">nous les signaler</a> !
       </div>
+
+      <p><a href="#" class="btn btn-small" data-bs-toggle="modal" data-bs-target="#modalInfo"><i class="bi bi-info-circle"></i> En savoir plus sur Eulexis-web</a></p>
+      <p>Pour une présentation détaillée d'Eulexis (versions bureau et web), voir <a href="https://www.arretetonchar.fr/memini12-le-lemmatiseur-eulexis-un-precieux-outil-danalyse-de-texte-et-dapprentissage-en-grec-ancien/">cet article</a> publié sur le site <em>Arrête ton Char</em>.</p>
 
       <hr/>
 

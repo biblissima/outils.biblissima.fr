@@ -89,6 +89,8 @@ $link_base =  $link_prefix.$version;
 
         <p class="lead">Eulexis est aussi disponible en version en ligne : <a href="/fr/eulexis-web">Tester Eulexis-web</a></p>
 
+        <p>Pour une présentation détaillée d'Eulexis (versions bureau et web), voir <a href="https://www.arretetonchar.fr/memini12-le-lemmatiseur-eulexis-un-precieux-outil-danalyse-de-texte-et-dapprentissage-en-grec-ancien/">cet article</a> publié sur le site <em>Arrête ton Char</em>.</p>
+
         <h2 class="mt-4 mb-4">Téléchargements</h2>
         <div class="row">
           <div class="col-md-3 col-sm-6">
