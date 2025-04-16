@@ -68,7 +68,7 @@
             keyString = String.fromCharCode(keyCode);
             // Mise en minuscules
             keyString = keyString.toLowerCase();
-            // Caractere grec correspondant dans lat_grc.json
+            // Caractere grec correspondant dans lat_grc.js
             value = lat_grc[keyString];
             if (value) {
                 // insere le caractere a la position du curseur
