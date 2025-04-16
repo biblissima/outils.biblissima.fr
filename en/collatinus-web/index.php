@@ -104,8 +104,8 @@ $formatter = new IntlDateFormatter('en_GB', IntlDateFormatter::LONG, IntlDateFor
 			        	<option value="nl ">Nederlands</option>
 			        </select>
 			        <input class="form-check-input" type="checkbox" id="medieval" name="medieval" autocomplete="off">
-				       <label for="medieval" class="form-check-label">Medieval spellings</label>
-				       <a role="button" class="ms-1" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="This option only takes into account the most common spelling variations between Classical and Medieval Latin. For more details about the transformation rules, see the file <a href='https://github.com/biblissima/collatinus/blob/Daemon/bin/data/medieval.txt' target='_blank'>medieval.txt</a>"><i class="bi bi-info-circle"></i></a>
+				      <label for="medieval" class="form-check-label">Medieval spellings</label>
+				      <a role="button" class="ms-1" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="This option only takes into account the most common spelling variations between Classical and Medieval Latin. For more details about the transformation rules, see the file <a href='https://github.com/biblissima/collatinus/blob/Daemon/bin/data/medieval.txt' target='_blank'>medieval.txt</a>"><i class="bi bi-info-circle"></i></a>
 				     </div>
 				     <div class="col-md-4 col-sm-4 text-end">
 				     	<button type="button" name="action" value="Erase" class="btn btn-sm btn-outline-danger btn-clear" aria-controls="results"><i class="bi bi-x-circle"></i> Clear input</button>
