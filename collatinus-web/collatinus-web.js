@@ -68,19 +68,12 @@
       })
       .done(function(data) {
         $("#results").html(data);
-        var divResults = $("#results");
-        // Calculate best horizontal position
-        var divResultsOffsetTop = divResults.offset().top;
-        var divResultsOffsetTop = divResultsOffsetTop + 20;
-        var divResultsWidth = divResults.width();
-        var divResultsHeight = divResults.height();
-        var windowWidth = $(window).width();
-        var positionRight = (windowWidth - divResultsWidth) / 2 - 60;
 
-        // ScrollToTop
-        $("html, body").stop(true).animate({
-          scrollTop: $("#results").offset().top
-        }, 600);
+        var divResults = document.querySelector('#results');
+        window.scrollTo({
+          top: divResults.offsetTop,
+          behavior: "smooth",
+        });
 
         afterHtmlAppendCallback();
       })
@@ -112,18 +105,6 @@
 
       // get rid of href on useless links in du_Cange
       $(".text a.form").removeAttr("href");
-
-      // animate scroll to anchors
-      $('a[href^=#]:not([href=#])').click(function() {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html,body').stop(true).animate({
-            scrollTop: target.offset().top - header
-          }, 1000);
-          return false;
-        }
-      });
     }
   });
 }(jQuery))

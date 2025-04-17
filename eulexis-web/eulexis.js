@@ -115,10 +115,12 @@
                 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
                 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {html: true}));
 
-                var headerHeight = 230;    
-                $('html, body').stop(true).animate({
-                    scrollTop: $("#results").offset().top - headerHeight
-                }, 600);
+                var divResults = document.querySelector('#results');
+                window.scrollTo({
+                  top: divResults.offsetTop,
+                  behavior: "smooth",
+                });
+
                 afterHtmlAppendCallback();
 
             }).fail(function() {
@@ -215,21 +217,6 @@
                 var pos_ind = $(this).attr("data-pos");
                 var dataString = 'pos_ind=' + pos_ind;
                 ajaxRequest(dataString);
-            });
-
-            /*
-             * Scroll anime vers ancres
-             */
-            $('a[href^=#]:not([href=#])').click(function() {
-                //if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').stop(true).animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
             });
         }
     });
