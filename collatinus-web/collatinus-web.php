@@ -64,6 +64,11 @@ function verifyFormToken($form) {
  * - p1 = appel du tagueur probabiliste
  * - a0 = scansion
  * - a10 = accentuation (ecclésiastique)
+ * - i2 = lemmatisation (avec les formes du texte, option médiévale)
+ * - i6 = analyse (avec morpho et formes, option médiévale)
+ * - q1 = appel du tagueur probabiliste, option médiévale
+ * - b0 = scansion, option médiévale
+ * - b10 = accentuation (ecclésiastique, option médiévale)
  * - F = flexion (attention à la majuscule !)
  *
  * Quand les traductions sont importantes dans la réponse,
