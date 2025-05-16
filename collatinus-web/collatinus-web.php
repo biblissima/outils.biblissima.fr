@@ -27,6 +27,24 @@ function interroge($requete) {
   fclose($sk);
   return $dati;
 }
+
+function sanitize($req, $opera) {
+  $req = trim(strip_tags($req));
+  if ($opera !== 'traite_txt') {
+    $search  = array(' ', '.', ';', ':', ',', '&', '@', '"', '§', '!', '-', '_', '¨', '^', '*', '$', '€', '/', '=', '+', '?', '%', '(', ')', '[', ']', '{', '}', '°', '£', '#', '،', '~', '∞', '…', '÷','«','≠','ß','◊','©','≈',
+      '‹','≤','‡','ƒ','ﬁ','¬','µ','π','º','†','®','—','ø','Ç','¡','¶','‘','“','','•','>','<','\'');
+    $req = str_replace($search, '', $req);
+  }
+  //$pattern = '/^([^a-zA-Z]+)$/';
+  $pattern = '/[^\P{L}a-zA-Z]|^[-\d]+$/ui';
+  if ( preg_match($pattern, $req) ) {
+    echo "<p class='text-danger'>Erreur de saisie : Collatinus ne reconnaît pas les mots en alphabet non-latin</p>";
+    return preg_replace($pattern, '', $req);
+  }
+  else {
+    return $req;
+  }
+}
  
 //---- Verifie les valeurs des tokens
 function verifyFormToken($form) {
@@ -108,23 +126,23 @@ if (isset($_POST['opera'])) {
       if (strpos($dico, ":") !== false) {
         $dico = str_replace(":", "", $dico);
       }
-      $lemme = strip_tags($_POST['lemme']);
+      $lemme = $_POST['lemme'];
       foreach ($mapKeysToNames as $key => $value) {
         if (strtolower($dico) == strtolower($value)) {
           $dico = $key;
           break;
         }
       }
-      $requete = "-" . $dico ." ". $lemme;
+      $requete = "-" . $dico ." ". sanitize($lemme, $opera);
       break;
     case 'flexion' :
-      $lemme = strip_tags($_POST['lemme']);
-      $requete = "-F " . $lemme;
+      $lemme = $_POST['lemme'];
+      $requete = "-F " . sanitize($lemme, $opera);
       break;
     case 'traite_txt' :
       $langue = $_POST['langue'];
       $medieval = $_POST['medieval'];
-      $texte = strip_tags($_POST['texte']);
+      $texte = sanitize($_POST['texte'], $opera);
       switch ($medieval) {
         case "true" :
           switch($_POST['action']) {
