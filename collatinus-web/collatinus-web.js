@@ -39,12 +39,8 @@
           var dataString = 'texte=' + texte + '&langue=' + langue + '&opera=' + opera + '&action=' + action + '&token=' + token + '&medieval=' + medieval;
           break;
       }
-
-      if (lemme || texte) {
+      if (texte && texte.trim() !== "") {
         ajaxRequest(dataString);
-      }
-      else {
-        $("#modal-error").modal();
       }
     });
 
