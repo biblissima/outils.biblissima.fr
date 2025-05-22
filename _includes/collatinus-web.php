@@ -102,7 +102,7 @@ $formatter = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFor
             </div>
           </div>
           <div class="col-lg-8 col-md-11 d-sm-flex btn-group-traitement">
-            <button type="submit" name="action" value="Lemmatiser" class="btn btn-success" aria-controls="results"> Lemmatiser</button>
+            <button type="submit" name="action" value="Lemmatiser" class="btn btn-success" aria-controls="results">Lemmatiser</button>
             <button type="submit" name="action" value="Analyser" class="btn btn-success" aria-controls="results">Analyser</button>
             <button type="submit" name="action" value="Taguer" class="btn btn-success" aria-controls="results">Taguer</button>
             <button type="submit" name="action" value="Scander" class="btn btn-success" aria-controls="results">Scander</button>

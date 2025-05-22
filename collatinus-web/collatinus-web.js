@@ -3,33 +3,31 @@
     var header = 185; // 20px more than the size of reduced header
 
     // submit form via Ajax for processing by collatinus-web.php
-    $('button[type="submit"]').on('click', function(event){
+    $('form').on('submit', function(event) {
       event.preventDefault();
 
-      var form = $(this).closest('form');
-
       // Type of operation
-      var opera = form.find("input[name='opera']").val();
+      var opera = $(this).find("input[name='opera']").val();
       // Valeur du token
-      var token = form.find("input[name='token']").val();
+      var token = $(this).find("input[name='token']").val();
       // variables and POST parameters depending on operation
       switch (opera) {
         case "consult":
-          var lemme = $("#recherche_lemme").val();
+          var texte = $("#recherche_lemme").val();
           var dico = $("#dicos option:selected").val();
           $("#dicos").change(function() {
             var dico = $(this).val();
           });
-          var dataString = 'lemme=' + lemme + '&opera=' + opera + '&dicos=' + dico + '&token=' + token;
+          var dataString = 'lemme=' + texte + '&opera=' + opera + '&dicos=' + dico + '&token=' + token;
           break;
 
         case "flexion":
-          var lemme = $("#flexion_lemme").val();
-          var dataString = 'lemme=' + lemme + '&opera=' + opera + '&token=' + token;
+          var texte = $("#flexion_lemme").val();
+          var dataString = 'lemme=' + texte + '&opera=' + opera + '&token=' + token;
           break;
 
         case "traite_txt":
-          var action = $(this).val();
+          var action = $(this).find("button[type='submit']:focus").val();
           var texte = $("#traitement_texte").val();
           var langue = $("#langue option:selected").val();
           $("#langue").change(function() {
