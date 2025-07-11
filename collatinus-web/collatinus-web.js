@@ -3,13 +3,15 @@
     var header = 185; // 20px more than the size of reduced header
 
     // submit form via Ajax for processing by collatinus-web.php
-    $('form').on('submit', function(event) {
+    $('button[type="submit"]').on('click', function(event){
       event.preventDefault();
 
+      var form = $(this).closest('form');
+
       // Type of operation
-      var opera = $(this).find("input[name='opera']").val();
+      var opera = form.find("input[name='opera']").val();
       // Valeur du token
-      var token = $(this).find("input[name='token']").val();
+      var token = form.find("input[name='token']").val();
       // variables and POST parameters depending on operation
       switch (opera) {
         case "consult":
@@ -27,7 +29,7 @@
           break;
 
         case "traite_txt":
-          var action = $(this).find("button[type='submit']:focus").val();
+          var action = $(this).val();          
           var texte = $("#traitement_texte").val();
           var langue = $("#langue option:selected").val();
           $("#langue").change(function() {
