@@ -113,7 +113,7 @@ $formatter = new IntlDateFormatter('en_GB', IntlDateFormatter::LONG, IntlDateFor
       <!-- Informations -->
       <div class="alert alert-info mt-4">
         <p class="lead">The &laquo; Bailly 2020 Hugo Chávez &raquo; is available on Eulexis!</p>
-                    <p>Thanks to the hard work of a team of volunteers led by Gérard Gréco, with special contribution of André Charbonnet, Mark De Wilde and Bernard Maréchal, the Bailly 2020 Hugo Chávez is <a href="http://gerardgreco.free.fr/spip.php?article52">available under conditions in PDF</a> since April 2020. You can now consult it online. If you find this work useful, do not hesitate to encourage it and <a href="http://gerardgreco.free.fr/spip.php?article52">make a donation</a>.</p>
+                    <p>Thanks to the hard work of a team of volunteers led by Gérard Gréco, with special contribution of André Charbonnet, Mark De Wilde and Bernard Maréchal, the Bailly 2020 Hugo Chávez is <a href="http://gerardgreco.free.fr/spip.php?article24">available under conditions in PDF</a> since April 2020. You can now consult it online. If you find this work useful, do not hesitate to encourage it and <a href="http://gerardgreco.free.fr/spip.php?article24">make a donation</a>.</p>
       </div>
 
       <div class="alert alert-light mt-4">
@@ -124,7 +124,7 @@ $formatter = new IntlDateFormatter('en_GB', IntlDateFormatter::LONG, IntlDateFor
                 <li>The LSJ is from <a href="http://www.mlat.uzh.ch/MLS/">Philipp Roelli</a>, revised and corrected by <a href="http://chaerephon.e-monsite.com/pages/litterature/grec-ancien/bailly.html">Chaeréphon (André Charbonnet)</a></li>
                 <li>The Pape is from <a href="http://www.mlat.uzh.ch/MLS/">Philipp Roelli</a>, revised and corrected by <a href="http://chaerephon.e-monsite.com/pages/litterature/grec-ancien/bailly.html">Chaeréphon (André Charbonnet)</a></li>
                 <li>The abridged Bailly is from <a href="http://chaerephon.e-monsite.com/pages/litterature/grec-ancien/bailly.html">Chaeréphon (André Charbonnet)</a></li>
-                <li>The <em>Bailly 2020 Hugo Chávez</em> is from <a href="http://gerardgreco.free.fr/spip.php?article52">Gérard Gréco</a>, converted from TeX to HTML by Philippe Verkerk.</li>
+                <li>The <em>Bailly 2020 Hugo Chávez</em> is from <a href="http://gerardgreco.free.fr/spip.php?article24">Gérard Gréco</a>, converted from TeX to HTML by Philippe Verkerk.</li>
                 <li>The lemmatisation and inflection functions are made possible with files from <a href="https://d.iogen.es/d/">Diogenes</a> and <a href="http://www.perseus.tufts.edu/">Perseus</a>.</li>
             </ul>
       </div>
@@ -176,7 +176,7 @@ $formatter = new IntlDateFormatter('en_GB', IntlDateFormatter::LONG, IntlDateFor
                         </ul>
                     </li>
                     <li>Pape (1880): Greek → German</li>
-                    <li><a href="http://gerardgreco.free.fr/spip.php?article52">Bailly 2020 Hugo Chávez</a> : Greek → French</li>
+                    <li><a href="http://gerardgreco.free.fr/spip.php?article24">Bailly 2020 Hugo Chávez</a> : Greek → French</li>
                     <li>Bailly (Abr. 1919) : Greek → French
                         <ul>
                             <li><a href="http://www.tabularium.be/bailly/">Scanned version of the Bailly on Tabularium</a></li>

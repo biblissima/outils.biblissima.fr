@@ -112,11 +112,11 @@ $link_base =  $link_prefix.$version;
 
         <div class="alert alert-info mt-4 mb-4">
           <p class="lead">Le &laquo; Bailly 2020 Hugo Chávez &raquo; disponible à la consultation dans Eulexis !</p>
-          <p>Grâce au travail acharné d'une équipe de bénévoles animée par Gérard Gréco, et avec la participation spéciale d'André Charbonnet, de Mark De Wilde et de Bernard Maréchal, le Bailly 2020 Hugo Chávez est <a href="http://gerardgreco.free.fr/spip.php?article52">accessible sous conditions en PDF</a> depuis avril 2020. Vous pouvez maintenant le consulter avec Eulexis. Si ce travail vous est utile, n'hésitez pas à l'encourager et <a href="http://gerardgreco.free.fr/spip.php?article52">à faire un don</a>.</p>
+          <p>Grâce au travail acharné d'une équipe de bénévoles animée par Gérard Gréco, et avec la participation spéciale d'André Charbonnet, de Mark De Wilde et de Bernard Maréchal, le Bailly 2020 Hugo Chávez est <a href="http://gerardgreco.free.fr/spip.php?article24">accessible sous conditions en PDF</a> depuis avril 2020. Vous pouvez maintenant le consulter avec Eulexis. Si ce travail vous est utile, n'hésitez pas à l'encourager et <a href="http://gerardgreco.free.fr/spip.php?article24">à faire un don</a>.</p>
         </div>
 
         <div class="alert alert-info">
-          <p>Les données, en particulier le <a href="http://gerardgreco.free.fr/spip.php?article52">Bailly 2020 Hugo Chávez</a>, n'étant pas libres de droit, mais néanmoins utilisables sous conditions, nous avons préféré ne pas les rendre téléchargeables sur ce site. Toutefois, un utilisateur de Linux qui compilerait les <a href="https://github.com/PhVerkerk/Eulexis_off_line">sources d'Eulexis</a> aura besoin de ces données. Il lui suffira de <a href="mailto:eulexis@biblissima-condorcet.fr">nous écrire</a> et nous nous ferons un plaisir de les lui envoyer.</p>
+          <p>Les données, en particulier le <a href="http://gerardgreco.free.fr/spip.php?article24">Bailly 2020 Hugo Chávez</a>, n'étant pas libres de droit, mais néanmoins utilisables sous conditions, nous avons préféré ne pas les rendre téléchargeables sur ce site. Toutefois, un utilisateur de Linux qui compilerait les <a href="https://github.com/PhVerkerk/Eulexis_off_line">sources d'Eulexis</a> aura besoin de ces données. Il lui suffira de <a href="mailto:eulexis@biblissima-condorcet.fr">nous écrire</a> et nous nous ferons un plaisir de les lui envoyer.</p>
         </div>
 
         <h3>Nouveautés de la version 1.1</h3>
@@ -140,7 +140,7 @@ $link_base =  $link_prefix.$version;
             <li>Le <abbr title="Liddell–Scott–Jones Greek-English Lexicon"><em>LSJ</em></abbr> est de <a href="http://www.mlat.uzh.ch/MLS/">Philipp Roelli</a>, revu et corrigé par <a href="http://chaerephon.e-monsite.com/pages/litterature/grec-ancien/bailly.html">Chaeréphon (André Charbonnet)</a></li>
             <li>Le <em>Pape</em> est de <a href="http://www.mlat.uzh.ch/MLS/">Philipp Roelli</a>. Il a été revu par <a href="http://chaerephon.e-monsite.com/pages/litterature/grec-ancien/bailly.html">Chaeréphon (André Charbonnet)</a> et Jean-Paul Woitrain.</li>
             <li>L'abrégé du <em>Bailly</em> est de <a href="http://chaerephon.e-monsite.com/pages/litterature/grec-ancien/bailly.html">Chaeréphon (André Charbonnet)</a></li>
-            <li>Le <em>Bailly 2020 Hugo Chávez</em> est de <a href="http://gerardgreco.free.fr/spip.php?article52">Gérard Gréco</a>, converti de TeX en HTML par Philippe Verkerk.</li>
+            <li>Le <em>Bailly 2020 Hugo Chávez</em> est de <a href="http://gerardgreco.free.fr/spip.php?article24">Gérard Gréco</a>, converti de TeX en HTML par Philippe Verkerk.</li>
             <li>La lemmatisation et la flexion ont été possibles grâce aux fichiers de <a href="https://community.dur.ac.uk/p.j.heslin/Software/Diogenes/">Diogenes</a> et de <a href="http://www.perseus.tufts.edu/">Perseus</a>.</li>
             <li>L'amélioration des traductions anglaises a été, en partie, possible grâce au travail d'Helma Dik (<a href="https://logeion.uchicago.edu">Logeion</a>).</li>
           </ul>

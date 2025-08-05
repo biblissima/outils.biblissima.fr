@@ -112,11 +112,11 @@ $link_base =  $link_prefix.$version;
 
         <div class="alert alert-info mt-4 mb-4">
           <p class="lead">The &laquo; Bailly 2020 Hugo Chávez &raquo; is available in Eulexis!</p>
-          <p>Thanks to the hard work of a team of volunteers led by Gérard Gréco, with special contribution of André Charbonnet, Mark De Wilde and Bernard Maréchal, the Bailly 2020 Hugo Chávez is <a href="http://gerardgreco.free.fr/spip.php?article52">available under conditions in PDF</a> since April 2020. You can now consult it in Eulexis. If you find this work useful, do not hesitate to encourage it and <a href="http://gerardgreco.free.fr/spip.php?article52">make a donation</a>.</p>
+          <p>Thanks to the hard work of a team of volunteers led by Gérard Gréco, with special contribution of André Charbonnet, Mark De Wilde and Bernard Maréchal, the Bailly 2020 Hugo Chávez is <a href="http://gerardgreco.free.fr/spip.php?article24">available under conditions in PDF</a> since April 2020. You can now consult it in Eulexis. If you find this work useful, do not hesitate to encourage it and <a href="http://gerardgreco.free.fr/spip.php?article24">make a donation</a>.</p>
         </div>
 
         <div class="alert alert-info">
-          <p>The data, in particular the <a href="http://gerardgreco.free.fr/spip.php?article52">Bailly 2020 Hugo Chávez</a>, not being released under a free license, but nevertheless usable under conditions, we preferred not to make it downloadable here. However, a Linux user compiling Eulexis from its <a href="https://github.com/PhVerkerk/Eulexis_off_line">source code</a> will need this data. He will just have to <a href="mailto:eulexis@biblissima-condorcet.fr">email us</a> and we will be happy to send it along.</p>
+          <p>The data, in particular the <a href="http://gerardgreco.free.fr/spip.php?article24">Bailly 2020 Hugo Chávez</a>, not being released under a free license, but nevertheless usable under conditions, we preferred not to make it downloadable here. However, a Linux user compiling Eulexis from its <a href="https://github.com/PhVerkerk/Eulexis_off_line">source code</a> will need this data. He will just have to <a href="mailto:eulexis@biblissima-condorcet.fr">email us</a> and we will be happy to send it along.</p>
         </div>
 
         <h3>New in version 1.1</h3>
@@ -141,7 +141,7 @@ $link_base =  $link_prefix.$version;
                     <a href="http://chaerephon.e-monsite.com/pages/litterature/grec-ancien/bailly.html">Chaeréphon (André Charbonnet)</a></li>
                 <li>The Pape is from <a href="http://www.mlat.uzh.ch/MLS/">Philipp Roelli</a>. It has been reviewed by <a href="http://chaerephon.e-monsite.com/pages/litterature/grec-ancien/bailly.html">Chaeréphon (André Charbonnet)</a> and Jean-Paul Woitrain.</li>
                 <li>The abridged Bailly is from <a href="http://chaerephon.e-monsite.com/pages/litterature/grec-ancien/bailly.html">Chaeréphon (André Charbonnet)</a></li>
-                <li>The <em>Bailly 2020 Hugo Chávez</em> is from <a href="http://gerardgreco.free.fr/spip.php?article52">Gérard Gréco</a>, converted from TeX to HTML by Philippe Verkerk.</li>
+                <li>The <em>Bailly 2020 Hugo Chávez</em> is from <a href="http://gerardgreco.free.fr/spip.php?article24">Gérard Gréco</a>, converted from TeX to HTML by Philippe Verkerk.</li>
                 <li>The lemmatisation and inflection functions are made possible with files from <a href="https://community.dur.ac.uk/p.j.heslin/Software/Diogenes/">Diogenes</a> and <a href="http://www.perseus.tufts.edu/">Perseus</a>.</li>
                 <li>The improvements of the English translations has been partly possible thanks to the work done by Helma Dik (<a href="https://logeion.uchicago.edu">Logeion</a>).</li>
             </ul>
