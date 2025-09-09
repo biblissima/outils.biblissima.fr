@@ -154,45 +154,48 @@ if (isset($_POST['opera'])) {
       $langue = $_POST['langue'];
       $medieval = $_POST['medieval'];
       $texte = sanitize($_POST['texte'], $opera);
-      switch ($medieval) {
-        case "true" :
-          switch($_POST['action']) {
-            case 'Lemmatiser' :
-              $requete = "-i2" . $langue . $texte;
-              break;
-            case 'Analyser' :
-              $requete = "-i6" . $langue . $texte;
-              break;
-            case 'Taguer' :
-              $requete = "-q1" . $langue . $texte;
-              break;
-            case 'Scander' :
-              $requete = "-b0 " . $texte;
-              break;
-            case 'Accentuer' :
-              $requete = "-b10 " . $texte;
-              break;
-          }
-          break;
-        case "false" :
-          switch($_POST['action']) {
-            case 'Lemmatiser' :
-              $requete = "-h2" . $langue . $texte;
-              break;
-            case 'Analyser' :
-              $requete = "-h6" . $langue . $texte;
-              break;
-            case 'Taguer' :
-              $requete = "-p1" . $langue . $texte;
-              break;
-            case 'Scander' :
-              $requete = "-a0 " . $texte;
-              break;
-            case 'Accentuer' :
-              $requete = "-a10 " . $texte;
-              break;
-          }
-          break;
+      $requete = "";
+      if (!empty($texte)) {
+        switch ($medieval) {
+          case "true" :
+            switch($_POST['action']) {
+              case 'Lemmatiser' :
+                $requete = "-i2" . $langue . $texte;
+                break;
+              case 'Analyser' :
+                $requete = "-i6" . $langue . $texte;
+                break;
+              case 'Taguer' :
+                $requete = "-q1" . $langue . $texte;
+                break;
+              case 'Scander' :
+                $requete = "-b0 " . $texte;
+                break;
+              case 'Accentuer' :
+                $requete = "-b10 " . $texte;
+                break;
+            }
+            break;
+          case "false" :
+            switch($_POST['action']) {
+              case 'Lemmatiser' :
+                $requete = "-h2" . $langue . $texte;
+                break;
+              case 'Analyser' :
+                $requete = "-h6" . $langue . $texte;
+                break;
+              case 'Taguer' :
+                $requete = "-p1" . $langue . $texte;
+                break;
+              case 'Scander' :
+                $requete = "-a0 " . $texte;
+                break;
+              case 'Accentuer' :
+                $requete = "-a10 " . $texte;
+                break;
+            }
+            break;
+        }
       }
       break;
   }
