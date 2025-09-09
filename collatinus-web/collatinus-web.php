@@ -35,11 +35,22 @@ function sanitize($req, $opera) {
       '‹','≤','‡','ƒ','ﬁ','¬','µ','π','º','†','®','—','ø','Ç','¡','¶','‘','“','','•','>','<','\'');
     $req = str_replace($search, '', $req);
   }
-  //$pattern = '/^([^a-zA-Z]+)$/';
-  $pattern = '/[^\P{L}a-zA-Z]|^[-\d]+$/ui';
+  /* Regex :
+    \p{Latin} = matches any characters in the Latin script
+    \p{P}     = matches any kind of punctuation character
+    \p{Z}     = matches a whitespace or invisible character
+    \p{S}     = matches any math symbols, currency signs etc.
+    \p{Lo}    = matches a letter or ideograph that does not have lower/uppercase variants
+    \p{No}    = matches a superscript or subscript digit, or a number that is not a digit (excluding numbers from ideographic scripts)
+  */
+
+  //$pattern = '/[^\P{L}a-zA-Z]|^[-\d]+$/ui';
+  //$pattern = '/([^\p{Latin}\p{P}\p{Zs}])|([-\d]$)|(?:\p{L})(\d)/ui';
+  $pattern = '/([^\p{Latin}\p{P}\p{Z}\p{S}\p{Lo}\p{No}\r\n\t])|([-\d]$)/ui';
   if ( preg_match($pattern, $req) ) {
-    echo "<p class='text-danger'>Erreur de saisie : Collatinus ne reconnaît pas les mots en alphabet non-latin</p>";
-    return preg_replace($pattern, '', $req);
+    echo "<p class='text-warning-emphasis fst-italic'>Collatinus ne traite pas les mots ou caractères en alphabet non-latin.</p>";
+    $req = preg_replace($pattern, '', $req);
+    return !empty($req) ? $req : 'null';
   }
   else {
     return $req;
