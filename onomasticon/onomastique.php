@@ -2,6 +2,7 @@
 $page = 0;
 if (isset($_POST['nom']) && isset($_POST['dico'])) {
   $nom = trim(strip_tags($_POST['nom']));
+  $nom = strtolower($nom);
   $dico = trim(strip_tags($_POST['dico']));
   $f_path = "data/". $dico . ".idx";
   $f_index = fopen($f_path, 'r');
@@ -9,7 +10,7 @@ if (isset($_POST['nom']) && isset($_POST['dico'])) {
   switch ($dico) {
     case 'perin':
       $page = $first_page = 2;
-      $last_page = 1598;
+      $last_page = 1599;
       break;
     case 'de_vit':
       $page = $first_page = 5;
@@ -21,9 +22,6 @@ if (isset($_POST['nom']) && isset($_POST['dico'])) {
       $last_page = 1770;
       break;
   }
-  // var_dump($nom);
-  // echo "<br>";
-  // var_dump($dico);
 
   // https://stackoverflow.com/questions/12888674/how-does-php-compare-strings-with-comparison-operators
   // pb dans le benseler : abaris arrive avant abareis
@@ -33,10 +31,6 @@ if (isset($_POST['nom']) && isset($_POST['dico'])) {
     $page = $_POST['page'];
   } else {
     while ($nom >= $line && $page < $last_page && !feof($f_index)) {
-      // var_dump($page);
-      // echo "<br>";
-      // var_dump($line);
-      // echo "<br>----<br>";
       $page = $page + 1;
       $line = trim(fgets($f_index));
     }
@@ -50,18 +44,19 @@ $nav = "<nav role='navigation' aria-label='Navigation dans le dictionnaire'>";
 $nav .= "<ul class='pager'>";
 $nav .= "<li class='previous' rel='prev'>";
 if ($page > $first_page) {
-  $nav .= "<a href='#' data-value='".($page - 1)."'>&larr;</a>";
+  $nav .= "<a href='#results' class='scrolltop' data-value='".($page - 1)."'>&larr;</a>";
 }
 $nav .= "</li>";
 $nav .= "<li class='next' rel='next'>";
 if ($page < $last_page) {
-  $nav .= "<a href='#' data-value='".($page + 1)."'>&rarr;</a>";
+  $nav .= "<a href='#results' class='scrolltop' data-value='".($page + 1)."'>&rarr;</a>";
 }
 $nav .= "</li>";
 $nav .= "</ul></nav>";
 
 echo $nav;
-echo "<img src='/onomastique/data/".$dico."/".$img.".jpg' alt='".$dico." image #".$img."' />";
+echo "<img src='/onomasticon/data/".$dico."/".$img.".jpg' alt='".$dico." image #".$img."' />";
+echo $nav;
 
 function latin2greek($mot) {
   if (mb_strrpos($mot, 's') == (mb_strlen($mot) - 1) && mb_strlen($mot) > 1) {
