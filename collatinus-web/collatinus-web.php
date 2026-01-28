@@ -30,30 +30,30 @@ function interroge($requete) {
 
 function sanitize($req, $opera) {
   $req = trim(strip_tags($req));
-  if ($opera !== 'traite_txt') {
-    $search  = array(' ', '.', ';', ':', ',', '&', '@', '"', '§', '!', '-', '_', '¨', '^', '*', '$', '€', '/', '=', '+', '?', '%', '(', ')', '[', ']', '{', '}', '°', '£', '#', '،', '~', '∞', '…', '÷','«','≠','ß','◊','©','≈',
-      '‹','≤','‡','ƒ','ﬁ','¬','µ','π','º','†','®','—','ø','Ç','¡','¶','‘','“','','•','>','<','\'');
-    $req = str_replace($search, '', $req);
-  }
-  /* Regex :
-    \p{Latin} = matches any characters in the Latin script
-    \p{P}     = matches any kind of punctuation character
-    \p{Z}     = matches a whitespace or invisible character
-    \p{S}     = matches any math symbols, currency signs etc.
-    \p{Lo}    = matches a letter or ideograph that does not have lower/uppercase variants
-    \p{No}    = matches a superscript or subscript digit, or a number that is not a digit (excluding numbers from ideographic scripts)
-  */
 
-  //$pattern = '/[^\P{L}a-zA-Z]|^[-\d]+$/ui';
-  //$pattern = '/([^\p{Latin}\p{P}\p{Zs}])|([-\d]$)|(?:\p{L})(\d)/ui';
-  $pattern = '/([^\p{Latin}\p{P}\p{Z}\p{S}\p{Lo}\p{No}\r\n\t])|([-\d]$)/ui';
-  if ( preg_match($pattern, $req) ) {
-    echo "<p class='text-warning-emphasis fst-italic'>Collatinus ne traite pas les mots ou caractères en alphabet non-latin.</p>";
-    $req = preg_replace($pattern, '', $req);
-    return !empty($req) ? $req : 'null';
+  $punctuation = array('.',';',':',',','!','-','–','—','_','?','…','/','(',')','[',']','{','}','«','»');
+  $unwanted  = array('&','@','"','§','¨','^','*','$','€','=','+','%','°', '£','#','،', '~', '∞','÷','≠','ß','◊','©','≈','‹','≤','‡','ƒ','ﬁ','¬','µ','π','º','†','®','ø','Ç','¡','¶','‘','“','','•','>','<','\'','-');
+  $pattern = '/([^\p{Latin}\p{P}\p{Z}\p{S}\p{No}\r\n\t])|([-\d]$)/ui';
+  $patterns = array();
+  $patterns[0] = '/([^\p{Latin}\p{P}\p{Z}\r\n\t])/ui';
+  $patterns[1] = '/([^[:ascii:]])/ui';
+  $patterns[2] = '/([-\d]$)/ui';
+  $patterns[3] = '/(\[)|(\])/ui';
+  $patterns[4] = '/[a-z]+(\')$/ui';
+  //$patterns[5] = '/[a-z](\.) /ui';
+
+  if ($opera !== 'traite_txt') {
+    $exclude = array_merge($punctuation, $unwanted);
+    $req = str_replace($exclude, '', $req);
+    $req = str_replace(' ', '', $req);
+    $req = preg_replace($patterns, '', $req);
+    return !empty($req) ? $req : 'nullus';
   }
-  else {
-    return $req;
+
+  if ($opera == 'traite_txt') {    
+    $req = str_replace($unwanted, '', $req);
+    $req = preg_replace($patterns, '', $req);
+    return !empty($req) ? $req : 'nullus';
   }
 }
  
