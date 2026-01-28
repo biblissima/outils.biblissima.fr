@@ -688,7 +688,7 @@ $desc_mini    = "Lewis &amp; Short 1879 / Gaffiot 2016";
           </div>
           <div class="text-quote">
             <h2 class="fs-3">How to cite us?</h2>
-            <p class="blockquote">OUVRARD, Yves, VERKERK, Philippe (<?php echo date("Y") ?>). <em>Collatinus</em> (<?php echo $version_txt; ?>). Available at: <a href="https://outils.biblissima/en/collatinus">https://outils.biblissima/en/collatinus</a> (Accessed on <?php echo $formatter->format(time()); ?>)</p>
+            <p class="blockquote">OUVRARD, Yves, VERKERK, Philippe (<?php echo date("Y") ?>). <em>Collatinus</em> (<?php echo $version_txt; ?>). Available at: <a href="https://outils.biblissima.fr/en/collatinus">https://outils.biblissima.fr/en/collatinus</a> (Accessed on <?php echo $formatter->format(time()); ?>)</p>
           </div>
         </div>
 

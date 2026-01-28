@@ -135,7 +135,7 @@ $formatter = new IntlDateFormatter('en_GB', IntlDateFormatter::LONG, IntlDateFor
         </div>
         <div class="text-quote">
           <h2 class="fs-3">How to cite us?</h2>
-          <p class="blockquote">VERKERK, Philippe (<?php echo date("Y") ?>). <em>Eulexis-web</em>. Available at: <a href="https://outils.biblissima/en/eulexis-web">https://outils.biblissima/en/eulexis-web</a> (Accessed on <?php echo $formatter->format(time()); ?>)</p>
+          <p class="blockquote">VERKERK, Philippe (<?php echo date("Y") ?>). <em>Eulexis-web</em>. Available at: <a href="https://outils.biblissima.fr/en/eulexis-web">https://outils.biblissima.fr/en/eulexis-web</a> (Accessed on <?php echo $formatter->format(time()); ?>)</p>
         </div>
       </div>
     </section>

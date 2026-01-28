@@ -152,7 +152,7 @@ $link_base =  $link_prefix.$version;
           </div>
           <div class="text-quote">
             <h2 class="fs-3">Comment nous citer ?</h2>
-            <p class="blockquote">VERKERK, Philippe (<?php echo date("Y") ?>). <em>Eulexis</em> (<?php echo $version_txt; ?>). Disponible sur : <a href="https://outils.biblissima/fr/eulexis">https://outils.biblissima/fr/eulexis</a> (consulté le <?php echo $formatter->format(time()); ?>)</p>
+            <p class="blockquote">VERKERK, Philippe (<?php echo date("Y") ?>). <em>Eulexis</em> (<?php echo $version_txt; ?>). Disponible sur : <a href="https://outils.biblissima.fr/fr/eulexis">https://outils.biblissima.fr/fr/eulexis</a> (consulté le <?php echo $formatter->format(time()); ?>)</p>
           </div>
         </div>
 

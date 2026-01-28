@@ -177,7 +177,7 @@ $formatter = new IntlDateFormatter('en_GB', IntlDateFormatter::LONG, IntlDateFor
         </div>
         <div class="text-quote">
           <h2 class="fs-3">How to cite us?</h2>
-          <p class="blockquote">OUVRARD, Yves, VERKERK, Philippe (<?php echo date("Y") ?>). <em>Collatinus-web</em>. Available at: <a href="https://outils.biblissima/en/collatinus-web">https://outils.biblissima/en/collatinus-web</a> (Accessed on <?php echo $formatter->format(time()); ?>)</p>
+          <p class="blockquote">OUVRARD, Yves, VERKERK, Philippe (<?php echo date("Y") ?>). <em>Collatinus-web</em>. Available at: <a href="https://outils.biblissima.fr/en/collatinus-web">https://outils.biblissima.fr/en/collatinus-web</a> (Accessed on <?php echo $formatter->format(time()); ?>)</p>
         </div>
       </div>
 
