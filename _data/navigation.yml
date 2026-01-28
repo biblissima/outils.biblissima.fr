@@ -20,6 +20,11 @@ fr:
   name_short: Eulexis-web
   desc: Version en ligne du lemmatiseur de textes grecs
   url: /fr/eulexis-web/
+- 
+  name: Onomasticon
+  name_short: Onomasticon
+  desc: Dictionnaires d'onomastique grecque et latine
+  url: /fr/onomasticon/
 en:
 -
   name: Collatinus
@@ -42,3 +47,8 @@ en:
   name_short: Eulexis-web
   desc: Online Lemmatiser for ancient Greek texts
   url: /en/eulexis-web/
+- 
+  name: Onomasticon
+  name_short: Onomasticon
+  desc: Greek and Latin onomastics dictionaries
+  url: /en/onomasticon/

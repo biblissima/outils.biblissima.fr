@@ -29,7 +29,7 @@ lang: en
             <img src="/images/pseudo-sappho.png" class="card-img-top" alt="visuel Collatinus">
             <div class="card-body">
               <h2 class="card-title">Collatinus</h2>
-              <p class="card-text">Tool for lemmatisation and morphological analysis of <strong>Latin texts</strong></p>
+              <p class="card-text">Lemmatisation and morphological analysis of Latin texts</p>
               <p><a href="/en/collatinus" class="card-link">Desktop version (PC, Mac)</a></p>
               <p><a href="/en/collatinus-web" class="card-link">Online version</a></p>
             </div>
@@ -38,9 +38,17 @@ lang: en
             <img src="/images/thaleia-muse.png" class="card-img-top" alt="visuel Eulexis">
             <div class="card-body">
               <h2 class="card-title">Eulexis</h2>
-              <p class="card-text">Tool for lemmatisation of <strong>Ancient Greek texts</strong></p>
+              <p class="card-text">Lemmatisation of Ancient Greek texts</p>
               <p><a href="/en/eulexis" class="card-link">Desktop version (PC, Mac)</a></p>
               <p><a href="/en/eulexis-web" class="card-link">Online version</a></p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/images/TabulaPeutingeriana.png" class="card-img-top" alt="visuel Onomasticon">
+            <div class="card-body">
+              <h2 class="card-title">Onomasticon</h2>
+              <p class="card-text">Greek and Latin onomastics dictionaries</p>
+              <p><a href="/en/onomasticon" class="card-link">Consult online</a></p>
             </div>
           </div>
         </div>
